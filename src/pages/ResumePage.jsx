@@ -89,7 +89,7 @@ const ResumePage = () => {
     <Box
       sx={{
         // minHeight: "100vh",
-        // backgroundColor: "#fafafa",
+        backgroundColor: "#f6f6f6",
         py: 4,
       }}
     >

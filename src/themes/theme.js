@@ -64,12 +64,12 @@ const theme = createTheme({
   },
   components: {
     MuiDivider: {
-        styleOverrides: {
-          root: {
-            backgroundColor: "#fff", 
-          },
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fff",
         },
       },
+    },
     MuiButton: {
       styleOverrides: {
         root: {

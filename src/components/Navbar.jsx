@@ -22,7 +22,7 @@ const Navbar = () => {
               </Typography>
             </Box>
             <Box>
-                <SiteMenu />
+              <SiteMenu />
             </Box>
           </Box>
         </Container>

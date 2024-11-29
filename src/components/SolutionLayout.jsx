@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid2";
 
 const SolutionLayout = ({ title, bulletOne, bulletTwo }) => {
   return (
-    <Grid container spacing={4} mt={4}>
+    <Grid container spacing={4} mt={3}>
       <Grid
         size={{ xs: 12, sm: 5, md: 5 }}
         sx={{
@@ -13,7 +13,7 @@ const SolutionLayout = ({ title, bulletOne, bulletTwo }) => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h6" fontWeight="bold" mb={3}>
+        <Typography variant="h5" fontWeight="bold" mb={2}>
           {title}
         </Typography>
         <Typography mb={3}>• {bulletOne}</Typography>

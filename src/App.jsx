@@ -17,12 +17,10 @@ import Navbar from "./components/Navbar";
 import ResumePage from "./pages/ResumePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
-    <Box sx={{         minHeight: "100vh",
-      backgroundColor: "#fafafa",}}>
     <Router>
       <Navbar />
 
@@ -38,7 +36,6 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
-    </Box>
   );
 }
 

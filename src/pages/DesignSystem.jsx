@@ -630,7 +630,7 @@ const DesignSystem = () => {
                   <Typography>{lineHeightDisplay}</Typography>
                 </Box>
               </Box>
-            )
+            ),
           )}
         </Container>
       </Box>

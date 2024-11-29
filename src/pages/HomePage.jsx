@@ -84,7 +84,7 @@ const HomePage = () => {
                 </Box>
               </Grid>
             </>
-          )
+          ),
         )}
       </Grid>
     </Container>

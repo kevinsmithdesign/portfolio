@@ -43,7 +43,7 @@ const StyledLink = styled(Link)({
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
   transition: "background-position 0.3s ease",
-  
+
   "&:hover": {
     backgroundPosition: "left",
   },
@@ -126,10 +126,12 @@ const MobileMenu = () => {
     const tl = gsap.timeline();
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-    
-    const maxDistance = Math.sqrt(Math.pow(windowWidth, 2) + Math.pow(windowHeight, 2));
+
+    const maxDistance = Math.sqrt(
+      Math.pow(windowWidth, 2) + Math.pow(windowHeight, 2),
+    );
     const scale = maxDistance / 40;
-    
+
     if (isOpen) {
       // Close animation
       tl.to(navItemsRef.current, {
@@ -138,37 +140,45 @@ const MobileMenu = () => {
         stagger: 0.02,
         ease: "power1.in",
       })
-        .to(bgRef.current, {
-          opacity: 0,
-          duration: 0.3,
-        }, "-=0.1")
-        .to(morphRef.current, {
-          scale: 1,
-          x: 0,
-          y: 0,
-          borderRadius: "50%",
-          duration: 0.35,
-          ease: "power2.inOut",
-        }, "-=0.3")
+        .to(
+          bgRef.current,
+          {
+            opacity: 0,
+            duration: 0.3,
+          },
+          "-=0.1",
+        )
+        .to(
+          morphRef.current,
+          {
+            scale: 1,
+            x: 0,
+            y: 0,
+            borderRadius: "50%",
+            duration: 0.35,
+            ease: "power2.inOut",
+          },
+          "-=0.3",
+        )
         .to(
           topBarRef.current,
-          { 
-            rotation: 0, 
-            y: 0, 
+          {
+            rotation: 0,
+            y: 0,
             duration: 0.2,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           },
-          "-=0.2"
+          "-=0.2",
         )
         .to(
           bottomBarRef.current,
-          { 
-            rotation: 0, 
-            y: 0, 
+          {
+            rotation: 0,
+            y: 0,
             duration: 0.2,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           },
-          "-=0.2"
+          "-=0.2",
         );
     } else {
       // Open animation
@@ -177,17 +187,21 @@ const MobileMenu = () => {
         {
           scale: scale,
           borderRadius: 0,
-          x: -windowWidth/2 + 40,
-          y: -windowHeight/2 + 40,
+          x: -windowWidth / 2 + 40,
+          y: -windowHeight / 2 + 40,
           duration: 0.4,
           ease: "power2.inOut",
         },
-        0
+        0,
       )
-        .to(bgRef.current, {
-          opacity: 1,
-          duration: 0.3,
-        }, 0)
+        .to(
+          bgRef.current,
+          {
+            opacity: 1,
+            duration: 0.3,
+          },
+          0,
+        )
         .to(
           mobNavRef.current,
           {
@@ -195,7 +209,7 @@ const MobileMenu = () => {
             duration: 0.1,
             pointerEvents: "all",
           },
-          "-=0.2"
+          "-=0.2",
         )
         .to(
           navItemsRef.current,
@@ -205,27 +219,27 @@ const MobileMenu = () => {
             stagger: 0.02,
             ease: "power1.out",
           },
-          "-=0.1"
+          "-=0.1",
         )
         .to(
           topBarRef.current,
-          { 
-            rotation: 45, 
-            y: 5, 
+          {
+            rotation: 45,
+            y: 5,
             duration: 0.2,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           },
-          0
+          0,
         )
         .to(
           bottomBarRef.current,
-          { 
-            rotation: -45, 
-            y: -5, 
+          {
+            rotation: -45,
+            y: -5,
             duration: 0.2,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           },
-          0
+          0,
         );
     }
     setIsOpen(!isOpen);
