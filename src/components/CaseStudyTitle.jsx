@@ -7,7 +7,7 @@ const CaseStudyTitle = ({ title, description }) => {
       <Typography fontWeight="bold" mb={1} sx={{ color: "#999" }}>
         {title}
       </Typography>
-      <Typography variant="h4" fontWeight="bold" mb={2}>
+      <Typography variant="h5" fontWeight="bold" mb={2}>
         {description}
       </Typography>
     </>

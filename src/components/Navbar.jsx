@@ -8,7 +8,7 @@ const Navbar = () => {
     <Box>
       <Box>
         <Container>
-          <Box sx={{ display: "flex", alignItems: "center", height: "120px" }}>
+          {/* <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box sx={{ flex: 1 }}>
               <Typography
                 color="#222"
@@ -21,10 +21,10 @@ const Navbar = () => {
                 kevin<span style={{ color: "#999" }}>smith.</span>
               </Typography>
             </Box>
-            <Box>
-              <SiteMenu />
-            </Box>
-          </Box>
+            <Box> */}
+          <SiteMenu />
+          {/* </Box> */}
+          {/* </Box> */}
         </Container>
       </Box>
     </Box>

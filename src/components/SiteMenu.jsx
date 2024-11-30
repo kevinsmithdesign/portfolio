@@ -50,8 +50,8 @@ const StyledLink = styled(Link)({
 });
 
 const HamburgerMenuContainer = styled(Box)({
-  width: "80px",
-  height: "80px",
+  width: "70px",
+  height: "70px",
   borderRadius: "50%",
   cursor: "pointer",
   display: "flex",
@@ -77,8 +77,8 @@ const MorphingBackground = styled(Box)({
   position: "fixed",
   top: "20px",
   right: "20px",
-  width: "80px",
-  height: "80px",
+  width: "70px",
+  height: "70px",
   backgroundColor: "#0069FF",
   borderRadius: "50%",
   zIndex: 10,
@@ -128,7 +128,7 @@ const MobileMenu = () => {
     const windowHeight = window.innerHeight;
 
     const maxDistance = Math.sqrt(
-      Math.pow(windowWidth, 2) + Math.pow(windowHeight, 2),
+      Math.pow(windowWidth, 2) + Math.pow(windowHeight, 2)
     );
     const scale = maxDistance / 40;
 
@@ -146,7 +146,7 @@ const MobileMenu = () => {
             opacity: 0,
             duration: 0.3,
           },
-          "-=0.1",
+          "-=0.1"
         )
         .to(
           morphRef.current,
@@ -158,7 +158,7 @@ const MobileMenu = () => {
             duration: 0.35,
             ease: "power2.inOut",
           },
-          "-=0.3",
+          "-=0.3"
         )
         .to(
           topBarRef.current,
@@ -168,7 +168,7 @@ const MobileMenu = () => {
             duration: 0.2,
             ease: "power1.inOut",
           },
-          "-=0.2",
+          "-=0.2"
         )
         .to(
           bottomBarRef.current,
@@ -178,7 +178,7 @@ const MobileMenu = () => {
             duration: 0.2,
             ease: "power1.inOut",
           },
-          "-=0.2",
+          "-=0.2"
         );
     } else {
       // Open animation
@@ -192,7 +192,7 @@ const MobileMenu = () => {
           duration: 0.4,
           ease: "power2.inOut",
         },
-        0,
+        0
       )
         .to(
           bgRef.current,
@@ -200,7 +200,7 @@ const MobileMenu = () => {
             opacity: 1,
             duration: 0.3,
           },
-          0,
+          0
         )
         .to(
           mobNavRef.current,
@@ -209,7 +209,7 @@ const MobileMenu = () => {
             duration: 0.1,
             pointerEvents: "all",
           },
-          "-=0.2",
+          "-=0.2"
         )
         .to(
           navItemsRef.current,
@@ -219,7 +219,7 @@ const MobileMenu = () => {
             stagger: 0.02,
             ease: "power1.out",
           },
-          "-=0.1",
+          "-=0.1"
         )
         .to(
           topBarRef.current,
@@ -229,7 +229,7 @@ const MobileMenu = () => {
             duration: 0.2,
             ease: "power1.inOut",
           },
-          0,
+          0
         )
         .to(
           bottomBarRef.current,
@@ -239,7 +239,7 @@ const MobileMenu = () => {
             duration: 0.2,
             ease: "power1.inOut",
           },
-          0,
+          0
         );
     }
     setIsOpen(!isOpen);

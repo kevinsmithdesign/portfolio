@@ -84,7 +84,7 @@ const LilaAnimationExample = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", height: "548px" }}>
+    <Box sx={{ display: "flex", height: "530px" }}>
       <Box
         sx={{
           background: "#222",
@@ -101,7 +101,7 @@ const LilaAnimationExample = () => {
             src="https://assets.codepen.io/2392702/Group+241591.svg"
             alt="Lila Logo"
             style={{
-              height: "36px",
+              height: "28px",
               width: "auto",
             }}
           />
@@ -110,11 +110,13 @@ const LilaAnimationExample = () => {
         <Box
           sx={{
             mb: 3,
-            px: 3,
-            py: 1.5,
+            px: 2,
+            py: 1.2,
             background: "#333",
             borderRadius: "8px",
             color: "#fff",
+            fontSize: "12px",
+            border: "1px solid #555",
           }}
         >
           Search
@@ -172,8 +174,8 @@ const LilaAnimationExample = () => {
             <Stack mr={2}>
               <Stack
                 sx={{
-                  height: "40px",
-                  width: "40px",
+                  height: "30px",
+                  width: "30px",
                   borderRadius: "100%",
                   background: "#1A56DB",
                 }}
@@ -184,12 +186,12 @@ const LilaAnimationExample = () => {
                 sx={{
                   boxShadow: "none",
                   background: "#1A56DB",
-                  borderRadius: "0 16px 16px 16px",
-                  padding: "16px",
+                  borderRadius: "6px 10px 10px 10px",
+                  padding: "12px",
                   color: "white",
                 }}
               >
-                <Typography variant="body1">
+                <Typography variant="body2">
                   {showMessage1 && (
                     <TypeWriter
                       text="Hi! I'm Lila, your caregiving companion. How can I support you today? Whether it's managing care plans, navigating emotional challenges, or finding trusted resources, I'm here to help."
@@ -213,19 +215,19 @@ const LilaAnimationExample = () => {
                 sx={{
                   boxShadow: "none",
                   background: "#DFE4F3",
-                  borderRadius: "16px 0px 16px 16px",
+                  borderRadius: "10px 6px 10px 10px",
                   padding: "16px",
                   color: "#111",
                 }}
               >
-                <Typography variant="body1">{userText}</Typography>
+                <Typography variant="body2">{userText}</Typography>
               </Card>
             </Stack>
             <Stack ml={2}>
               <Stack
                 sx={{
-                  height: "40px",
-                  width: "40px",
+                  height: "30px",
+                  width: "30px",
                   borderRadius: "100%",
                   background: "#DFE4F3",
                 }}
@@ -236,18 +238,25 @@ const LilaAnimationExample = () => {
         <Box
           sx={{
             background: "#333",
-            fontSize: "14px",
+            fontSize: "12px",
             height: "40px",
             lineHeight: "40px",
             borderRadius: "8px",
             marginX: 8,
             px: 2,
             color: "#fff",
+            border: "1px solid #555",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              fontSize: "12px",
+            }}
+          >
             {!showPlaceholderText ? (
-              <span>How can I help you today?</span>
+              <span>Enter Message</span>
             ) : (
               <TypeWriter
                 text={userText}

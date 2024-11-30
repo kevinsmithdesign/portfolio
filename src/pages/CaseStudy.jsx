@@ -132,42 +132,36 @@ export default function CaseStudy() {
           An AI-powered Platform Designed to Support Caregivers with Natural,
           Human-like Conversations in Healthcare.
         </Typography>
-        {/* <Box
-        sx={{
-        //   background: "#eee",
-        boxShadow:'24px 24px 64px rgba(36, 107, 253, 0.01)',
-        backgroundImage: `url("https://assets.codepen.io/2392702/Frame+241072.svg")`,
-        backgroundSize: "cover", // Ensures the image fills the Box
-        backgroundPosition: "center", // Centers the image
-        backgroundRepeat: "no-repeat", // Prevents tiling of the image
-          height: "600px",
-          width: "100%",
-          borderRadius: 3,
-          mb: 2,
-        }}
-      ></Box> */}
-        <Box
-          sx={{
-            height: "615px",
-            background: "#111111",
-            width: "100%",
-            p: 4,
-            borderRadius: 3,
-            mb: 2,
-          }}
-        >
-          <LilaAnimationExample />
+
+        <Box sx={{ background: "#4E88FF", pt: 10, borderRadius: "16px" }}>
+          <Box
+            sx={{
+              background: "#111111",
+              width: "100%",
+              p: 4,
+              borderTopRightRadius: "16px",
+              borderTopLeftRadius: "16px",
+              maxWidth: "960px",
+              marginRight: "auto",
+              marginLeft: "auto",
+              mb: 2,
+            }}
+          >
+            <LilaAnimationExample />
+          </Box>
         </Box>
         <Grid container spacing={2} mb={2}>
           {caseStudyOverview.map(({ title, description }) => (
             <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card
                 sx={{
-                  p: 4,
+                  px: 6,
+                  py: 5,
+
                   background: "#fff",
 
                   boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-                  borderRadius: 3,
+                  borderRadius: "16px",
                 }}
               >
                 <Typography variant="h6" fontWeight="bold">
@@ -181,11 +175,11 @@ export default function CaseStudy() {
         {/* <CaseStudyDivider /> */}
         <Card
           sx={{
-            p: 4,
+            p: 6,
             background: "#fff",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: 3,
+            borderRadius: "16px",
             mb: 2,
           }}
         >
@@ -206,7 +200,7 @@ export default function CaseStudy() {
             patients concerns efficiently and confidently.
           </Typography>
           <Box sx={{ pl: 6 }}>
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h6" fontWeight="bold">
               “How might we create a platform that empowers caregivers with
               timely, empathetic guidance tailored to their unique challenges?”
             </Typography>
@@ -215,11 +209,11 @@ export default function CaseStudy() {
         {/* <CaseStudyDivider /> */}
         <Card
           sx={{
-            p: 4,
+            p: 6,
             background: "#fff",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: 3,
+            borderRadius: "16px",
             mb: 2,
           }}
         >
@@ -246,11 +240,10 @@ export default function CaseStudy() {
         </Card>
         <Card
           sx={{
-            p: 4,
+            p: 6,
             background: "#fff",
-
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: 3,
+            borderRadius: "16px",
             mb: 2,
           }}
         >
@@ -301,11 +294,11 @@ export default function CaseStudy() {
               >
                 <Card
                   sx={{
-                    p: 4,
+                    p: 6,
                     background: "#fff",
                     border: "1px solid #DFE4F3",
                     boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-                    borderRadius: 3,
+                    borderRadius: "16px",
                     flex: 1, // Ensures all cards stretch to the same height
                     display: "flex",
                     flexDirection: "column",
@@ -435,7 +428,7 @@ export default function CaseStudy() {
               {competitiveAnalysis.map(
                 (
                   { feature, carely, caringBridge, helpingHands, honor, lila },
-                  index,
+                  index
                 ) => (
                   <Box sx={{ display: "flex" }} key={feature}>
                     <Box
@@ -504,18 +497,18 @@ export default function CaseStudy() {
                       <Typography>{lila}</Typography>
                     </Box>
                   </Box>
-                ),
+                )
               )}
             </Box>
           </Box>
         </Card>
         <Card
           sx={{
-            p: 4,
+            p: 6,
             background: "#fff",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: 3,
+            borderRadius: "16px",
             mb: 2,
           }}
         >
@@ -556,11 +549,11 @@ Lack of real-time assistance tools that support staff while reassuring families.
         {/* <CaseStudyDivider /> */}
         <Card
           sx={{
-            p: 4,
+            p: 6,
             background: "#fff",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: 3,
+            borderRadius: "16px",
             mb: 2,
           }}
         >
