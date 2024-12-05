@@ -146,14 +146,14 @@ const HomePage = () => {
         "A showcase of thoughtfully crafted user interfaces, featuring real-world projects and fictional designs that highlight diverse capabilities and creative problem-solving.",
       btnText: "View UI Designs",
       externalLink: "https://dribbble.com/kevinsmithdesign",
-      img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29_1.svg",
+      img: "https://assets.codepen.io/2392702/Group+1.jpg",
     },
   ];
 
   return (
     <Container sx={{ mb: 6 }}>
       <HeroSection />
-      <Grid container spacing={{ xs: 2, md: 4 }}>
+      <Grid container spacing={{ xs: 2, md: 6 }}>
         {portfolioProjects.map(
           (
             { title, description, btnText, route, externalLink, img },
@@ -171,10 +171,12 @@ const HomePage = () => {
                   flexDirection: "column",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" mb={1}>
+                <Typography variant="h4" fontWeight="bold" mb={2}>
                   {title}
                 </Typography>
-                <Typography mb={3}>{description}</Typography>
+                <Typography mb={3} sx={{ fontSize: "18px" }}>
+                  {description}
+                </Typography>
                 <Box>
                   <Button
                     variant="contained"
