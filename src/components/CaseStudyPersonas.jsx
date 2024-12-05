@@ -58,10 +58,10 @@ const CaseStudyPersona = ({ name, title, motivations, painPoints, img }) => {
             height: "440px",
             width: "100%",
             borderRadius: 3,
-            backgroundImage: `url(${img})`, // Dynamically use the passed img prop
-            backgroundSize: "cover", // Ensures the image fills the Box
-            backgroundPosition: "center", // Centers the image
-            backgroundRepeat: "no-repeat", // Prevents tiling of the image
+            backgroundImage: `url(${img})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         ></Box>
       </Grid>
@@ -73,18 +73,22 @@ const CaseStudyPersona = ({ name, title, motivations, painPoints, img }) => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h6" fontWeight="bold" mb={1}>
+        <Typography variant="h6" fontWeight="bold" mb={1} color="white">
           {name}
         </Typography>
-        <Typography mb={3}>{title}</Typography>
-        <Typography variant="h6" fontWeight="bold" mb={1}>
+        <Typography mb={3} color="white">
+          {title}
+        </Typography>
+        <Typography color="white" variant="h6" fontWeight="bold" mb={1}>
           Motivations
         </Typography>
-        <Typography mb={3}>{motivations}</Typography>
-        <Typography variant="h6" fontWeight="bold" mb={1}>
+        <Typography color="white" mb={3}>
+          {motivations}
+        </Typography>
+        <Typography color="white" variant="h6" fontWeight="bold" mb={1}>
           Pain Points
         </Typography>
-        <Typography>{painPoints}</Typography>
+        <Typography color="white">{painPoints}</Typography>
       </Grid>
     </Grid>
   );

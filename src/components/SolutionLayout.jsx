@@ -2,9 +2,9 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
-const SolutionLayout = ({ title, bulletOne, bulletTwo }) => {
+const SolutionLayout = ({ title, bulletOne, bulletTwo, img }) => {
   return (
-    <Grid container spacing={4} mt={3}>
+    <Grid container spacing={6} mt={4}>
       <Grid
         size={{ xs: 12, sm: 5, md: 5 }}
         sx={{
@@ -13,21 +13,26 @@ const SolutionLayout = ({ title, bulletOne, bulletTwo }) => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5" fontWeight="bold" mb={2}>
+        <Typography variant="h6" fontWeight="bold" mb={3} color="#fff">
           {title}
         </Typography>
-        <Typography mb={3}>• {bulletOne}</Typography>
-        <Typography>• {bulletTwo}</Typography>
+        <Typography mb={3} color="#fff">
+          • {bulletOne}
+        </Typography>
+        <Typography color="#fff">• {bulletTwo}</Typography>
       </Grid>
       <Grid size={{ xs: 12, sm: 7, md: 7 }}>
-        <Box
+        {/* <Box
           sx={{
-            height: "360px",
+            height: "400px",
             width: "100%",
-            background: "#eee",
-            borderRadius: 3,
+            background: "#333",
+            borderRadius: "16px",
           }}
-        ></Box>
+        >
+          <img src={PromptsPreview} alt="img" style={{ maxWidth: "500px" }} />
+        </Box> */}
+        {img}
       </Grid>
     </Grid>
   );

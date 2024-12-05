@@ -8,6 +8,10 @@ import CaseStudyPersona from "../components/CaseStudyPersonas";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import LilaAnimationExample from "../components/LilaAnimationExample";
+import PromptViewImg from "../components/PromptViewImg";
+import LilaCaseStudyPreview from "../assets/images/LilaCaseStudyPreview.svg";
+import PersonalizeInteractions from "../components/PersonalizedInteractions";
+import CollaborationImg from "../components/CollaborationImg";
 
 export default function CaseStudy() {
   const caseStudyOverview = [
@@ -75,26 +79,26 @@ export default function CaseStudy() {
   const competitiveAnalysis = [
     {
       feature: "Real-Time Assistance",
-      carely: <RemoveCircleIcon color="disabled" />,
-      caringBridge: <RemoveCircleIcon color="disabled" />,
-      helpingHands: <RemoveCircleIcon color="disabled" />,
+      carely: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      caringBridge: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      helpingHands: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       honor: <CheckCircleIcon color="success" />,
       lila: <CheckCircleIcon color="success" />,
     },
     {
       feature: "Empathy-Driven Conversations",
-      carely: <RemoveCircleIcon color="disabled" />,
-      caringBridge: <RemoveCircleIcon color="disabled" />,
-      helpingHands: <RemoveCircleIcon color="disabled" />,
-      honor: <RemoveCircleIcon color="disabled" />,
+      carely: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      caringBridge: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      helpingHands: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      honor: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       lila: <CheckCircleIcon color="success" />,
     },
     {
       feature: "Specialized Prompt Suggestions",
-      carely: <RemoveCircleIcon color="disabled" />,
-      caringBridge: <RemoveCircleIcon color="disabled" />,
+      carely: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      caringBridge: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       helpingHands: <CheckCircleIcon color="success" />,
-      honor: <RemoveCircleIcon color="disabled" />,
+      honor: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       lila: <CheckCircleIcon color="success" />,
     },
     {
@@ -107,17 +111,17 @@ export default function CaseStudy() {
     },
     {
       feature: "Collaboration with Healthcare Providers",
-      carely: <RemoveCircleIcon color="disabled" />,
-      caringBridge: <RemoveCircleIcon color="disabled" />,
-      helpingHands: <RemoveCircleIcon color="disabled" />,
+      carely: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      caringBridge: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      helpingHands: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       honor: <CheckCircleIcon color="success" />,
       lila: <CheckCircleIcon color="success" />,
     },
     {
       feature: "24/7 Availability",
-      carely: <RemoveCircleIcon color="disabled" />,
-      caringBridge: <RemoveCircleIcon color="disabled" />,
-      helpingHands: <RemoveCircleIcon color="disabled" />,
+      carely: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      caringBridge: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
+      helpingHands: <RemoveCircleIcon sx={{ color: "#DB2F40" }} />,
       honor: <CheckCircleIcon color="success" />,
       lila: <CheckCircleIcon color="success" />,
     },
@@ -126,29 +130,54 @@ export default function CaseStudy() {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ background: "#f6f6f6" }}>
+    <Box
+      sx={{
+        background: "#111",
+        pb: 4,
+        margin: 0,
+        minHeight: "100vh",
+        height: "100%",
+      }}
+    >
       <Container>
-        <Typography variant="h4" fontWeight="bold" pt={3} mb={2}>
+        <Typography variant="h4" fontWeight="bold" pt={6} mb={2} color="#fff">
           An AI-powered Platform Designed to Support Caregivers with Natural,
           Human-like Conversations in Healthcare.
         </Typography>
 
-        <Box sx={{ background: "#4E88FF", pt: 10, borderRadius: "16px" }}>
-          <Box
+        <Box
+          sx={{
+            background: "#222",
+            height: "600px",
+            mb: 2,
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={LilaCaseStudyPreview}
+            alt="Lila Preview"
+            style={{ maxWidth: "760px" }}
+          />
+          {/* <Box
             sx={{
-              background: "#111111",
+              background: "#111",
+
               width: "100%",
               p: 4,
-              borderTopRightRadius: "16px",
-              borderTopLeftRadius: "16px",
+              borderRadius: "16px",
+              // borderTopRightRadius: "16px",
+              // borderTopLeftRadius: "16px",
               maxWidth: "960px",
               marginRight: "auto",
               marginLeft: "auto",
-              mb: 2,
+              // mb: 2,
             }}
           >
             <LilaAnimationExample />
-          </Box>
+          </Box> */}
         </Box>
         <Grid container spacing={2} mb={2}>
           {caseStudyOverview.map(({ title, description }) => (
@@ -158,16 +187,20 @@ export default function CaseStudy() {
                   px: 6,
                   py: 5,
 
-                  background: "#fff",
+                  background: "#222",
 
                   boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
                   borderRadius: "16px",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold">
+                <Typography
+                  sx={{ fontSize: "18px" }}
+                  fontWeight="bold"
+                  color="#fff"
+                >
                   {title}
                 </Typography>
-                <Typography>{description}</Typography>
+                <Typography color="#fff">{description}</Typography>
               </Card>
             </Grid>
           ))}
@@ -176,7 +209,7 @@ export default function CaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#fff",
+            background: "#222",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -187,7 +220,7 @@ export default function CaseStudy() {
             title="PROBLEM"
             description="Caregivers Struggle to Find Timely, Supportive Guidance"
           />
-          <Typography mb={3}>
+          <Typography mb={3} color="#fff">
             Caregivers often struggle to access timely, reliable, and tailored
             support when managing the complex needs of their patients.
             Communication gaps between caregivers and healthcare professionals
@@ -200,7 +233,7 @@ export default function CaseStudy() {
             patients concerns efficiently and confidently.
           </Typography>
           <Box sx={{ pl: 6 }}>
-            <Typography variant="h6" fontWeight="bold">
+            <Typography variant="h6" fontWeight="bold" color="#777">
               “How might we create a platform that empowers caregivers with
               timely, empathetic guidance tailored to their unique challenges?”
             </Typography>
@@ -210,7 +243,7 @@ export default function CaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#fff",
+            background: "#222",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -221,27 +254,36 @@ export default function CaseStudy() {
             title="SOLUTION"
             description="Empowering Caregivers with Real-Time Support"
           />
+          <Typography mb={3} color="#fff">
+            Caregivers face constant challenges in providing care. This solution
+            delivers intuitive, real-time tools and empathetic interactions to
+            streamline their tasks, reduce stress, and foster collaboration with
+            healthcare professionals.
+          </Typography>
           <SolutionLayout
             title="Instant Access to Guidance"
             bulletOne="Provides caregivers with on-demand answers to common healthcare questions, reducing wait times and helping them make informed decisions quickly."
             bulletTwo="An intuitive Prompts Page allows easy navigation of pre-built responses, giving caregivers quick access to the guidance they need, even during busy moments."
+            img={<PromptViewImg />}
           />
           <SolutionLayout
             title="Human-Like, Personalized Interactions"
             bulletOne="Adapts responses based on caregiver input, creating a natural conversation flow that feels supportive and empathetic."
             bulletTwo="Builds rapport through tailored, empathy-driven responses that address the unique challenges caregivers face, enhancing confidence in caregiving tasks"
+            img={<PersonalizeInteractions />}
           />
           <SolutionLayout
             title="Resource Sharing & Collaboration"
             bulletOne="Recommends helpful articles and resources for deeper insight when needed, helping caregivers feel more confident and prepared."
             bulletTwo="Facilitates real-time collaboration by enabling caregivers to share updates with healthcare professionals, keeping all parties informed and aligned."
+            img={<CollaborationImg />}
           />
           {/* <CaseStudyDivider /> */}
         </Card>
         <Card
           sx={{
             p: 6,
-            background: "#fff",
+            background: "#222",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -251,10 +293,32 @@ export default function CaseStudy() {
             title="RESEARCH"
             description="Diving Deeper into the Problem"
           />
-          <Typography variant="h6" mb={2} fontWeight="bold">
+          <Typography mb={3} color="#fff">
+            Understanding the unique challenges faced by caregivers was crucial
+            to designing an effective solution. Through user interviews,
+            affinity mapping, and competitive analysis, I uncovered key insights
+            that shaped the foundation of Lila, ensuring it meets caregivers’
+            needs for real-time, empathetic, and personalized support.
+          </Typography>
+
+          <Box
+            sx={{
+              background: "#333",
+              height: "400px",
+              mb: 3,
+              backgroundImage:
+                "url('https://condens.io/img/blog/interview_analysis/analysis_hero.webp')",
+              borderRadius: "16px",
+              backgroundSize: "cover", // Ensures the image covers the entire container
+              backgroundPosition: "center", // Centers the image
+              backgroundRepeat: "no-repeat", // Prevents the image from repeating
+            }}
+          ></Box>
+
+          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
             User Interviews
           </Typography>
-          <Typography mb={3}>
+          <Typography mb={3} color="#fff">
             To truly understand the challenges caregivers face, I conducted a
             series of interviews with healthcare professionals and family
             caregivers, focusing on their experiences with communication tools
@@ -266,20 +330,20 @@ export default function CaseStudy() {
             solutions.
           </Typography>
           <Box sx={{ pl: 6, mb: 3 }}>
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h6" fontWeight="bold" color="#777">
               “According to recent studies, caregivers feel an increase in
               stress and burnout when unable to access timely information and
               support.”
             </Typography>
           </Box>
-          <Typography mb={3}>
+          <Typography mb={4} color="#fff">
             This insight validated our approach of creating a conversational
             platform that’s accessible 24/7, meeting caregivers’ needs in
             real-time. While many apps provide support during office hours, Lila
             aims to be a constant companion, ready to assist whenever needed.
           </Typography>
 
-          <Typography variant="h6" mb={2} fontWeight="bold">
+          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
             Affinity Mapping
           </Typography>
           <Grid container spacing={2} mb={3}>
@@ -295,8 +359,8 @@ export default function CaseStudy() {
                 <Card
                   sx={{
                     p: 6,
-                    background: "#fff",
-                    border: "1px solid #DFE4F3",
+                    background: "#333",
+                    color: "#fff",
                     boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
                     borderRadius: "16px",
                     flex: 1, // Ensures all cards stretch to the same height
@@ -304,18 +368,18 @@ export default function CaseStudy() {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography fontWeight="bold" mb={1}>
+                  <Typography fontWeight="bold" mb={1} color="#fff">
                     {title}
                   </Typography>
-                  <Typography>{description}</Typography>
+                  <Typography color="#fff">{description}</Typography>
                 </Card>
               </Grid>
             ))}
           </Grid>
-          <Typography variant="h6" mb={2} fontWeight="bold">
+          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
             Competitive Analysis
           </Typography>
-          <Typography mb={3}>
+          <Typography mb={3} color="#fff">
             To understand how Lila can best serve caregivers, I conducted a
             competitive analysis of existing caregiving support platforms. This
             analysis revealed gaps in the current market, particularly in the
@@ -357,70 +421,82 @@ export default function CaseStudy() {
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderLeft: "1px solid #555",
+                    borderBottom: "1px solid #555",
                     borderTopLeftRadius: "16px",
                   }}
                 >
-                  <Typography fontWeight="bold">Feature | App Name</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Feature | App Name
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">Carley</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Carley
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">CaringBridge</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    CaringBridge
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">Helping Hands</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Helping Hands
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">Honor</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Honor
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
                     width: "200px",
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
-                    borderRight: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
+                    borderRight: "1px solid #555",
                     borderTopRightRadius: "16px",
                   }}
                 >
-                  <Typography fontWeight="bold">Lila</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Lila
+                  </Typography>
                 </Box>
               </Box>
 
@@ -435,20 +511,22 @@ export default function CaseStudy() {
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
                         borderBottomLeftRadius:
                           index === competitiveAnalysis.length - 1 ? "16px" : 0,
                       }}
                     >
-                      <Typography fontWeight="bold">{feature}</Typography>
+                      <Typography fontWeight="bold" color="white">
+                        {feature}
+                      </Typography>
                     </Box>
                     <Box
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
                       }}
                     >
                       <Typography>{carely}</Typography>
@@ -457,8 +535,8 @@ export default function CaseStudy() {
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
                       }}
                     >
                       <Typography>{caringBridge}</Typography>
@@ -467,8 +545,8 @@ export default function CaseStudy() {
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
                       }}
                     >
                       <Typography>{helpingHands}</Typography>
@@ -477,8 +555,8 @@ export default function CaseStudy() {
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
                       }}
                     >
                       <Typography>{honor}</Typography>
@@ -487,9 +565,9 @@ export default function CaseStudy() {
                       sx={{
                         width: "200px",
                         p: 3,
-                        borderBottom: "1px solid #DFE4F3",
-                        borderLeft: "1px solid #DFE4F3",
-                        borderRight: "1px solid #DFE4F3",
+                        borderBottom: "1px solid #555",
+                        borderLeft: "1px solid #555",
+                        borderRight: "1px solid #555",
                         borderBottomRightRadius:
                           index === competitiveAnalysis.length - 1 ? "16px" : 0,
                       }}
@@ -505,7 +583,7 @@ export default function CaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#fff",
+            background: "#222",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -550,14 +628,27 @@ Lack of real-time assistance tools that support staff while reassuring families.
         <Card
           sx={{
             p: 6,
-            background: "#fff",
+            background: "#222",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
           }}
         >
-          <CaseStudyTitle title="USER JOURNEY MAP" description="Title" />
+          <CaseStudyTitle
+            title="USER JOURNEY MAP"
+            description="Understanding the Caregiver Ecosystem
+"
+          />
+
+          <Typography mb={3} color="#fff">
+            The User Journey Map captures the experiences of different
+            caregivers—family members, healthcare professionals, and care
+            facility managers—highlighting their challenges and interactions
+            with Lila at various stages. This map informed key design decisions
+            to ensure Lila meets the unique needs of each user type, providing
+            empathetic, real-time support across their caregiving journeys.
+          </Typography>
           <Box
             sx={{
               width: "100%",
@@ -594,13 +685,15 @@ Lack of real-time assistance tools that support staff while reassuring families.
                       md: 1, // Flex grow on desktop
                     },
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderLeft: "1px solid #555",
+                    borderBottom: "1px solid #555",
                     borderTopLeftRadius: "16px",
                   }}
                 >
-                  <Typography fontWeight="bold">Stage</Typography>
+                  <Typography fontWeight="bold" color="#fff">
+                    Stage
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
@@ -609,12 +702,12 @@ Lack of real-time assistance tools that support staff while reassuring families.
                       md: 1,
                     },
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">
+                  <Typography fontWeight="bold" color="#fff">
                     Linda (Family Caregiver)
                   </Typography>
                 </Box>
@@ -625,12 +718,12 @@ Lack of real-time assistance tools that support staff while reassuring families.
                       md: 1,
                     },
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
                   }}
                 >
-                  <Typography fontWeight="bold">
+                  <Typography fontWeight="bold" color="#fff">
                     John (Healthcare Professional)
                   </Typography>
                 </Box>
@@ -641,14 +734,14 @@ Lack of real-time assistance tools that support staff while reassuring families.
                       md: 1,
                     },
                     p: 3,
-                    borderTop: "1px solid #DFE4F3",
-                    borderBottom: "1px solid #DFE4F3",
-                    borderLeft: "1px solid #DFE4F3",
-                    borderRight: "1px solid #DFE4F3",
+                    borderTop: "1px solid #555",
+                    borderBottom: "1px solid #555",
+                    borderLeft: "1px solid #555",
+                    borderRight: "1px solid #555",
                     borderTopRightRadius: "16px",
                   }}
                 >
-                  <Typography fontWeight="bold">
+                  <Typography fontWeight="bold" color="#fff">
                     Mike (Care Facility Manager)
                   </Typography>
                 </Box>
@@ -664,13 +757,15 @@ Lack of real-time assistance tools that support staff while reassuring families.
                         md: 1,
                       },
                       p: 3,
-                      borderBottom: "1px solid #DFE4F3",
-                      borderLeft: "1px solid #DFE4F3",
+                      borderBottom: "1px solid #555",
+                      borderLeft: "1px solid #555",
                       borderBottomLeftRadius:
                         index === userJourneys.length - 1 ? "16px" : 0,
                     }}
                   >
-                    <Typography>{journey.stage}</Typography>
+                    <Typography color="#fff" fontWeight="bold">
+                      {journey.stage}
+                    </Typography>
                   </Box>
                   <Box
                     sx={{
@@ -679,11 +774,11 @@ Lack of real-time assistance tools that support staff while reassuring families.
                         md: 1,
                       },
                       p: 3,
-                      borderBottom: "1px solid #DFE4F3",
-                      borderLeft: "1px solid #DFE4F3",
+                      borderBottom: "1px solid #555",
+                      borderLeft: "1px solid #555",
                     }}
                   >
-                    <Typography>{journey.linda}</Typography>
+                    <Typography color="#fff">{journey.linda}</Typography>
                   </Box>
                   <Box
                     sx={{
@@ -692,11 +787,11 @@ Lack of real-time assistance tools that support staff while reassuring families.
                         md: 1,
                       },
                       p: 3,
-                      borderBottom: "1px solid #DFE4F3",
-                      borderLeft: "1px solid #DFE4F3",
+                      borderBottom: "1px solid #555",
+                      borderLeft: "1px solid #555",
                     }}
                   >
-                    <Typography>{journey.john}</Typography>
+                    <Typography color="#fff">{journey.john}</Typography>
                   </Box>
                   <Box
                     sx={{
@@ -705,14 +800,14 @@ Lack of real-time assistance tools that support staff while reassuring families.
                         md: 1,
                       },
                       p: 3,
-                      borderBottom: "1px solid #DFE4F3",
-                      borderLeft: "1px solid #DFE4F3",
-                      borderRight: "1px solid #DFE4F3",
+                      borderBottom: "1px solid #555",
+                      borderLeft: "1px solid #555",
+                      borderRight: "1px solid #555",
                       borderBottomRightRadius:
                         index === userJourneys.length - 1 ? "16px" : 0,
                     }}
                   >
-                    <Typography>{journey.mike}</Typography>
+                    <Typography color="#fff">{journey.mike}</Typography>
                   </Box>
                 </Box>
               ))}
@@ -720,11 +815,96 @@ Lack of real-time assistance tools that support staff while reassuring families.
           </Box>
         </Card>
 
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          <CaseStudyTitle
+            title="INFORMATION ARCHITECTURE"
+            description="Title"
+          />
+        </Card>
+
         {/* <CaseStudyDivider /> */}
-        <CaseStudyTitle
-          title="DESIGN"
-          description="Crafting an Intuitive and Empathetic Experience"
-        />
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            // mb: 2,
+          }}
+        >
+          <CaseStudyTitle
+            title="DESIGN"
+            description="Crafting an Intuitive and Empathetic Experience"
+          />
+          <Typography mb={6} color="#fff">
+            The design process focused on creating a user-friendly interface
+            that balances functionality with empathy. By prioritizing
+            accessibility, simplicity, and personalization, the design ensures
+            that caregivers feel supported and confident at every step of their
+            journey.
+          </Typography>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            Log In & Sign Up Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The Login & Sign Up Page introduces Lila as a personalized
+            caregiving companion, highlighting key benefits while providing
+            users with a seamless way to access its features. Visitors are
+            encouraged to sign up to unlock expert-backed prompts, emotional
+            support, and caregiving solutions, or preview Lila’s conversational
+            interface to experience its value before creating an account.
+          </Typography>
+          <Box sx={{ mb: 6 }}>
+            <img
+              src="https://assets.codepen.io/2392702/Group+241592_1.svg"
+              alt="log in screen"
+              style={{ width: "100%" }}
+            />
+          </Box>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            Chat Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The Chat Page was designed to provide caregivers with instant,
+            personalized guidance in a conversational format. With features like
+            tailored responses, recent chats, and pinned resources, it ensures
+            caregivers can access the support they need quickly and
+            effortlessly.
+          </Typography>
+          <Box mb={6}>
+            <img
+              src="https://assets.codepen.io/2392702/Group+241568.svg"
+              alt="log in screen"
+              style={{ width: "100%" }}
+            />
+          </Box>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            Prompt Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The Prompts Page organizes pre-built responses into easy-to-navigate
+            categories, allowing caregivers to find practical solutions quickly.
+            By prioritizing efficiency and personalization, it empowers
+            caregivers to address challenges with confidence and ease.
+          </Typography>
+
+          <img
+            src="https://assets.codepen.io/2392702/Group+241576.svg"
+            alt="log in screen"
+            // style={{ height: "1050px" }}
+            style={{ width: "100%" }}
+          />
+        </Card>
       </Container>
     </Box>
   );

@@ -117,7 +117,7 @@ const MobileMenu = () => {
 
   const menuItems = [
     { path: "/", label: "Portfolio" },
-    { path: "/about", label: "About" },
+    // { path: "/about", label: "About" },
     { path: "/resume", label: "Resume" },
     // { path: "/contact", label: "Contact" },
   ];
