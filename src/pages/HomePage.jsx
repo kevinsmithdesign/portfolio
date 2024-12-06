@@ -148,6 +148,23 @@ const HomePage = () => {
       externalLink: "https://dribbble.com/kevinsmithdesign",
       img: "https://assets.codepen.io/2392702/Group+1.jpg",
     },
+    // {
+    //   title: "Animations Collection",
+    //   description:
+    //     "A curated selection of UI animations showcasing smooth interactions, micro-interactions, and engaging motion design that enhance user experiences.",
+    //   btnText: "View Animations",
+    //   route: "/animation",
+    //   img: "https://assets.codepen.io/2392702/Group+241568.svg",
+    // },
+    {
+      title: "Front End Development",
+      description:
+        "A collection of interactive, performance-optimized web applications and components, built with clean code, modern frameworks, and a focus on usability and scalability.",
+      btnText: "View Code",
+      // route: "/code",
+      externalLink: "https://github.com/kevinsmithdesign",
+      img: "https://assets.codepen.io/2392702/Desktop+-+6.svg",
+    },
   ];
 
   return (

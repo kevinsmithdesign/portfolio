@@ -79,16 +79,22 @@ const HeroSection = () => {
         }}
       >
         <Stack mt={4} mb={6}>
-          <Typography variant="h3" fontWeight="bold" mb={2}>
+          <Typography variant="h2" fontWeight="bold" mb={3}>
             Hello, I'm Kevin Smith
           </Typography>
-          <Typography sx={{ fontSize: "20px" }} mb={4}>
+          <Typography sx={{ fontSize: "20px", color: "#777" }} mb={4}>
             A UI/UX Designer & Developer with over a decade of experience
             crafting engaging digital experiences and driving business growth.
           </Typography>
         </Stack>
       </Grid>
-      <Grid size={{ sm: 12, md: 6 }}></Grid>
+      <Grid size={{ sm: 12, md: 6 }}>
+        <img
+          src="https://assets.codepen.io/2392702/Group+637.svg"
+          alt="UI Components"
+          style={{ height: "760px", marginTop: "16px" }}
+        />
+      </Grid>
     </Grid>
   );
 };
