@@ -57,7 +57,7 @@ const HamburgerMenuContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#0069FF",
+  backgroundColor: "#3B75FE",
   position: "relative",
 });
 

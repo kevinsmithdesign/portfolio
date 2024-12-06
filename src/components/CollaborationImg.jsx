@@ -1,5 +1,6 @@
 import React from "react";
 import DoctorCommunication from "../assets/images/DoctorCommunication.svg";
+// import Test from "https://assets.codepen.io/2392702/Group+241611.svg";
 
 const CollaborationImg = () => {
   return (

@@ -82,10 +82,11 @@ const theme = createTheme({
           },
         },
         containedPrimary: {
-          backgroundColor: "#0069FF",
+          backgroundColor: "#3B75FE",
           color: "#fff",
+          fontWeight: 600,
           "&:hover": {
-            backgroundColor: darken("#0069FF", 0.1), // Darkens by 10%
+            backgroundColor: darken("#3B75FE", 0.1), // Darkens by 10%
           },
         },
         containedSecondary: {

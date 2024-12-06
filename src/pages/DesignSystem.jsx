@@ -312,7 +312,7 @@ const DesignSystem = () => {
                 >
                   <Box
                     sx={{
-                      height: "240px",
+                      height: "200px",
                       background: "#45A2FB",
                       borderRadius: "16px 16px 16px 0px",
                       width: "100%",
@@ -630,7 +630,7 @@ const DesignSystem = () => {
                   <Typography>{lineHeightDisplay}</Typography>
                 </Box>
               </Box>
-            ),
+            )
           )}
         </Container>
       </Box>
@@ -984,6 +984,7 @@ const DesignSystem = () => {
                 variant="outlined"
                 sx={{
                   border: "1px solid #009CDE",
+
                   color: "#009CDE",
                   "&:hover": {
                     border: "1px solid #009CDE",

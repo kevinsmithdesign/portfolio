@@ -144,7 +144,6 @@ export default function CaseStudy() {
           An AI-powered Platform Designed to Support Caregivers with Natural,
           Human-like Conversations in Healthcare.
         </Typography>
-
         <Box
           sx={{
             background: "#222",
@@ -815,7 +814,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
           </Box>
         </Card>
 
-        <Card
+        {/* <Card
           sx={{
             p: 6,
             background: "#222",
@@ -829,7 +828,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             title="INFORMATION ARCHITECTURE"
             description="Title"
           />
-        </Card>
+        </Card> */}
 
         {/* <CaseStudyDivider /> */}
         <Card

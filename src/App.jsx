@@ -22,6 +22,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
+      {/* <Box sx={{ height: "100%", minHeight: "100vh" }}> */}
       <Navbar />
 
       <Routes>
@@ -35,6 +36,7 @@ function App() {
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      {/* </Box> */}
     </Router>
   );
 }
