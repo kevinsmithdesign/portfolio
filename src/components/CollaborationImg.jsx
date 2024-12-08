@@ -15,11 +15,11 @@ const CollaborationImg = () => {
         alignItems: "center",
       }}
     >
-      <img
+      {/* <img
         src={DoctorCommunication}
         alt="Doctor Support"
         style={{ maxWidth: "480px", width: "100%" }}
-      />
+      /> */}
     </div>
   );
 };

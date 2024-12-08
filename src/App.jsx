@@ -18,6 +18,7 @@ import ResumePage from "./pages/ResumePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import "./App.css";
+import WhiteLabelPage from "./pages/WhiteLabelPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/casestudy" element={<CaseStudy />} />
         <Route path="/designsystem" element={<DesignSystem />} />
+        <Route path="/whitelabel/*" element={<WhiteLabelPage />} />
         <Route path="/uidesign" element={<UiDesign />} />
         <Route path="/animation" element={<Animation />} />
         <Route path="/code" element={<FrontEndCode />} />

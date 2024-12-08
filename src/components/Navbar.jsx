@@ -1,9 +1,14 @@
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 import SiteMenu from "./SiteMenu";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isWhitelabelRoute = location.pathname.startsWith("/whitelabel");
+
   return (
     <Box>
       <Box>
@@ -22,7 +27,8 @@ const Navbar = () => {
               </Typography>
             </Box>
             <Box> */}
-          <SiteMenu />
+          {!isWhitelabelRoute && <SiteMenu />}
+
           {/* </Box> */}
           {/* </Box> */}
         </Container>

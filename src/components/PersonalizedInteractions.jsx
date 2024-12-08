@@ -17,11 +17,11 @@ const PersonalizeInteractions = () => {
         alignItems: "flex-end",
       }}
     >
-      <img
+      {/* <img
         src={PersonalizedInteractionImg}
         alt="Prompt View"
         style={{ maxWidth: "440px", width: "100%" }}
-      />
+      /> */}
     </div>
   );
 };

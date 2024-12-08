@@ -133,11 +133,15 @@ const HomePage = () => {
       img: "https://assets.codepen.io/2392702/Group+241568.svg",
     },
     {
-      title: "Scales Design System",
+      title: "White Label Design System",
       description:
-        "A flexible framework of reusable components and guidelines for building consistent, scalable, and accessible user interfaces.",
+        "A flexible framework of reusable components and guidelines for building consistent, scalable, and accessible user interfaces, with support for multiple themes.",
       btnText: "View Design System",
-      route: "/designsystem",
+      // route: "/designsystem",
+      // route: "/whitelabel",
+      externalLink: "/whitelabel", // Add this
+
+      // externalLink: "https://55c5pt.csb.app/",
       img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29.svg",
     },
     {
