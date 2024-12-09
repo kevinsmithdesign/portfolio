@@ -606,7 +606,7 @@ Frustration with generic advice that doesn't address specific caregiving challen
 Challenges in finding resources that are easy for families to understand and use.
 Frustration with existing tools that don’t provide a human-like, empathetic response for caregivers.
 "
-            img="https://assets.codepen.io/2392702/John.jpg"
+            img="https://assets.codepen.io/2392702/Group+241290_1.jpg"
           />
           <CaseStudyPersona
             name="Michael, 28"
@@ -615,7 +615,7 @@ Frustration with existing tools that don’t provide a human-like, empathetic re
             painPoints="Difficulty managing communication with multiple family members.
 Inconsistent information between caregivers and family members, leading to misunderstandings.
 Lack of real-time assistance tools that support staff while reassuring families."
-            img="https://assets.codepen.io/2392702/unsplash_7YVZYZeITc8.png"
+            img="https://assets.codepen.io/2392702/Group+241290.jpg"
           />
         </Card>
         {/* <CaseStudyDivider /> */}
