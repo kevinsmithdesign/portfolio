@@ -6,23 +6,23 @@ import PersonalizedInteractionImg from "../assets/images/PersonalizedInteraction
 
 const PersonalizeInteractions = () => {
   return (
-    <div
-      style={{
-        height: "400px",
-        width: "100%",
-        background: "#111",
-        borderRadius: "16px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-end",
-      }}
-    >
-      {/* <img
-        src={PersonalizedInteractionImg}
-        alt="Prompt View"
-        style={{ maxWidth: "440px", width: "100%" }}
-      /> */}
-    </div>
+    // <div
+    //   style={{
+    //     height: "400px",
+    //     width: "100%",
+    //     background: "#111",
+    //     borderRadius: "16px",
+    //     display: "flex",
+    //     justifyContent: "center",
+    //     alignItems: "flex-end",
+    //   }}
+    // >
+    <img
+      src={PersonalizedInteractionImg}
+      alt="Prompt View"
+      style={{ width: "100%" }}
+    />
+    // </div>
   );
 };
 

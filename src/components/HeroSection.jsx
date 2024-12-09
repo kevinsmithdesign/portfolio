@@ -93,7 +93,7 @@ const HeroSection = () => {
           src="https://assets.codepen.io/2392702/Group+637.svg"
           alt="UI Components"
           // style={{ height: "760px", marginTop: "16px" }}
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginTop: "16px" }}
         />
       </Grid>
     </Grid>

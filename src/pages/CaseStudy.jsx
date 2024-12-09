@@ -146,7 +146,7 @@ export default function CaseStudy() {
           // pt={6}
           mb={2}
           color="#fff"
-          sx={{ paddingTop: 12 }}
+          sx={{ paddingTop: 14 }}
         >
           An AI-powered Platform Designed to Support Caregivers with Natural,
           Human-like Conversations in Healthcare.
@@ -163,7 +163,7 @@ export default function CaseStudy() {
             px: 2,
             borderRadius: "16px",
             display: "flex",
-            alignItems: "flex-end",
+            // alignItems: "flex-end",
             justifyContent: "center",
           }}
         >

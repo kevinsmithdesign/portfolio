@@ -17,6 +17,7 @@ import TextFieldPage from "./TextFieldPage";
 import ControlsPage from "./ControlsPage";
 import DesignPrinciplesPage from "./DesignPrinciplesPage";
 import DesignSystemHamburgerBtn from "../components/DesignSystemHamburgerBtn";
+import SiteMenu from "../components/SiteMenu";
 
 const links = [
   // { to: "/logos", title: "Logos" },
@@ -98,11 +99,12 @@ const WhiteLabelContent = () => {
               ml: 2,
             }}
           >
-            <DesignSystemHamburgerBtn
+            {/* <DesignSystemHamburgerBtn
               menuOpen={menuOpen}
               setMenuOpen={setMenuOpen}
               // hamburgerRef={hamburgerRef}
-            />
+            /> */}
+            <SiteMenu />
           </Stack>
         </Stack>
       </Stack>

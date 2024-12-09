@@ -5,11 +5,11 @@ import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 
 const NavWrapper = styled(Box)({
-  position: "fixed",
-  top: "20px",
-  right: "20px",
+  // position: "fixed",
+  // top: "20px",
+  // right: "20px",
+  position: "absolute",
   zIndex: 20,
-  background: "orange",
 });
 
 const MobileNavGroup = styled(Box)({
@@ -51,14 +51,14 @@ const StyledLink = styled(Link)({
 });
 
 const HamburgerMenuContainer = styled(Box)({
-  width: "70px",
-  height: "70px",
+  width: "40px",
+  height: "40px",
   borderRadius: "50%",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  backgroundColor: "#3B75FE",
+  background: "#222",
   position: "relative",
 });
 
@@ -68,19 +68,19 @@ const BackgroundOverlay = styled(Box)({
   left: 0,
   width: "100vw",
   height: "100vh",
-  backgroundColor: "#0069FF",
+  backgroundColor: "#222",
   opacity: 0,
   pointerEvents: "none",
   zIndex: 5,
 });
 
 const MorphingBackground = styled(Box)({
-  position: "fixed",
-  top: "20px",
-  right: "20px",
-  width: "70px",
-  height: "70px",
-  backgroundColor: "#0069FF",
+  // position: "fixed",
+  // top: "20px",
+  // right: "20px",
+  width: "40px",
+  height: "40px",
+  backgroundColor: "#222",
   borderRadius: "50%",
   zIndex: 10,
   transformOrigin: "center",
