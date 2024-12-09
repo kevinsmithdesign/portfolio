@@ -69,7 +69,7 @@ import Grid from "@mui/material/Grid2";
 
 const HeroSection = () => {
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={6} sx={{}}>
       <Grid
         size={{ sm: 12, md: 5 }}
         sx={{
@@ -78,11 +78,11 @@ const HeroSection = () => {
           justifyContent: "center",
         }}
       >
-        <Stack mt={4} mb={6}>
+        <Stack sx={{ marginTop: { xs: 10, md: 0 } }}>
           <Typography variant="h2" fontWeight="bold" mb={3}>
             Hello, I'm Kevin Smith
           </Typography>
-          <Typography sx={{ fontSize: "20px", color: "#777" }} mb={4}>
+          <Typography sx={{ fontSize: "20px", color: "#777" }}>
             A UI/UX Designer & Developer with over a decade of experience
             crafting engaging digital experiences and driving business growth.
           </Typography>
@@ -93,7 +93,7 @@ const HeroSection = () => {
           src="https://assets.codepen.io/2392702/Group+637.svg"
           alt="UI Components"
           // style={{ height: "760px", marginTop: "16px" }}
-          style={{ width: "100%", marginTop: "16px" }}
+          style={{ width: "100%" }}
         />
       </Grid>
     </Grid>

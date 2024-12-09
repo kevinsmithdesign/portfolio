@@ -9,6 +9,7 @@ const NavWrapper = styled(Box)({
   top: "20px",
   right: "20px",
   zIndex: 20,
+  background: "orange",
 });
 
 const MobileNavGroup = styled(Box)({

@@ -140,7 +140,14 @@ export default function CaseStudy() {
       }}
     >
       <Container>
-        <Typography variant="h4" fontWeight="bold" pt={6} mb={2} color="#fff">
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          // pt={6}
+          mb={2}
+          color="#fff"
+          sx={{ paddingTop: 12 }}
+        >
           An AI-powered Platform Designed to Support Caregivers with Natural,
           Human-like Conversations in Healthcare.
         </Typography>
