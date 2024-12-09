@@ -62,10 +62,10 @@ const DesignPrinciplesPage = () => {
 
   return (
     <Box sx={{ maxWidth: "1120px" }}>
-      <Typography variant="h4" mb={2} fontWeight="bold">
+      <Typography variant="h2" fontWeight="bold" mb={3}>
         Atomic Design Principles
       </Typography>
-      <Typography mb={4}>
+      <Typography mb={6}>
         Create consistent, reusable components by breaking down the interface
         into smaller parts. This approach helps ensure flexibility, scalability,
         and a cohesive experience from individual elements to full pages.
@@ -73,7 +73,7 @@ const DesignPrinciplesPage = () => {
       <Grid container spacing={3}>
         {atomicDesignPrinciples.map(({ icon, title, description }) => (
           <Grid
-            size={{ xs: 12, sm: 6, md: 4 }}
+            size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
             key={title}
             sx={{
               display: "flex",

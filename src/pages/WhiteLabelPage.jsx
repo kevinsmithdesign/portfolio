@@ -1,7 +1,6 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { Outlet } from "react-router-dom";
-import { Stack, Typography, Button } from "@mui/material";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Stack, Typography, Button, Divider } from "@mui/material";
 import { useState } from "react";
 import { ThemeProviderDesignSystem, useTheme } from "../themes/ThemeContext";
 
@@ -17,6 +16,7 @@ import ChipPage from "./ChipPage";
 import TextFieldPage from "./TextFieldPage";
 import ControlsPage from "./ControlsPage";
 import DesignPrinciplesPage from "./DesignPrinciplesPage";
+import DesignSystemHamburgerBtn from "../components/DesignSystemHamburgerBtn";
 
 const links = [
   // { to: "/logos", title: "Logos" },
@@ -47,7 +47,9 @@ const componentsLink = [
 
 const WhiteLabelContent = () => {
   const { themeName, setThemeName, theme } = useTheme();
+  const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleHamburgerMenu = () => {
     setToggle((prevToggle) => !prevToggle);
@@ -59,170 +61,304 @@ const WhiteLabelContent = () => {
   };
 
   return (
-    <Stack flexDirection="column" sx={{ height: "100%", flex: 1 }}>
+    <>
+      <Stack sx={{ backgroundColor: theme.palette.primary.main }}>
+        <Stack
+          flexDirection="row"
+          sx={{ maxWidth: "1430px", padding: "16px 24px" }}
+        >
+          <Stack sx={{ flex: 1 }}>
+            <Typography
+              sx={{
+                fontSize: "24px",
+                color: theme.palette.primary.contrastText,
+              }}
+            >
+              {themeName}
+            </Typography>
+          </Stack>
+          <Stack>
+            <Button
+              sx={{
+                background: theme.palette.primary.contrastText,
+                "&:hover": {
+                  background: theme.palette.primary.contrastText,
+                },
+              }}
+              onClick={toggleHamburgerMenu}
+            >
+              Change Theme
+            </Button>
+          </Stack>
+          <Stack
+            sx={{
+              //   display: { xs: "flex", md: "none" },
+              justifyContent: "center",
+
+              ml: 2,
+            }}
+          >
+            <DesignSystemHamburgerBtn
+              menuOpen={menuOpen}
+              setMenuOpen={setMenuOpen}
+              // hamburgerRef={hamburgerRef}
+            />
+          </Stack>
+        </Stack>
+      </Stack>
       <Stack
         flexDirection="row"
         sx={{
-          backgroundColor: theme.palette.primary.main,
-          padding: "16px 24px",
+          maxWidth: "1410px",
+          background: "red",
+          position: "relative",
         }}
       >
-        <Stack sx={{ flex: 1 }}>
-          <Typography
+        {toggle && (
+          <Stack
             sx={{
-              fontSize: "24px",
-              color: theme.palette.primary.contrastText,
+              position: "absolute",
+              top: 10,
+              right: 55,
+              zIndex: "1000",
+              background: "#fff",
+              padding: "16px",
+              borderRadius: "8px",
+              width: "160px",
             }}
           >
-            {themeName}
-          </Typography>
-        </Stack>
-        <Button
-          sx={{
-            background: theme.palette.primary.contrastText,
-            "&:hover": {
-              background: theme.palette.primary.contrastText,
-            },
-          }}
-          onClick={toggleHamburgerMenu}
-        >
-          Change Theme
-        </Button>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme One")}
+            >
+              Theme One
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Two")}
+            >
+              Theme Two
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Three")}
+            >
+              Theme Three
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Four")}
+            >
+              Theme Four
+            </Typography>
+          </Stack>
+        )}
+        {menuOpen && (
+          <Stack>
+            <Stack
+              sx={{
+                position: "absolute",
+                top: 10,
+                right: 0,
+                zIndex: "1000",
+                background: "#fff",
+                padding: "16px",
+                borderRadius: "8px",
+                width: "200px",
+                border: "1px solid #eee",
+              }}
+            >
+              <Stack onClick={() => navigate("/")} sx={{ p: 1 }}>
+                Portfolio
+              </Stack>
+              <Stack onClick={() => navigate("/resume")} sx={{ p: 1 }}>
+                Resume
+              </Stack>
+            </Stack>
+          </Stack>
+        )}
       </Stack>
-      {toggle && (
-        <Stack
+
+      <Stack flexDirection="column" sx={{ height: "100%", flex: 1 }}>
+        {/* <Stack
+          flexDirection="row"
           sx={{
-            position: "absolute",
-            top: 64,
-            right: 24,
-            zIndex: "1000",
-            background: "#fff",
-            padding: "16px",
-            borderRadius: "8px",
-            width: "160px",
+            backgroundColor: theme.palette.primary.main,
+            padding: "16px 24px",
           }}
         >
-          <Typography
-            sx={{ paddingBottom: "8px", cursor: "pointer" }}
-            onClick={() => handleThemeChange("Theme One")}
-          >
-            Theme One
-          </Typography>
-          <Typography
-            sx={{ paddingBottom: "8px", cursor: "pointer" }}
-            onClick={() => handleThemeChange("Theme Two")}
-          >
-            Theme Two
-          </Typography>
-          <Typography
-            sx={{ paddingBottom: "8px", cursor: "pointer" }}
-            onClick={() => handleThemeChange("Theme Three")}
-          >
-            Theme Three
-          </Typography>
-          <Typography
-            sx={{ paddingBottom: "8px", cursor: "pointer" }}
-            onClick={() => handleThemeChange("Theme Four")}
-          >
-            Theme Four
-          </Typography>
-        </Stack>
-      )}
-
-      <Stack
-        flexDirection="row"
-        sx={{ flex: 1, borderRight: "1px solid #eee" }}
-      >
-        <Stack sx={{ width: "260px" }}>
-          <Stack mt={8}>
-            <Stack sx={{ padding: "0 0 8px 24px" }}>
-              <Typography fontWeight="bold">Getting Started</Typography>
-            </Stack>
-
-            {links.map(({ to, title }, index) => (
-              <Link
-                key={index}
-                style={{
-                  textDecoration: "none",
-                  color: "#222",
-                  borderBottom: "1px solid #eee",
-                  padding: "16px 24px",
-                }}
-                to={to}
-              >
-                <Typography>{title}</Typography>
-              </Link>
-            ))}
+          <Stack sx={{ flex: 1 }}>
+            <Typography
+              sx={{
+                fontSize: "24px",
+                color: theme.palette.primary.contrastText,
+              }}
+            >
+              {themeName}
+            </Typography>
           </Stack>
-          <Stack mb={2}>
-            <Stack sx={{ padding: "16px 0 8px 24px" }}>
-              <Typography fontWeight="bold">Foundation</Typography>
-            </Stack>
-            {moleculesLink.map(({ to, title }, index) => (
-              <Link
-                key={index}
-                style={{
-                  textDecoration: "none",
-                  color: "#222",
-                  borderBottom: "1px solid #eee",
-                  padding: "16px 24px",
-                }}
-                to={to}
-              >
-                <Typography>{title}</Typography>
-              </Link>
-            ))}
+          <Stack>
+            <Button
+              sx={{
+                background: theme.palette.primary.contrastText,
+                "&:hover": {
+                  background: theme.palette.primary.contrastText,
+                },
+              }}
+              onClick={toggleHamburgerMenu}
+            >
+              Change Theme
+            </Button>
           </Stack>
-          <Stack mb={2}>
-            <Stack sx={{ padding: "16px 0 8px 24px" }}>
-              <Typography fontWeight="bold">Components</Typography>
-            </Stack>
-            {componentsLink.map(({ to, title }, index) => (
-              <Link
-                key={index}
-                style={{
-                  textDecoration: "none",
-                  color: "#222",
-                  borderBottom: "1px solid #eee",
-                  padding: "16px 24px",
-                }}
-                to={to}
-              >
-                <Typography>{title}</Typography>
-              </Link>
-            ))}
-          </Stack>
-        </Stack>
-        <Stack
-          sx={{
-            flex: 1,
-            background: "#f6f6fa",
-            padding: "32px 48px",
-            overflowY: "auto",
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<DesignSystemOverviewPage />} />
-            <Route
-              path="/design-principles"
-              element={<DesignPrinciplesPage />}
+          <Stack
+            sx={{
+              display: { xs: "flex", md: "none" },
+              justifyContent: "center",
+              background: "red",
+            }}
+          >
+            <DesignSystemHamburgerBtn
+              menuOpen={menuOpen}
+              setMenuOpen={setMenuOpen}
+              // hamburgerRef={hamburgerRef}
             />
-            <Route path="/colors" element={<ColorPage />} />
-            <Route path="/typography" element={<TypographyPage />} />
-            <Route path="/spacing" element={<SpacingPage />} />
-            <Route path="/border" element={<BorderPage />} />
+          </Stack>
+        </Stack> */}
+        {/* {toggle && (
+          <Stack
+            sx={{
+              position: "absolute",
+              top: 64,
+              right: 24,
+              zIndex: "1000",
+              background: "#fff",
+              padding: "16px",
+              borderRadius: "8px",
+              width: "160px",
+            }}
+          >
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme One")}
+            >
+              Theme One
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Two")}
+            >
+              Theme Two
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Three")}
+            >
+              Theme Three
+            </Typography>
+            <Typography
+              sx={{ paddingBottom: "8px", cursor: "pointer" }}
+              onClick={() => handleThemeChange("Theme Four")}
+            >
+              Theme Four
+            </Typography>
+          </Stack>
+        )} */}
 
-            <Route path="/button" element={<ButtonPage />} />
-            <Route path="/chip" element={<ChipPage />} />
-            <Route path="/text-field" element={<TextFieldPage />} />
-            <Route path="/controls" element={<ControlsPage />} />
+        <Stack
+          flexDirection="row"
+          sx={{ flex: 1, borderRight: "1px solid #eee" }}
+        >
+          <Stack sx={{ width: "260px", display: { xs: "none", md: "flex" } }}>
+            <Stack mt={8}>
+              <Stack sx={{ padding: "0 0 8px 24px" }}>
+                <Typography fontWeight="bold">Getting Started</Typography>
+              </Stack>
 
-            <Route path="/alert" element={<AlertPage />} />
-            <Route path="/grid" element={<GridPage />} />
-          </Routes>
+              {links.map(({ to, title }, index) => (
+                <Link
+                  key={index}
+                  style={{
+                    textDecoration: "none",
+                    color: "#222",
+                    borderBottom: "1px solid #eee",
+                    padding: "16px 24px",
+                  }}
+                  to={to}
+                >
+                  <Typography>{title}</Typography>
+                </Link>
+              ))}
+            </Stack>
+            <Stack mb={2}>
+              <Stack sx={{ padding: "16px 0 8px 24px" }}>
+                <Typography fontWeight="bold">Foundation</Typography>
+              </Stack>
+              {moleculesLink.map(({ to, title }, index) => (
+                <Link
+                  key={index}
+                  style={{
+                    textDecoration: "none",
+                    color: "#222",
+                    borderBottom: "1px solid #eee",
+                    padding: "16px 24px",
+                  }}
+                  to={to}
+                >
+                  <Typography>{title}</Typography>
+                </Link>
+              ))}
+            </Stack>
+            <Stack mb={2}>
+              <Stack sx={{ padding: "16px 0 8px 24px" }}>
+                <Typography fontWeight="bold">Components</Typography>
+              </Stack>
+              {componentsLink.map(({ to, title }, index) => (
+                <Link
+                  key={index}
+                  style={{
+                    textDecoration: "none",
+                    color: "#222",
+                    borderBottom: "1px solid #eee",
+                    padding: "16px 24px",
+                  }}
+                  to={to}
+                >
+                  <Typography>{title}</Typography>
+                </Link>
+              ))}
+            </Stack>
+          </Stack>
+          <Stack
+            sx={{
+              flex: 1,
+              background: "#f6f6fa",
+              padding: "32px 48px",
+              overflowY: "auto",
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<DesignSystemOverviewPage />} />
+              <Route
+                path="/design-principles"
+                element={<DesignPrinciplesPage />}
+              />
+              <Route path="/colors" element={<ColorPage />} />
+              <Route path="/typography" element={<TypographyPage />} />
+              <Route path="/spacing" element={<SpacingPage />} />
+              <Route path="/border" element={<BorderPage />} />
+
+              <Route path="/button" element={<ButtonPage />} />
+              <Route path="/chip" element={<ChipPage />} />
+              <Route path="/text-field" element={<TextFieldPage />} />
+              <Route path="/controls" element={<ControlsPage />} />
+
+              <Route path="/alert" element={<AlertPage />} />
+              <Route path="/grid" element={<GridPage />} />
+            </Routes>
+          </Stack>
         </Stack>
       </Stack>
-    </Stack>
+    </>
   );
 };
 
