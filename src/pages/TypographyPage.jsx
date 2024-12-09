@@ -202,7 +202,7 @@ const TypographyPage = () => {
             mb: 4,
           }}
         >
-          <Typography fontWeight="bold" variant="h5" mb={4}>
+          <Typography fontWeight="bold" variant="h4" mb={3}>
             Roboto
           </Typography>
           <Stack flexDirection="row" gap={4} mb={4}>

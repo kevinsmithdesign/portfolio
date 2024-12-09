@@ -1,8 +1,9 @@
 import React from "react";
-import { Stack, Typography, Tabs, Tab, Box } from "@mui/material";
+import { Stack, Typography, Tabs, Tab, Box, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CodeSnippet from "../components/CodeSnippet";
 import Grid from "@mui/material/Grid2";
+import UsageCard from "../components/UsageCard";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,7 +63,28 @@ const ButtonPage = () => {
       </Tabs>
 
       <CustomTabPanel value={value} index={0}>
-        Design
+        <Box
+          sx={{
+            background: "#fff",
+            p: 6,
+            borderRadius: 3,
+            position: "relative",
+            mb: 4,
+          }}
+        >
+          <Stack flexDirection="row" gap={3}>
+            <Button variant="contained">Primary</Button>
+            <Button variant="outlined">Secondary</Button>
+            <Button variant="contained" disabled>
+              Disabled
+            </Button>
+            <Button variant="contained" color="error">
+              Error
+            </Button>
+          </Stack>
+        </Box>
+        <UsageCard />
+        <UsageCard />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Code

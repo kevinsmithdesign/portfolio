@@ -41,13 +41,8 @@ const ResumePage = () => {
       url: "https://newfold.com/",
       domain: "Newfold.com",
       content:
-        "NewFold Digital specializes in creating digital solutions that enhance user experiences. As a UX Developer, my role focused on improving design systems and creating intuitive interfaces.",
-      achievements: [
-        "Redesigned core website components, reducing bounce rates by 25% and improving user engagement.",
-        "Developed responsive and accessible UI designs, ensuring compliance with WCAG standards.",
-        "Collaborated with cross-functional teams to implement A/B testing, leading to a 15% increase in conversion rates.",
-        "Streamlined the design-to-development handoff process using tools like Figma and Zeplin, improving project timelines by 20%.",
-      ],
+        "Newfold Digital previously Endurance International is a parent company for brands like Bluehost, HostGator, Network Solutions, Web.com and many more. While working at Newfold I had the privilege on working on products for HostGator and Bluehost. Below are some of the teams I was on and what I contributed",
+      achievements: ["coming soon"],
     },
     {
       logo: "https://assets.codepen.io/2392702/FanReactLogo_1.svg",
@@ -57,13 +52,8 @@ const ResumePage = () => {
       url: "https://www.glassdoor.com/Reviews/FanReact-Reviews-E1604563.htm",
       domain: "FanReact",
       content:
-        "FanReact is a social platform that connects fans to their favorite teams and communities. My role as a Front-End Developer involved creating interactive features and improving performance.",
-      achievements: [
-        "Implemented new front-end features using React, increasing site traffic by 18%.",
-        "Optimized application performance, reducing load times by 30%.",
-        "Designed and developed reusable components, improving scalability and maintainability.",
-        "Worked closely with designers to ensure pixel-perfect UI implementation.",
-      ],
+        "FanReact is a software company that builds products for brands like Vype Media, Game Day Films, Mainline.gg and many others. Below are some of the projects I contributed to",
+      achievements: ["Coming Soon"],
     },
     {
       logo: "https://assets.codepen.io/2392702/klogo.svg",
@@ -72,12 +62,7 @@ const ResumePage = () => {
       jobTitle: "UI/UX Designer & Developer",
       content:
         "Kevin Smith Design is a creative agency focusing on innovation and custom solutions. My role emphasized creating unique, user-centered designs and front-end development.",
-      achievements: [
-        "Designed and developed fully responsive websites for clients, enhancing their online presence.",
-        "Created custom animations using Greensock and CSS, resulting in more engaging user experiences.",
-        "Developed prototypes in Figma for client approval, reducing feedback loops by 25%.",
-        "Collaborated with developers to ensure seamless integration of design assets into production.",
-      ],
+      achievements: ["Coming Soon"],
     },
   ];
 

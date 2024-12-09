@@ -16,21 +16,12 @@ import GridPage from "./GridPage";
 import ChipPage from "./ChipPage";
 import TextFieldPage from "./TextFieldPage";
 import ControlsPage from "./ControlsPage";
+import DesignPrinciplesPage from "./DesignPrinciplesPage";
 
 const links = [
   // { to: "/logos", title: "Logos" },
   { to: "/whitelabel", title: "Overview" },
-  { to: "/whitelabel/colors", title: "Colors" },
-  { to: "/whitelabel/typography", title: "Typography" },
-  { to: "/whitelabel/spacing", title: "Spacing" },
-  { to: "/whitelabel/border", title: "Border" },
-
-  { to: "/whitelabel/button", title: "Button" },
-  { to: "/whitelabel/chip", title: "Chip" },
-  { to: "/whitelabel/text-field", title: "TextField" },
-  { to: "/whitelabel/controls", title: "Controls" },
-  { to: "/whitelabel/alert", title: "Alert" },
-  { to: "/whitelabel/grid", title: "Grid" },
+  { to: "/whitelabel/design-principles", title: "Design Principles" },
 
   //   { to: "/fonts", title: "Fonts" },
   //   { to: "/icons", title: "Icons" },
@@ -39,14 +30,19 @@ const links = [
 
 // Components
 const moleculesLink = [
-  //   { to: "/whitelabel/typography", title: "Typography" },
-  //   { to: "/whitelabel/button", title: "Button" },
-  //   { to: "/tabs", title: "Tabs" },
-  //   { to: "/pagination", title: "Pagination" },
-  //   { to: "/table", title: "Table" },
-  //   { to: "/whitelabel/alert", title: "Alert" },
-  // { to: "/page-header", title: "Page Header" },
-  // { to: "/filter-content-search", title: "Search" },
+  { to: "/whitelabel/colors", title: "Colors" },
+  { to: "/whitelabel/typography", title: "Typography" },
+  { to: "/whitelabel/spacing", title: "Spacing" },
+  { to: "/whitelabel/border", title: "Border" },
+  { to: "/whitelabel/grid", title: "Grid" },
+];
+
+const componentsLink = [
+  { to: "/whitelabel/button", title: "Button" },
+  { to: "/whitelabel/chip", title: "Chip" },
+  { to: "/whitelabel/text-field", title: "TextField" },
+  { to: "/whitelabel/controls", title: "Controls" },
+  { to: "/whitelabel/alert", title: "Alert" },
 ];
 
 const WhiteLabelContent = () => {
@@ -132,19 +128,17 @@ const WhiteLabelContent = () => {
           </Typography>
         </Stack>
       )}
-      {/* <Routes>
-        <Route
-          path="/"
-          element={<Typography>Design System Overview</Typography>}
-        />
-        <Route path="/colors" element={<Typography>Colors</Typography>} />
-      </Routes> */}
+
       <Stack
         flexDirection="row"
         sx={{ flex: 1, borderRight: "1px solid #eee" }}
       >
         <Stack sx={{ width: "260px" }}>
           <Stack mt={8}>
+            <Stack sx={{ padding: "0 0 8px 24px" }}>
+              <Typography fontWeight="bold">Getting Started</Typography>
+            </Stack>
+
             {links.map(({ to, title }, index) => (
               <Link
                 key={index}
@@ -161,7 +155,29 @@ const WhiteLabelContent = () => {
             ))}
           </Stack>
           <Stack mb={2}>
+            <Stack sx={{ padding: "16px 0 8px 24px" }}>
+              <Typography fontWeight="bold">Foundation</Typography>
+            </Stack>
             {moleculesLink.map(({ to, title }, index) => (
+              <Link
+                key={index}
+                style={{
+                  textDecoration: "none",
+                  color: "#222",
+                  borderBottom: "1px solid #eee",
+                  padding: "16px 24px",
+                }}
+                to={to}
+              >
+                <Typography>{title}</Typography>
+              </Link>
+            ))}
+          </Stack>
+          <Stack mb={2}>
+            <Stack sx={{ padding: "16px 0 8px 24px" }}>
+              <Typography fontWeight="bold">Components</Typography>
+            </Stack>
+            {componentsLink.map(({ to, title }, index) => (
               <Link
                 key={index}
                 style={{
@@ -187,6 +203,10 @@ const WhiteLabelContent = () => {
         >
           <Routes>
             <Route path="/" element={<DesignSystemOverviewPage />} />
+            <Route
+              path="/design-principles"
+              element={<DesignPrinciplesPage />}
+            />
             <Route path="/colors" element={<ColorPage />} />
             <Route path="/typography" element={<TypographyPage />} />
             <Route path="/spacing" element={<SpacingPage />} />

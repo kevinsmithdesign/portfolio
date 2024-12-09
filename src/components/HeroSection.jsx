@@ -69,9 +69,9 @@ import Grid from "@mui/material/Grid2";
 
 const HeroSection = () => {
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={6}>
       <Grid
-        size={{ sm: 12, md: 6 }}
+        size={{ sm: 12, md: 5 }}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -88,11 +88,12 @@ const HeroSection = () => {
           </Typography>
         </Stack>
       </Grid>
-      <Grid size={{ sm: 12, md: 6 }}>
+      <Grid size={{ sm: 12, md: 7 }}>
         <img
           src="https://assets.codepen.io/2392702/Group+637.svg"
           alt="UI Components"
-          style={{ height: "760px", marginTop: "16px" }}
+          // style={{ height: "760px", marginTop: "16px" }}
+          style={{ width: "100%", marginTop: "16px" }}
         />
       </Grid>
     </Grid>

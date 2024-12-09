@@ -178,62 +178,6 @@ const DesignSystemOverviewPage = () => {
           </Box>
         </Grid>
       </Grid>
-
-      <Typography variant="h4" mb={2} fontWeight="bold">
-        Atomic Design Principles
-      </Typography>
-      <Typography mb={4}>
-        Create consistent, reusable components by breaking down the interface
-        into smaller parts. This approach helps ensure flexibility, scalability,
-        and a cohesive experience from individual elements to full pages.
-      </Typography>
-      <Grid container spacing={3}>
-        {atomicDesignPrinciples.map(({ icon, title, description }) => (
-          <Grid
-            size={{ xs: 12, sm: 6, md: 4 }}
-            key={title}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Card
-              sx={{
-                p: 2,
-                background: "#fff",
-                boxShadow: "none",
-                borderRadius: "24px",
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Box
-                sx={{
-                  height: "200px",
-                  background: muiTheme.palette.primary.main,
-                  borderRadius: "16px 16px 16px 0px",
-                  width: "100%",
-                  mb: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Box>
-                  <img src={icon} alt="" style={{ width: "60px" }} />
-                </Box>
-              </Box>
-              <Box sx={{ px: 1, pt: 1, pb: 2 }}>
-                <Typography variant="h6" fontWeight="bold" mb={1}>
-                  {title}
-                </Typography>
-                <Typography>{description}</Typography>
-              </Box>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
     </Box>
   );
 };

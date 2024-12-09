@@ -147,8 +147,13 @@ export default function CaseStudy() {
         <Box
           sx={{
             background: "#222",
-            height: "600px",
+            height: {
+              xs: "auto", // Auto height for extra-small screens and up
+              md: "600px", // Fixed height for medium screens and up (desktop)
+            },
             mb: 2,
+            pt: 2,
+            px: 2,
             borderRadius: "16px",
             display: "flex",
             alignItems: "flex-end",
@@ -158,25 +163,8 @@ export default function CaseStudy() {
           <img
             src={LilaCaseStudyPreview}
             alt="Lila Preview"
-            style={{ maxWidth: "760px" }}
+            style={{ maxWidth: "760px", width: "100%" }}
           />
-          {/* <Box
-            sx={{
-              background: "#111",
-
-              width: "100%",
-              p: 4,
-              borderRadius: "16px",
-              // borderTopRightRadius: "16px",
-              // borderTopLeftRadius: "16px",
-              maxWidth: "960px",
-              marginRight: "auto",
-              marginLeft: "auto",
-              // mb: 2,
-            }}
-          >
-            <LilaAnimationExample />
-          </Box> */}
         </Box>
         <Grid container spacing={2} mb={2}>
           {caseStudyOverview.map(({ title, description }) => (
