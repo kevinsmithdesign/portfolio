@@ -1,5 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Container, Typography, Box, Alert, Card } from "@mui/material";
+import {
+  Button,
+  Container,
+  Typography,
+  Box,
+  Alert,
+  Card,
+  Stack,
+} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import CaseStudyTitle from "../components/CaseStudyTitle";
 import SolutionLayout from "../components/SolutionLayout";
@@ -12,6 +20,9 @@ import PromptViewImg from "../components/PromptViewImg";
 import LilaCaseStudyPreview from "../assets/images/LilaCaseStudyPreview.svg";
 import PersonalizeInteractions from "../components/PersonalizedInteractions";
 import CollaborationImg from "../components/CollaborationImg";
+
+import ProfilePage from "../assets/images/ProfilePage.svg";
+import ContactPage from "../assets/images/ContactPage.svg";
 
 export default function CaseStudy() {
   const caseStudyOverview = [
@@ -875,6 +886,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             caregivers can access the support they need quickly and
             effortlessly.
           </Typography>
+
           <Box mb={6}>
             <img
               src="https://assets.codepen.io/2392702/Group+241568.svg"
@@ -882,6 +894,25 @@ Lack of real-time assistance tools that support staff while reassuring families.
               style={{ width: "100%" }}
             />
           </Box>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            About Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The About Page introduces Lila’s mission to support caregivers
+            through empathetic and personalized solutions. By highlighting its
+            core values, features, and the impact it aims to create, the page
+            fosters trust and reinforces Lila’s dedication to empowering
+            caregiving journeys.
+          </Typography>
+          <Box mb={6}>
+            {/* <img
+              src={ProfilePage}
+              alt="Profile Page"
+              style={{ width: "100%" }}
+            /> */}
+            Redesigning...
+          </Box>
+
           <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
             Prompt Page
           </Typography>
@@ -891,13 +922,89 @@ Lack of real-time assistance tools that support staff while reassuring families.
             By prioritizing efficiency and personalization, it empowers
             caregivers to address challenges with confidence and ease.
           </Typography>
+          <Box mb={6}>
+            <img
+              src="https://assets.codepen.io/2392702/Group+241576.svg"
+              alt="log in screen"
+              // style={{ height: "1050px" }}
+              style={{ width: "100%" }}
+            />
+          </Box>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            Profile Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The Profile Page allows caregivers to personalize their experience
+            with Lila by managing preferences, accessing saved resources, and
+            viewing activity insights. Its intuitive design ensures users can
+            easily tailor Lila’s features to meet their unique caregiving needs.
+          </Typography>
+          <Box mb={6}>
+            <img
+              src={ProfilePage}
+              alt="Profile Page"
+              style={{ width: "100%" }}
+            />
+          </Box>
+          <Typography variant="h6" fontWeight="bold" mb={2} color="#fff">
+            Contact Page
+          </Typography>
+          <Typography mt={1} mb={3} color="#fff">
+            The Contact Page provides a simple way for caregivers to connect
+            with support, offer feedback, or find technical assistance. With
+            direct contact options and helpful resources, it reinforces Lila’s
+            commitment to being accessible and empathetic.
+          </Typography>
+          <Box mb={6}>
+            <img
+              src={ContactPage}
+              alt="Profile Page"
+              style={{ width: "100%" }}
+            />
+          </Box>
+          <Box
+            sx={{
+              background: "#111",
+              p: 4,
 
-          <img
-            src="https://assets.codepen.io/2392702/Group+241576.svg"
-            alt="log in screen"
-            // style={{ height: "1050px" }}
-            style={{ width: "100%" }}
-          />
+              margin: 0,
+              borderRadius: 4,
+            }}
+          >
+            <Typography color="white" variant="h5" mb={2}>
+              Coded Prototype coming soon...
+            </Typography>
+            <Stack flexDirection="row" gap={2}>
+              <Button
+                variant="contained"
+                disabled
+                sx={{
+                  backgroundColor: "#444", // Darker background for dark mode contrast
+                  color: "#aaa", // Lighter text color for readability
+                  "&.Mui-disabled": {
+                    backgroundColor: "#555", // Slightly lighter background for disabled state
+                    color: "#777", // Subtle text color for disabled state
+                  },
+                }}
+              >
+                View Code
+              </Button>
+              <Button
+                variant="contained"
+                disabled
+                sx={{
+                  backgroundColor: "#444", // Darker background for dark mode contrast
+                  color: "#aaa", // Lighter text color for readability
+                  "&.Mui-disabled": {
+                    backgroundColor: "#555", // Slightly lighter background for disabled state
+                    color: "#777", // Subtle text color for disabled state
+                  },
+                }}
+              >
+                View Prototype
+              </Button>
+            </Stack>
+          </Box>
         </Card>
       </Container>
     </Box>

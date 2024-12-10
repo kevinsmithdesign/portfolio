@@ -72,6 +72,7 @@ const WhiteLabelContent = () => {
             <Typography
               sx={{
                 fontSize: "24px",
+                fontWeight: "bold",
                 color: theme.palette.primary.contrastText,
               }}
             >
