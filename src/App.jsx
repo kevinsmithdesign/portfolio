@@ -23,7 +23,6 @@ import WhiteLabelPage from "./pages/WhiteLabelPage";
 function App() {
   return (
     <Router>
-      {/* <Box sx={{ height: "100%", minHeight: "100vh" }}> */}
       <Navbar />
 
       <Routes>

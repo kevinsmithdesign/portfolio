@@ -285,51 +285,49 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <Box sx={{ mr: 2 }}>
-      <Box>
-        <Container sx={{ position: "relative" }}>
-          {!isWhitelabelRoute && (
-            <>
-              <BackgroundOverlay ref={bgRef} />
-              <MorphingBackground ref={morphRef} />
-              <MobileNavGroup ref={mobNavRef}>
-                {menuItems.map((item, index) => (
-                  <StyledLink
-                    key={item.path}
-                    to={item.path}
-                    ref={(el) => (navItemsRef.current[index] = el)}
-                    onClick={toggleMenu}
-                  >
-                    {item.label}
-                  </StyledLink>
-                ))}
-              </MobileNavGroup>
+    <Box>
+      <Container sx={{ position: "relative" }}>
+        {!isWhitelabelRoute && (
+          <>
+            <BackgroundOverlay ref={bgRef} />
+            <MorphingBackground ref={morphRef} />
+            <MobileNavGroup ref={mobNavRef}>
+              {menuItems.map((item, index) => (
+                <StyledLink
+                  key={item.path}
+                  to={item.path}
+                  ref={(el) => (navItemsRef.current[index] = el)}
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </StyledLink>
+              ))}
+            </MobileNavGroup>
 
-              <Box
-                sx={{
-                  mt: 2,
-                  width: "70px",
-                  height: "70px",
-                  background: "#3B75FE",
-                  borderRadius: "50%",
-                  position: "absolute",
-                  right: 0,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                }}
-                onClick={toggleMenu}
-              >
-                <HamburgerMenu>
-                  <Box className="bar top-bar" ref={topBarRef}></Box>
-                  <Box className="bar bottom-bar" ref={bottomBarRef}></Box>
-                </HamburgerMenu>
-              </Box>
-            </>
-          )}
-        </Container>
-      </Box>
+            <Box
+              sx={{
+                mt: 2,
+                width: "70px",
+                height: "70px",
+                background: "#3B75FE",
+                borderRadius: "50%",
+                position: "absolute",
+                right: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
+              onClick={toggleMenu}
+            >
+              <HamburgerMenu>
+                <Box className="bar top-bar" ref={topBarRef}></Box>
+                <Box className="bar bottom-bar" ref={bottomBarRef}></Box>
+              </HamburgerMenu>
+            </Box>
+          </>
+        )}
+      </Container>
     </Box>
   );
 };

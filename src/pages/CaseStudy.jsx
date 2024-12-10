@@ -23,12 +23,23 @@ import CollaborationImg from "../components/CollaborationImg";
 
 import ProfilePage from "../assets/images/ProfilePage.svg";
 import ContactPage from "../assets/images/ContactPage.svg";
+import LayerIcon from "../assets/images/LayerIcon.svg";
+import ToolsIcon from "../assets/images/ToolsIcon.svg";
+import CalendarIcon from "../assets/images/CalendarIcon.svg";
 
 export default function CaseStudy() {
   const caseStudyOverview = [
-    { title: "Role", description: "UI/UX Designer & Developer" },
-    { title: "Timeline", description: "6 Weeks" },
-    { title: "Date", description: "November 2024 - December 2024" },
+    {
+      title: "Role",
+      description: "UI/UX Designer & Developer",
+      img: LayerIcon,
+    },
+    { title: "Tools", description: "Figma, React, MUI", img: ToolsIcon },
+    {
+      title: "Timeline",
+      description: "November - December 2024",
+      img: CalendarIcon,
+    },
   ];
 
   const affinityMapping = [
@@ -185,7 +196,7 @@ export default function CaseStudy() {
           />
         </Box>
         <Grid container spacing={2} mb={2}>
-          {caseStudyOverview.map(({ title, description }) => (
+          {caseStudyOverview.map(({ title, description, img }) => (
             <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card
                 sx={{
@@ -198,13 +209,16 @@ export default function CaseStudy() {
                   borderRadius: "16px",
                 }}
               >
-                <Typography
-                  sx={{ fontSize: "18px" }}
-                  fontWeight="bold"
-                  color="#fff"
-                >
-                  {title}
-                </Typography>
+                <Box sx={{ display: "flex", mb: 1 }}>
+                  <img src={img} style={{ marginRight: "8px" }} />
+                  <Typography
+                    sx={{ fontSize: "18px" }}
+                    fontWeight="bold"
+                    color="#fff"
+                  >
+                    {title}
+                  </Typography>
+                </Box>
                 <Typography color="#fff">{description}</Typography>
               </Card>
             </Grid>
