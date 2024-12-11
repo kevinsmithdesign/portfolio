@@ -26,6 +26,7 @@ import ContactPage from "../assets/images/ContactPage.svg";
 import LayerIcon from "../assets/images/LayerIcon.svg";
 import ToolsIcon from "../assets/images/ToolsIcon.svg";
 import CalendarIcon from "../assets/images/CalendarIcon.svg";
+import SiteMap from "../components/SiteMap";
 
 export default function CaseStudy() {
   const caseStudyOverview = [
@@ -834,7 +835,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
           </Box>
         </Card>
 
-        {/* <Card
+        <Card
           sx={{
             p: 6,
             background: "#222",
@@ -846,9 +847,10 @@ Lack of real-time assistance tools that support staff while reassuring families.
         >
           <CaseStudyTitle
             title="INFORMATION ARCHITECTURE"
-            description="Title"
+            description="Designing a Clear Path to Personalized Care"
           />
-        </Card> */}
+          <SiteMap />
+        </Card>
 
         {/* <CaseStudyDivider /> */}
         <Card
@@ -948,10 +950,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             Profile Page
           </Typography>
           <Typography mt={1} mb={3} color="#fff">
-            The Profile Page allows caregivers to personalize their experience
-            with Lila by managing preferences, accessing saved resources, and
-            viewing activity insights. Its intuitive design ensures users can
-            easily tailor Lila’s features to meet their unique caregiving needs.
+            Description coming soon
           </Typography>
           <Box mb={6}>
             <img
@@ -964,10 +963,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             Contact Page
           </Typography>
           <Typography mt={1} mb={3} color="#fff">
-            The Contact Page provides a simple way for caregivers to connect
-            with support, offer feedback, or find technical assistance. With
-            direct contact options and helpful resources, it reinforces Lila’s
-            commitment to being accessible and empathetic.
+            Description coming soon
           </Typography>
           <Box mb={6}>
             <img
