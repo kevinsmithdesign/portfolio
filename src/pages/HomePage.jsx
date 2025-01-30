@@ -182,7 +182,12 @@ const HomePage = () => {
           ) => (
             <React.Fragment key={index}>
               <Grid size={{ xs: 12, md: 6 }}>
-                <img src={img} alt={title} style={{ width: "100%" }} />
+                <img
+                  loading="lazy"
+                  src={img}
+                  alt={title}
+                  style={{ width: "100%" }}
+                />
               </Grid>
               <Grid
                 size={{ xs: 12, md: 6 }}

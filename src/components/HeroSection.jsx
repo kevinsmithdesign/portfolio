@@ -90,6 +90,7 @@ const HeroSection = () => {
       </Grid>
       <Grid size={{ sm: 12, md: 7 }}>
         <img
+          loading="lazy"
           src="https://assets.codepen.io/2392702/Group+637.svg"
           alt="UI Components"
           // style={{ height: "760px", marginTop: "16px" }}
