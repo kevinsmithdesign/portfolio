@@ -192,6 +192,7 @@ export default function CaseStudy() {
         >
           <img
             src={LilaCaseStudyPreview}
+            loading="lazy"
             alt="Lila Preview"
             style={{ maxWidth: "760px", width: "100%" }}
           />
@@ -211,7 +212,11 @@ export default function CaseStudy() {
                 }}
               >
                 <Box sx={{ display: "flex", mb: 1 }}>
-                  <img src={img} style={{ marginRight: "8px" }} />
+                  <img
+                    loading="lazy"
+                    src={img}
+                    style={{ marginRight: "8px" }}
+                  />
                   <Typography
                     sx={{ fontSize: "18px" }}
                     fontWeight="bold"
