@@ -17,20 +17,22 @@ const HeroSection = () => {
   return (
     <Grid
       container
-      spacing={6}
+      spacing={{ xs: 0, md: 6 }}
       sx={{
         minHeight: "600px",
         alignItems: "center",
       }}
     >
       <Grid size={{ sm: 12, md: 5 }}>
-        <Typography variant="h2" fontWeight="bold" mb={3}>
-          Hello, I'm Kevin Smith
-        </Typography>
-        <Typography sx={{ fontSize: "20px", color: "#777" }}>
-          A UI/UX Designer & Developer with over a decade of experience crafting
-          engaging digital experiences and driving business growth.
-        </Typography>
+        <Box sx={{ mt: { xs: 12, md: 0 } }}>
+          <Typography variant="h2" fontWeight="bold" mb={3}>
+            Hello, I'm Kevin Smith
+          </Typography>
+          <Typography sx={{ fontSize: "20px", color: "#777" }}>
+            A UI/UX Designer & Developer with over a decade of experience
+            crafting engaging digital experiences and driving business growth.
+          </Typography>
+        </Box>
       </Grid>
       <Grid size={{ sm: 12, md: 7 }}>
         <Box
@@ -40,13 +42,17 @@ const HeroSection = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            mt: 12, // Matches padding with Skeleton
+            mt: { xs: 0, sm: 2, md: 12 },
           }}
         >
           {!imageLoaded ? (
             <Skeleton
               variant="rectangular"
-              sx={{ borderRadius: "16px", width: "100%", height: "100%" }}
+              sx={{
+                borderRadius: "16px",
+                width: { xs: "80%", md: "80%" },
+                height: "80%",
+              }}
               animation="wave" // Adds smooth shimmer effect
             />
           ) : (

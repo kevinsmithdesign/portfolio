@@ -16,6 +16,16 @@ const ResumePage = () => {
 
   const jobInfo = [
     {
+      logo: "",
+      companyName: "Apex Systems",
+      jobTitle: "Lead UX Engineer",
+      date: "2025-Present",
+      url: "https://brado.net",
+      domain: "Brado.net",
+      content: "6 Month Contract through Apex Systems working with WaFd Bank",
+      achievements: ["Will update as I start knocking out stories"],
+    },
+    {
       logo: "https://assets.codepen.io/2392702/BradoLogo.svg",
       companyName: "Brado",
       jobTitle: "UI/UX Designer & Developer",
