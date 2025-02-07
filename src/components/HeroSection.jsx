@@ -10,7 +10,7 @@ const HeroSection = () => {
     const img = new Image();
     img.src = HeroImg;
     img.onload = () => {
-      setTimeout(() => setImageLoaded(true), 1500); // Ensures loader stays for 3 seconds
+      setTimeout(() => setImageLoaded(true), 1000); // Ensures loader stays for 3 seconds
     };
   }, []);
 

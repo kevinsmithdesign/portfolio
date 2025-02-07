@@ -222,7 +222,7 @@ const HomePage = () => {
     // Set timeout to delay the appearance of all images (to match other components)
     const timer = setTimeout(() => {
       setAllImagesLoaded(true);
-    }, 1500); // Ensures all images fade in at the same time
+    }, 1000); // Ensures all images fade in at the same time
 
     return () => clearTimeout(timer);
   }, []);
