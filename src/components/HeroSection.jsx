@@ -66,38 +66,44 @@
 import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import HeroImg from "../assets/images/HeroImg.svg";
 
 const HeroSection = () => {
   return (
-    <Grid container spacing={6} sx={{}}>
-      <Grid
-        size={{ sm: 12, md: 5 }}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <Stack sx={{ marginTop: { xs: 10, md: 0 } }}>
-          <Typography variant="h2" fontWeight="bold" mb={3}>
-            Hello, I'm Kevin Smith
-          </Typography>
-          <Typography sx={{ fontSize: "20px", color: "#777" }}>
-            A UI/UX Designer & Developer with over a decade of experience
-            crafting engaging digital experiences and driving business growth.
-          </Typography>
-        </Stack>
+    <div style={{ minHeight: "600px" }}>
+      <Grid container spacing={6}>
+        <Grid
+          size={{ sm: 12, md: 5 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Stack sx={{ marginTop: { xs: 10, md: 0 } }}>
+            <Typography variant="h2" fontWeight="bold" mb={3}>
+              Hello, I'm Kevin Smith
+            </Typography>
+            <Typography sx={{ fontSize: "20px", color: "#777" }}>
+              A UI/UX Designer & Developer with over a decade of experience
+              crafting engaging digital experiences and driving business growth.
+            </Typography>
+          </Stack>
+        </Grid>
+        <Grid size={{ sm: 12, md: 7 }}>
+          <img
+            loading="eager"
+            src={HeroImg}
+            alt="Profile Page"
+            style={{
+              width: "100%",
+              height: "auto",
+              marginTop: "16px",
+            }}
+          />
+        </Grid>
       </Grid>
-      <Grid size={{ sm: 12, md: 7 }}>
-        <img
-          loading="lazy"
-          src="https://assets.codepen.io/2392702/Group+637.svg"
-          alt="UI Components"
-          // style={{ height: "760px", marginTop: "16px" }}
-          style={{ width: "100%", marginTop: "16px" }}
-        />
-      </Grid>
-    </Grid>
+    </div>
   );
 };
 

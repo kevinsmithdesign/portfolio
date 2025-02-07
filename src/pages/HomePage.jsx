@@ -55,7 +55,7 @@ const HomePage = () => {
   return (
     <Container sx={{ mb: 6 }}>
       <HeroSection />
-      <Grid container spacing={{ xs: 2, md: 6 }}>
+      {/* <Grid container spacing={{ xs: 2, md: 6 }}>
         {portfolioProjects.map(
           (
             { title, description, btnText, route, externalLink, img },
@@ -107,7 +107,7 @@ const HomePage = () => {
             </React.Fragment>
           )
         )}
-      </Grid>
+      </Grid> */}
     </Container>
   );
 };
