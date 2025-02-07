@@ -63,47 +63,38 @@
 
 // export default HeroSection;
 
-import React from "react";
-import { Typography, Box, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { Skeleton, Typography, Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import HeroImg from "../assets/images/HeroImg.svg";
 
 const HeroSection = () => {
   return (
-    <div style={{ minHeight: "600px" }}>
-      <Grid container spacing={6}>
-        <Grid
-          size={{ sm: 12, md: 5 }}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <Stack sx={{ marginTop: { xs: 10, md: 0 } }}>
-            <Typography variant="h2" fontWeight="bold" mb={3}>
-              Hello, I'm Kevin Smith
-            </Typography>
-            <Typography sx={{ fontSize: "20px", color: "#777" }}>
-              A UI/UX Designer & Developer with over a decade of experience
-              crafting engaging digital experiences and driving business growth.
-            </Typography>
-          </Stack>
-        </Grid>
-        <Grid size={{ sm: 12, md: 7 }}>
-          <img
-            loading="eager"
-            src={HeroImg}
-            alt="Profile Page"
-            style={{
-              width: "100%",
-              height: "auto",
-              marginTop: "16px",
-            }}
-          />
-        </Grid>
+    <Grid
+      container
+      spacing={6}
+      sx={{
+        minHeight: "600px",
+        alignItems: "center",
+      }}
+    >
+      <Grid size={{ sm: 12, md: 5 }}>
+        <Typography variant="h2" fontWeight="bold" mb={3}>
+          Hello, I'm Kevin Smith
+        </Typography>
+        <Typography sx={{ fontSize: "20px", color: "#777" }}>
+          A UI/UX Designer & Developer with over a decade of experience crafting
+          engaging digital experiences and driving business growth.
+        </Typography>
       </Grid>
-    </div>
+      <Grid size={{ sm: 12, md: 7 }}>
+        <img
+          src={HeroImg}
+          alt="Profile Page"
+          style={{ width: "100%", height: "auto" }}
+        />
+      </Grid>
+    </Grid>
   );
 };
 
