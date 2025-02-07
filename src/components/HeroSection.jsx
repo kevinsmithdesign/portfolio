@@ -1,74 +1,19 @@
-// import React from "react";
-// import { Container, Typography, Stack, Grid, Card } from "@mui/material";
-// import Grid from "@mui/material/Grid2";
-
-// const HeroSection = () => {
-//   return (
-//     <>
-//       <Grid container spacing={4} mt={4}>
-//         <Grid
-//           size={{ xs: 12, sm: 5, md: 5 }}
-//           sx={{
-//             display: "flex",
-//             flexDirection: "column",
-//             justifyContent: "center",
-//           }}
-//         >
-//           <Typography variant="h6" fontWeight="bold" mb={3}>
-//             {title}
-//           </Typography>
-//           <Typography mb={3}>• {bulletOne}</Typography>
-//           <Typography>• {bulletTwo}</Typography>
-//         </Grid>
-//         <Grid size={{ xs: 12, sm: 7, md: 7 }}>
-//           <Box
-//             sx={{
-//               height: "360px",
-//               width: "100%",
-//               background: "#eee",
-//               borderRadius: 3,
-//             }}
-//           ></Box>
-//         </Grid>
-//       </Grid>
-
-//       <Stack mt={8}>
-//         <Typography variant="h2" fontWeight="bold" mb={2}>
-//           Hello, I'm Kevin Smith
-//         </Typography>
-//         <Typography variant="h6" mb={4}>
-//           A UI/UX Designer & Developer with over a decade of experience crafting
-//           engaging digital experiences and driving business growth.
-//         </Typography>
-//       </Stack>
-
-//       <Stack mb={8}>
-//         <Typography fontWeight="bold" mb={1}>
-//           A FEW STATS ABOUT ME
-//         </Typography>
-//         <Typography variant="body1">
-//           • Designed and developed 20+ products and websites.
-//         </Typography>
-//         <Typography variant="body1">
-//           • Created 50+ prototypes for various industries.
-//         </Typography>
-//         <Typography variant="body1">
-//           • Specialized in building scalable design systems and reusable
-//           components.
-//         </Typography>
-//       </Stack>
-//     </>
-//   );
-// };
-
-// export default HeroSection;
-
-import React, { useState } from "react";
-import { Skeleton, Typography, Box, Stack } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Skeleton, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import HeroImg from "../assets/images/HeroImg.svg";
 
 const HeroSection = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = HeroImg;
+    img.onload = () => {
+      setTimeout(() => setImageLoaded(true), 1500); // Ensures loader stays for 3 seconds
+    };
+  }, []);
+
   return (
     <Grid
       container
@@ -88,11 +33,36 @@ const HeroSection = () => {
         </Typography>
       </Grid>
       <Grid size={{ sm: 12, md: 7 }}>
-        <img
-          src={HeroImg}
-          alt="Profile Page"
-          style={{ width: "100%", height: "auto" }}
-        />
+        <Box
+          sx={{
+            width: "100%",
+            height: 600, // Ensures consistent height
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 12, // Matches padding with Skeleton
+          }}
+        >
+          {!imageLoaded ? (
+            <Skeleton
+              variant="rectangular"
+              sx={{ borderRadius: "16px", width: "100%", height: "100%" }}
+              animation="wave" // Adds smooth shimmer effect
+            />
+          ) : (
+            <img
+              src={HeroImg}
+              alt="Profile Page"
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "block", // Prevents unwanted inline spacing
+                transition: "opacity 0.5s ease-in-out",
+                opacity: imageLoaded ? 1 : 0, // Smooth fade-in effect
+              }}
+            />
+          )}
+        </Box>
       </Grid>
     </Grid>
   );
