@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { darken } from "@mui/material/styles";
 import { Container, Box, Typography } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
@@ -56,23 +57,22 @@ const BackgroundOverlay = styled(Box)({
 const MorphingBackground = styled(Box)({
   position: "absolute",
 
-  top: "26px",
-  right: "20px",
-  width: "40px",
-  height: "40px",
+  top: "40px",
+  right: "16px",
+  width: "48px",
+  height: "48px",
   background: "#3B75FE",
   borderRadius: "50%",
-  zIndex: 10,
   transformOrigin: "center",
 });
 
 const HamburgerMenu = styled(Box)({
   position: "relative",
   height: "14px",
-  width: "20px",
+  width: "18px",
   zIndex: 30,
   "& .bar": {
-    width: "20px",
+    width: "18px",
     height: "4px",
     borderRadius: "2px",
     background: "#FFF",
@@ -243,7 +243,7 @@ const Navbar = () => {
 
   return (
     <Box>
-      <Container sx={{ position: "relative", py: 4 }}>
+      <Container sx={{ position: "relative", pb: 4, pt: 6 }}>
         <Box sx={{ display: "flex" }}>
           <Box>
             <Typography variant="h6">Kevin Smith Design</Typography>
@@ -269,18 +269,20 @@ const Navbar = () => {
                 <Box
                   sx={{
                     mt: 2,
-                    width: "40px",
-                    height: "40px",
+                    width: "48px",
+                    height: "48px",
                     background: "#3B75FE",
-
                     borderRadius: "50%",
                     position: "absolute",
-                    right: "20px",
-                    top: "10px",
+                    right: "16px",
+                    top: "24px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
+                    "&:hover": {
+                      backgroundColor: darken("#3B75FE", 0.1),
+                    },
                   }}
                   onClick={toggleMenu}
                 >
