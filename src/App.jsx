@@ -23,21 +23,22 @@ import WhiteLabelPage from "./pages/WhiteLabelPage";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Box sx={{ px: 1 }}>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/casestudy" element={<CaseStudy />} />
-        <Route path="/designsystem" element={<DesignSystem />} />
-        <Route path="/whitelabel/*" element={<WhiteLabelPage />} />
-        <Route path="/uidesign" element={<UiDesign />} />
-        <Route path="/animation" element={<Animation />} />
-        <Route path="/code" element={<FrontEndCode />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/resume" element={<ResumePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      {/* </Box> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/casestudy" element={<CaseStudy />} />
+          <Route path="/designsystem" element={<DesignSystem />} />
+          <Route path="/whitelabel/*" element={<WhiteLabelPage />} />
+          <Route path="/uidesign" element={<UiDesign />} />
+          <Route path="/animation" element={<Animation />} />
+          <Route path="/code" element={<FrontEndCode />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/resume" element={<ResumePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Box>
     </Router>
   );
 }

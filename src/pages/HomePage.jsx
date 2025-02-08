@@ -243,7 +243,6 @@ const HomePage = () => {
                   <Box
                     sx={{
                       width: "100%",
-                      borderRadius: "16px",
                       overflow: "hidden",
                       position: "relative",
                       display: "flex",
@@ -258,7 +257,12 @@ const HomePage = () => {
                         width="100%"
                         height="100%"
                         animation="wave"
-                        sx={{ position: "absolute", top: 0, left: 0 }}
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          borderRadius: "8px",
+                        }}
                       />
                     )}
 

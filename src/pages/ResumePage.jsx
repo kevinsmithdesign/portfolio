@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import WaFdLogo from "../assets/images/WaFdLogo.svg";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
@@ -16,12 +17,12 @@ const ResumePage = () => {
 
   const jobInfo = [
     {
-      logo: "",
-      companyName: "Apex Systems",
+      logo: WaFdLogo,
+      companyName: "WaFd Bank",
       jobTitle: "Lead UX Engineer",
       date: "2025-Present",
-      url: "https://brado.net",
-      domain: "Brado.net",
+      url: "https://wafdbank.com",
+      domain: "wafdbank.com",
       content: "6 Month Contract through Apex Systems working with WaFd Bank",
       achievements: ["Will update as I start knocking out stories"],
     },
@@ -121,7 +122,7 @@ const ResumePage = () => {
                   {/* Company and Job Title */}
                   <Box sx={{ flex: 1 }}>
                     <Typography
-                      sx={{ fontSize: "20px", fontWeight: "bold" }}
+                      sx={{ fontSize: "18px", fontWeight: "bold" }}
                       mt={1}
                       mb={0}
                     >

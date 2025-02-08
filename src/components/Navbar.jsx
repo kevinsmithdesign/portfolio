@@ -1,45 +1,9 @@
-// import React from "react";
-// import { Container, Typography, Box } from "@mui/material";
-// import { Link } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
-
-// import SiteMenu from "./SiteMenu";
-
-// const Navbar = () => {
-//   const location = useLocation();
-//   const isWhitelabelRoute = location.pathname.startsWith("/whitelabel");
-
-//   return (
-//     <Box>
-//       <Box sx={{ background: "red", p: 1 }}>
-//         <Container sx={{ background: "green", position: "relative" }}>
-//           {/* {!isWhitelabelRoute && <SiteMenu />} */}
-
-//           <Box
-//             sx={{
-//               width: "70px",
-//               height: "70px",
-//               background: "lightblue",
-//               borderRadius: "50%",
-//               position: "absolute",
-//               right: 0,
-//             }}
-//           ></Box>
-//         </Container>
-//       </Box>
-//     </Box>
-//   );
-// };
-
-// export default Navbar;
-
 import React, { useState, useRef, useEffect } from "react";
-import { Container, Box } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { styled } from "@mui/system";
 
-// Styled components
 const MobileNavGroup = styled(Box)({
   position: "fixed",
   left: "50%",
@@ -83,27 +47,20 @@ const BackgroundOverlay = styled(Box)({
   left: 0,
   width: "100vw",
   height: "100vh",
-  // backgroundColor: "#0069FF",
   background: "#3B75FE",
-
   opacity: 0,
   pointerEvents: "none",
   zIndex: 5,
 });
 
 const MorphingBackground = styled(Box)({
-  // position: "fixed",
   position: "absolute",
 
-  // top: "20px",
-  // right: "20px",
-  top: 16,
-  right: 16,
-  width: "70px",
-  height: "70px",
-  // backgroundColor: "#0069FF",
+  top: "26px",
+  right: "20px",
+  width: "40px",
+  height: "40px",
   background: "#3B75FE",
-
   borderRadius: "50%",
   zIndex: 10,
   transformOrigin: "center",
@@ -286,47 +243,56 @@ const Navbar = () => {
 
   return (
     <Box>
-      <Container sx={{ position: "relative" }}>
-        {!isWhitelabelRoute && (
-          <>
-            <BackgroundOverlay ref={bgRef} />
-            <MorphingBackground ref={morphRef} />
-            <MobileNavGroup ref={mobNavRef}>
-              {menuItems.map((item, index) => (
-                <StyledLink
-                  key={item.path}
-                  to={item.path}
-                  ref={(el) => (navItemsRef.current[index] = el)}
+      <Container sx={{ position: "relative", py: 4 }}>
+        <Box sx={{ display: "flex" }}>
+          <Box>
+            <Typography variant="h6">Kevin Smith Design</Typography>
+          </Box>
+          <Box>
+            {!isWhitelabelRoute && (
+              <>
+                <BackgroundOverlay ref={bgRef} />
+                <MorphingBackground ref={morphRef} />
+                <MobileNavGroup ref={mobNavRef}>
+                  {menuItems.map((item, index) => (
+                    <StyledLink
+                      key={item.path}
+                      to={item.path}
+                      ref={(el) => (navItemsRef.current[index] = el)}
+                      onClick={toggleMenu}
+                    >
+                      {item.label}
+                    </StyledLink>
+                  ))}
+                </MobileNavGroup>
+
+                <Box
+                  sx={{
+                    mt: 2,
+                    width: "40px",
+                    height: "40px",
+                    background: "#3B75FE",
+
+                    borderRadius: "50%",
+                    position: "absolute",
+                    right: "20px",
+                    top: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                  }}
                   onClick={toggleMenu}
                 >
-                  {item.label}
-                </StyledLink>
-              ))}
-            </MobileNavGroup>
-
-            <Box
-              sx={{
-                mt: 2,
-                width: "70px",
-                height: "70px",
-                background: "#3B75FE",
-                borderRadius: "50%",
-                position: "absolute",
-                right: "16px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-              }}
-              onClick={toggleMenu}
-            >
-              <HamburgerMenu>
-                <Box className="bar top-bar" ref={topBarRef}></Box>
-                <Box className="bar bottom-bar" ref={bottomBarRef}></Box>
-              </HamburgerMenu>
-            </Box>
-          </>
-        )}
+                  <HamburgerMenu>
+                    <Box className="bar top-bar" ref={topBarRef}></Box>
+                    <Box className="bar bottom-bar" ref={bottomBarRef}></Box>
+                  </HamburgerMenu>
+                </Box>
+              </>
+            )}
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
