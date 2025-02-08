@@ -243,7 +243,7 @@ const Navbar = () => {
 
   return (
     <Box>
-      <Container sx={{ position: "relative", pb: 4, pt: 6 }}>
+      <Container sx={{ position: "relative", py: 6 }}>
         <Box sx={{ display: "flex" }}>
           <Box>
             <Typography variant="h6">Kevin Smith Design</Typography>
