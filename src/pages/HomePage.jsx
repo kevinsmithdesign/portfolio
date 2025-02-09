@@ -157,6 +157,7 @@ import Grid from "@mui/material/Grid2"; // Keeping Grid as you had it
 import HeroSection from "../components/HeroSection";
 import UICollectionImg from "../assets/images/UICollectionImg.jpg";
 import FrontEndSoftwareImg from "../assets/images/FrontEndSoftwareImg.svg";
+import PromptRank from "../assets/images/PromptRank.svg";
 
 const HomePage = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
@@ -184,11 +185,20 @@ const HomePage = () => {
     //   img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29.svg",
     // },
     {
+      title: "Prompt Rank",
+      description:
+        "Explore, rank, and share AI prompts while discovering powerful AI tools. Prompt Rank helps users refine AI interactions, learn prompt engineering techniques, and enhance their workflow with curated resources.",
+      btnText: "View Site",
+      externalLink: "https://promptrank.netlify.app/",
+      img: PromptRank,
+    },
+
+    {
       title: "UI Design Collection",
       description:
         "A showcase of thoughtfully crafted user interfaces, featuring real-world projects and fictional designs that highlight diverse capabilities and creative problem-solving.",
       btnText: "View UI Designs",
-      externalLink: "https://dribbble.com/kevinsmithdesign",
+      route: "/",
       img: UICollectionImg,
     },
     // {
