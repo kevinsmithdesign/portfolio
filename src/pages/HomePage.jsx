@@ -192,13 +192,13 @@ const HomePage = () => {
       externalLink: "https://promptrank.netlify.app/",
       img: PromptRank,
     },
-
     {
       title: "UI Design Collection",
       description:
         "A showcase of thoughtfully crafted user interfaces, featuring real-world projects and fictional designs that highlight diverse capabilities and creative problem-solving.",
       btnText: "View UI Designs",
-      route: "/",
+      // route: "/",
+      externalLink: "https://dribbble.com/kevinsmithdesign",
       img: UICollectionImg,
     },
     // {
@@ -271,7 +271,7 @@ const HomePage = () => {
                           position: "absolute",
                           top: 0,
                           left: 0,
-                          borderRadius: "8px",
+                          borderRadius: "16px",
                         }}
                       />
                     )}
@@ -283,6 +283,7 @@ const HomePage = () => {
                       style={{
                         width: "100%",
                         height: "100%",
+                        borderRadius: "16px",
                         objectFit: "cover",
                         transition: "opacity 0.3s ease-in-out",
                         opacity: allImagesLoaded ? 1 : 0, // Fade in all images at once
