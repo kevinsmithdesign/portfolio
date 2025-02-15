@@ -272,6 +272,7 @@ const HomePage = () => {
                           top: 0,
                           left: 0,
                           borderRadius: "16px",
+                          background: "#F5F9FC",
                         }}
                       />
                     )}

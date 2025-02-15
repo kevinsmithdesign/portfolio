@@ -10,7 +10,7 @@ const HeroSection = () => {
     const img = new Image();
     img.src = HeroImg;
     img.onload = () => {
-      setTimeout(() => setImageLoaded(true), 1000); // Ensures loader stays for 3 seconds
+      setTimeout(() => setImageLoaded(true), 1000);
     };
   }, []);
 
@@ -48,8 +48,9 @@ const HeroSection = () => {
             <Skeleton
               variant="rectangular"
               sx={{
-                borderRadius: "8px",
+                borderRadius: "16px",
                 width: { xs: "80%", md: "80%" },
+                background: "#F5F9FC",
                 height: "80%",
               }}
               animation="wave" // Adds smooth shimmer effect
