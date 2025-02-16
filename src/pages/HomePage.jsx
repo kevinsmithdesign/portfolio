@@ -189,7 +189,7 @@ const HomePage = () => {
       description:
         "Explore, rank, and share AI prompts while discovering powerful AI tools. Prompt Rank helps users refine AI interactions, learn prompt engineering techniques, and enhance their workflow with curated resources.",
       btnText: "View Site",
-      externalLink: "https://promptrank.netlify.app/",
+      externalLink: "https://promptrank.io",
       img: PromptRank,
     },
     {
