@@ -1,165 +1,14 @@
-// import React, { useState, useEffect } from "react";
-// import { Button, Container, Typography, Box, Divider } from "@mui/material";
-// import Grid from "@mui/material/Grid2";
-// import HeroSection from "../components/HeroSection";
-// import UICollectionImg from "../assets/images/UICollectionImg.jpg";
-// import FrontEndSoftwareImg from "../assets/images/FrontEndSoftwareImg.svg";
-
-// const HomePage = () => {
-//   const [imageLoaded, setImageLoaded] = useState(false);
-
-//   useEffect(() => {
-//     const img = new Image();
-//     img.src = UICollectionImg;
-//     img.onload = () => {
-//       setTimeout(() => setImageLoaded(true), 1500); // Ensures loader stays for 3 seconds
-//     };
-//   }, []);
-
-//   const portfolioProjects = [
-//     // {
-//     //   title: "Lila Case Study",
-//     //   description:
-//     //     "Lila is an AI-powered platform that supports caregivers with natural, human-like conversations, revolutionizing communication in healthcare.",
-//     //   btnText: "View Case Study",
-//     //   route: "/casestudy",
-//     //   img: "https://assets.codepen.io/2392702/Group+241568.svg",
-//     // },
-//     // {
-//     //   title: "White Label Design System",
-//     //   description:
-//     //     "A flexible framework of reusable components and guidelines for building consistent, scalable, and accessible user interfaces, with support for multiple themes.",
-//     //   btnText: "View Design System",
-//     //   // route: "/designsystem",
-//     //   route: "/whitelabel",
-//     //   // externalLink: "/whitelabel", // Add this
-
-//     //   // externalLink: "https://55c5pt.csb.app/",
-//     //   img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29.svg",
-//     // },
-//     {
-//       title: "UI Design Collection",
-//       description:
-//         "A showcase of thoughtfully crafted user interfaces, featuring real-world projects and fictional designs that highlight diverse capabilities and creative problem-solving.",
-//       btnText: "View UI Designs",
-//       externalLink: "https://dribbble.com/kevinsmithdesign",
-//       // img: "https://assets.codepen.io/2392702/Group+1.jpg",
-//       img: UICollectionImg,
-//     },
-//     // {
-//     //   title: "Animations Collection",
-//     //   description:
-//     //     "A curated selection of UI animations showcasing smooth interactions, micro-interactions, and engaging motion design that enhance user experiences.",
-//     //   btnText: "View Animations",
-//     //   route: "/animation",
-//     //   img: "https://assets.codepen.io/2392702/Group+241568.svg",
-//     // },
-//     {
-//       title: "Front End Development",
-//       description:
-//         "A collection of interactive, performance-optimized web applications and components, built with clean code, modern frameworks, and a focus on usability and scalability.",
-//       btnText: "View Code",
-//       // route: "/code",
-//       externalLink: "https://github.com/kevinsmithdesign",
-//       // img: "https://assets.codepen.io/2392702/Desktop+-+6.svg",
-//       img: FrontEndSoftwareImg,
-//     },
-//   ];
-
-//   return (
-//     <Container sx={{ mb: 6 }}>
-//       <HeroSection />
-//       <Grid container spacing={{ xs: 2, md: 8 }}>
-//         {portfolioProjects.map(
-//           (
-//             { title, description, btnText, route, externalLink, img },
-//             index
-//           ) => (
-//             <React.Fragment key={index}>
-//               <Grid size={{ xs: 12, md: 6 }}>
-//                 {/* <img
-//                   loading="lazy"
-//                   src={img}
-//                   alt={title}
-//                   style={{ width: "100%" }}
-//                 /> */}
-//                 {!imageLoaded ? (
-//                   <Skeleton
-//                     variant="rectangular"
-//                     sx={{
-//                       borderRadius: "16px",
-//                       width: "100%",
-//                       height: "100%",
-//                     }}
-//                     animation="wave" // Adds smooth shimmer effect
-//                   />
-//                 ) : (
-//                   <img
-//                     src={FrontEndSoftwareImg}
-//                     alt="Profile Page"
-//                     style={{
-//                       width: "100%",
-//                       height: "100%",
-//                       display: "block", // Prevents unwanted inline spacing
-//                       transition: "opacity 0.5s ease-in-out",
-//                       opacity: imageLoaded ? 1 : 0, // Smooth fade-in effect
-//                     }}
-//                   />
-//                 )}
-//               </Grid>
-//               <Grid
-//                 size={{ xs: 12, md: 6 }}
-//                 sx={{
-//                   display: "flex",
-//                   justifyContent: "center",
-//                   flexDirection: "column",
-//                 }}
-//               >
-//                 <Typography variant="h4" fontWeight="bold" mb={2}>
-//                   {title}
-//                 </Typography>
-//                 <Typography mb={3} sx={{ fontSize: "18px" }}>
-//                   {description}
-//                 </Typography>
-//                 <Box>
-//                   <Button
-//                     variant="contained"
-//                     sx={{ mb: 2 }}
-//                     onClick={() => {
-//                       if (externalLink) {
-//                         window.open(
-//                           externalLink,
-//                           "_blank",
-//                           "noopener,noreferrer"
-//                         );
-//                       } else {
-//                         window.location.pathname = route;
-//                       }
-//                     }}
-//                   >
-//                     {btnText}
-//                   </Button>
-//                 </Box>
-//               </Grid>
-//             </React.Fragment>
-//           )
-//         )}
-//       </Grid>
-//     </Container>
-//   );
-// };
-
-// export default HomePage;
-
 import React, { useState, useEffect } from "react";
 import { Button, Container, Typography, Box, Skeleton } from "@mui/material";
-import Grid from "@mui/material/Grid2"; // Keeping Grid as you had it
+import Grid from "@mui/material/Grid2";
 import HeroSection from "../components/HeroSection";
 import UICollectionImg from "../assets/images/UICollectionImg.jpg";
 import FrontEndSoftwareImg from "../assets/images/FrontEndSoftwareImg.svg";
 import PromptRank from "../assets/images/PromptRank.svg";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 
 const HomePage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook for routing
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [imageLoadStatus, setImageLoadStatus] = useState({});
 
@@ -188,8 +37,10 @@ const HomePage = () => {
       title: "Prompt Rank",
       description:
         "Explore, rank, and share AI prompts while discovering powerful AI tools. Prompt Rank helps users refine AI interactions, learn prompt engineering techniques, and enhance their workflow with curated resources.",
-      btnText: "View Site",
-      externalLink: "https://promptrank.io",
+      // btnText: "View Site",
+      // externalLink: "https://promptrank.io",
+      btnText: "Site Overview",
+      route: "/promptrank-overview",
       img: PromptRank,
     },
     {
@@ -237,6 +88,17 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Handle click based on whether it's a route or external link
+  const handleButtonClick = (route, externalLink) => {
+    if (externalLink) {
+      // For external links, open in a new tab
+      window.open(externalLink, "_blank", "noopener,noreferrer");
+    } else if (route) {
+      // For internal routes, use the router's navigate
+      navigate(route);
+    }
+  };
+
   return (
     <Container sx={{ mb: 6 }}>
       <Box sx={{ mb: 4 }}>
@@ -244,7 +106,10 @@ const HomePage = () => {
       </Box>
       <Grid container spacing={{ xs: 2, md: 8 }}>
         {portfolioProjects.map(
-          ({ title, description, btnText, externalLink, img }, index) => {
+          (
+            { title, description, btnText, route, externalLink, img },
+            index
+          ) => {
             const isImageLoaded = imageLoadStatus[index];
 
             return (
@@ -311,13 +176,7 @@ const HomePage = () => {
                     <Button
                       variant="contained"
                       sx={{ mb: 2 }}
-                      onClick={() =>
-                        window.open(
-                          externalLink,
-                          "_blank",
-                          "noopener,noreferrer"
-                        )
-                      }
+                      onClick={() => handleButtonClick(route, externalLink)}
                     >
                       {btnText}
                     </Button>

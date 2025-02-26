@@ -13,7 +13,8 @@ import WaFdLogo from "../assets/images/WaFdLogo.svg";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const ResumePage = () => {
-  const [openIndex, setOpenIndex] = useState(0); // Default the first card as open
+  // const [openIndex, setOpenIndex] = useState(0); // Default the first card as open
+  const [openIndex, setOpenIndex] = useState(-1); // Set to -1 so no cards are open by default
 
   const jobInfo = [
     {

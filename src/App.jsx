@@ -1,6 +1,7 @@
 import { Button, Container, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,11 +20,12 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import "./App.css";
 import WhiteLabelPage from "./pages/WhiteLabelPage";
+import PromptRankOverviewPage from "./pages/PromptRankOverviewPage";
 
 function App() {
   return (
     <Router>
-      <Box sx={{ px: 1 }}>
+      <Box>
         <Navbar />
 
         <Routes>
@@ -31,6 +33,11 @@ function App() {
           <Route path="/casestudy" element={<CaseStudy />} />
           <Route path="/designsystem" element={<DesignSystem />} />
           <Route path="/whitelabel/*" element={<WhiteLabelPage />} />
+          <Route
+            path="/promptrank-overview"
+            element={<PromptRankOverviewPage />}
+          />
+
           <Route path="/uidesign" element={<UiDesign />} />
           <Route path="/animation" element={<Animation />} />
           <Route path="/code" element={<FrontEndCode />} />
