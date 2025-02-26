@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import WaFdLogo from "../assets/images/WaFdLogo.svg";
+import Navbar from "../components/Navbar";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
@@ -87,10 +88,11 @@ const ResumePage = () => {
       sx={{
         // minHeight: "100vh",
         backgroundColor: "#f6f6f6",
-        py: 4,
       }}
     >
-      <Container sx={{ mt: 4 }}>
+      <Navbar />
+
+      <Container sx={{ mb: 6 }}>
         <Typography variant="h6" fontWeight="bold" mb={1}>
           EXPERIENCE
         </Typography>

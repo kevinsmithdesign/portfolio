@@ -1,3 +1,4 @@
+// Navbar closes correctly if you close it on the page your already on. Any other page looks jenky. Look into this
 import React, { useState, useRef, useEffect } from "react";
 import { darken } from "@mui/material/styles";
 import { Container, Box, Typography } from "@mui/material";
@@ -79,9 +80,17 @@ const HamburgerWithMorph = ({ isOpen, toggleMenu }) => {
     }
 
     return () => {
-      // Clean up on unmount
-      if (morphCloneRef.current) {
-        document.body.removeChild(morphCloneRef.current);
+      // Clean up on unmount - FIXED: Add a safety check
+      if (
+        morphCloneRef.current &&
+        document.body.contains(morphCloneRef.current)
+      ) {
+        try {
+          document.body.removeChild(morphCloneRef.current);
+        } catch (error) {
+          console.log("Element already removed from DOM");
+        }
+        morphCloneRef.current = null;
       }
     };
   }, []);
@@ -111,7 +120,7 @@ const HamburgerWithMorph = ({ isOpen, toggleMenu }) => {
 
   // Handle animation when isOpen changes
   useEffect(() => {
-    if (!morphCloneRef.current) return;
+    if (!morphCloneRef.current || !buttonRef.current) return;
 
     const rect = buttonRef.current.getBoundingClientRect();
     const windowWidth = window.innerWidth;
@@ -140,19 +149,21 @@ const HamburgerWithMorph = ({ isOpen, toggleMenu }) => {
       });
 
       // Animate bars
-      gsap.to(topBarRef.current, {
-        rotation: 45,
-        y: 5,
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
+      if (topBarRef.current && bottomBarRef.current) {
+        gsap.to(topBarRef.current, {
+          rotation: 45,
+          y: 5,
+          duration: 0.2,
+          ease: "power1.inOut",
+        });
 
-      gsap.to(bottomBarRef.current, {
-        rotation: -45,
-        y: -5,
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
+        gsap.to(bottomBarRef.current, {
+          rotation: -45,
+          y: -5,
+          duration: 0.2,
+          ease: "power1.inOut",
+        });
+      }
     } else if (morphCloneRef.current.style.opacity === "1") {
       // Only animate if it was previously visible
       gsap.to(morphCloneRef.current, {
@@ -161,24 +172,28 @@ const HamburgerWithMorph = ({ isOpen, toggleMenu }) => {
         duration: 0.35,
         ease: "power2.inOut",
         onComplete: () => {
-          morphCloneRef.current.style.opacity = "0";
+          if (morphCloneRef.current) {
+            morphCloneRef.current.style.opacity = "0";
+          }
         },
       });
 
       // Animate bars back
-      gsap.to(topBarRef.current, {
-        rotation: 0,
-        y: 0,
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
+      if (topBarRef.current && bottomBarRef.current) {
+        gsap.to(topBarRef.current, {
+          rotation: 0,
+          y: 0,
+          duration: 0.2,
+          ease: "power1.inOut",
+        });
 
-      gsap.to(bottomBarRef.current, {
-        rotation: 0,
-        y: 0,
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
+        gsap.to(bottomBarRef.current, {
+          rotation: 0,
+          y: 0,
+          duration: 0.2,
+          ease: "power1.inOut",
+        });
+      }
     }
   }, [isOpen]);
 
@@ -242,6 +257,13 @@ const Navbar = () => {
     { path: "/", label: "Portfolio" },
     { path: "/resume", label: "Resume" },
   ];
+
+  // Close menu when location changes
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     const tl = gsap.timeline();

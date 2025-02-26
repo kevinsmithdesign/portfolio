@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { Link } from "react-router-dom"; // Import for internal routing
+import Navbar from "../components/Navbar";
 
 const PromptRankOverviewPage = () => {
   // Array of card data with route or externalLink options
@@ -38,6 +39,7 @@ const PromptRankOverviewPage = () => {
   // Card style object for reuse
   const cardStyle = {
     height: "100%",
+    textDecoration: "none",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -113,17 +115,10 @@ const PromptRankOverviewPage = () => {
   };
 
   return (
-    <Box
-    // sx={{
-    //   background: "#111",
-    //   padding: 0,
-    //   margin: 0,
-    //   minHeight: "100vh",
-    //   height: "100%",
-    //   color: "#fff",
-    // }}
-    >
-      <Container>
+    <Box sx={{ background: "#111", height: "100vh", color: "#fff" }}>
+      <Navbar />
+
+      <Container sx={{ mb: 6 }}>
         <Typography variant="h4" component="h1" mb={3}>
           Inside PromptRank: A Product Breakdown
         </Typography>
