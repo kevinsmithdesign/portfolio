@@ -114,14 +114,14 @@ const PromptRankOverviewPage = () => {
 
   return (
     <Box
-      sx={{
-        background: "#111",
-        padding: 0,
-        margin: 0,
-        minHeight: "100vh",
-        height: "100%",
-        color: "#fff",
-      }}
+    // sx={{
+    //   background: "#111",
+    //   padding: 0,
+    //   margin: 0,
+    //   minHeight: "100vh",
+    //   height: "100%",
+    //   color: "#fff",
+    // }}
     >
       <Container>
         <Typography variant="h4" component="h1" mb={3}>
