@@ -81,6 +81,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import WhiteLabelPage from "./pages/WhiteLabelPage";
 import PromptRankOverviewPage from "./pages/PromptRankOverviewPage";
+import PromptRankCaseStudy from "./pages/PromptRankCaseStudy";
 
 // Wrapper to force components to remount when routes change
 const KeyedRoute = ({ Component }) => {
@@ -116,6 +117,10 @@ function App() {
           <Route
             path="/promptrank-overview"
             element={<KeyedRoute Component={PromptRankOverviewPage} />}
+          />
+          <Route
+            path="/promptrank-case-study"
+            element={<KeyedRoute Component={PromptRankCaseStudy} />}
           />
           <Route
             path="/uidesign"

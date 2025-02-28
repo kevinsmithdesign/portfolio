@@ -5,6 +5,7 @@ import {
   Typography,
   Box,
   Divider,
+  Stack,
   Card,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -15,22 +16,27 @@ const PromptRankOverviewPage = () => {
   // Array of card data with route or externalLink options
   const cardButtons = [
     {
-      title: "View Case Study",
-      route: "/case-study", // Internal route
+      title: "Case Study",
+      route: "/promptrank-case-study", // Internal route
+      description: "UX Research & Insight",
       externalLink: null,
+      disabled: true, // Disabling the case study button
     },
     {
-      title: "View Roadmap",
+      title: "Roadmap",
       route: null,
+      description: "On-going updates",
       externalLink: "https://trello.com/b/tl1HuWg6/promptrank",
     },
     {
-      title: "View Code",
+      title: "Code",
+      description: "React and Firebase",
       route: null,
       externalLink: "https://github.com/kevinsmithdesign/PromptRank", // External link
     },
     {
-      title: "View Site",
+      title: "Site",
+      description: "promptrank.io",
       route: null,
       externalLink: "https://promptrank.io", // External link
     },
@@ -50,9 +56,10 @@ const PromptRankOverviewPage = () => {
     position: "relative",
     border: `1px solid #222`,
     overflow: "hidden",
-    padding: 4,
+    padding: 3,
     "&:hover": {
-      border: `1px solid #3B75FE`,
+      // border: `1px solid #3B75FE`,
+      border: `1px solid #333`,
     },
     "&::before": {
       content: '""',
@@ -61,7 +68,7 @@ const PromptRankOverviewPage = () => {
       left: 0,
       width: "100%",
       height: "100%",
-      backgroundColor: "#3B75FE",
+      // backgroundColor: "#3B75FE",
       opacity: 0,
       transition: "opacity 0.3s ease",
       zIndex: 0,
@@ -88,9 +95,21 @@ const PromptRankOverviewPage = () => {
           sx={cardStyle}
           key={index}
         >
-          <Typography color="white" fontWeight="bold">
+          {/* <Typography color="white" fontWeight="bold">
             {card.title}
-          </Typography>
+          </Typography> */}
+          <Box
+            sx={{
+              width: "100%",
+              height: "200px",
+              background: "#222",
+              borderRadius: "8px",
+              mb: 3,
+            }}
+          ></Box>
+          <Button variant="contained" fullWidth>
+            {card.title}
+          </Button>
         </Card>
       );
     }
@@ -98,9 +117,21 @@ const PromptRankOverviewPage = () => {
     else if (card.route) {
       return (
         <Card component={Link} to={card.route} sx={cardStyle} key={index}>
-          <Typography color="white" fontWeight="bold">
+          {/* <Typography color="white" fontWeight="bold">
             {card.title}
-          </Typography>
+          </Typography> */}
+          <Box
+            sx={{
+              width: "100%",
+              height: "200px",
+              background: "#222",
+              borderRadius: "8px",
+              mb: 3,
+            }}
+          ></Box>
+          <Button variant="contained" fullWidth>
+            {card.title}
+          </Button>
         </Card>
       );
     }
@@ -115,13 +146,35 @@ const PromptRankOverviewPage = () => {
   };
 
   return (
-    <Box sx={{ background: "#111", height: "100vh", color: "#fff" }}>
+    <Box
+      sx={{
+        background: "#111",
+        height: "100vh",
+        color: "#fff",
+        overflow: "auto",
+      }}
+    >
       <Navbar />
 
-      <Container sx={{ mb: 6 }}>
-        <Typography variant="h4" component="h1" mb={3}>
-          Inside PromptRank: A Product Breakdown
-        </Typography>
+      <Container sx={{ mb: 6, mt: 3 }}>
+        <Stack flexDirection="row">
+          <Stack flexGrow={1}>
+            <Typography variant="h4" component="h1" mb={3}>
+              Inside PromptRank: A Product Breakdown
+            </Typography>
+          </Stack>
+          <Stack>
+            <Button
+              variant="contained"
+              component="a"
+              href="https://promptrank.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Site
+            </Button>
+          </Stack>
+        </Stack>
         <Typography variant="h6" mb={1.5}>
           Overview
         </Typography>
@@ -134,16 +187,74 @@ const PromptRankOverviewPage = () => {
           design, UI development, and modern web technologies.
         </Typography>
 
-        {/* Dynamic card grid using the cardButtons array */}
-        <Grid container spacing={1} mb={3}>
-          {cardButtons.map((card, index) => (
-            <Grid size={{ xs: 12, md: 6, lg: 3 }} key={index}>
-              {renderCard(card, index)}
+        {cardButtons.map(
+          ({ title, description, route, externalLink, disabled }, index) => (
+            <Grid container key={index}>
+              <Grid size={{ xs: 12 }}>
+                <Card sx={{ p: 5, borderRadius: 4, background: "#222", mb: 1 }}>
+                  <Box sx={{ display: "flex" }}>
+                    <Box sx={{ flex: 1 }}>
+                      <Typography color="white" variant="h6" mb={0.5}>
+                        {title}
+                      </Typography>
+                      <Typography color="white">{description}</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      {route && (
+                        <Box sx={{ position: "relative" }}>
+                          <Button
+                            variant="contained"
+                            component={Link}
+                            to={disabled ? undefined : route}
+                            disabled={disabled}
+                            sx={{
+                              "&.Mui-disabled": {
+                                backgroundColor: "#444",
+                                color: "#777",
+                                opacity: 0.7,
+                              },
+                            }}
+                          >
+                            View Details
+                          </Button>
+                          {disabled && (
+                            <Typography
+                              sx={{
+                                position: "absolute",
+                                top: "100%",
+                                left: "50%",
+                                transform: "translateX(-50%)",
+                                fontSize: "12px",
+                                color: "#aaa",
+                                mt: 1,
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              Currently Updating
+                            </Typography>
+                          )}
+                        </Box>
+                      )}
+                      {externalLink && (
+                        <Button
+                          variant="contained"
+                          component="a"
+                          href={externalLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit {title}
+                        </Button>
+                      )}
+                    </Box>
+                  </Box>
+                </Card>
+              </Grid>
             </Grid>
-          ))}
-        </Grid>
+          )
+        )}
 
-        <Typography variant="h6" mb={1.5}>
+        {/* <Typography variant="h6" mb={1.5}>
           Project Highlights
         </Typography>
         <Typography mb={3}>
@@ -165,7 +276,7 @@ const PromptRankOverviewPage = () => {
         <Typography>
           🛠 Design: Figma ⚛️ Frontend: React, MUI (Material-UI) 🔗 Data
           Fetching: React Query 🔥 Backend & Auth: Firebase
-        </Typography>
+        </Typography> */}
       </Container>
     </Box>
   );
