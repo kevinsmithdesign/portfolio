@@ -346,7 +346,7 @@ const HomePage = () => {
                             position: "absolute",
                             top: 0,
                             left: 0,
-                            borderRadius: "16px",
+                            borderRadius: "10px",
                             background: "#F5F9FC",
                           }}
                         />
@@ -359,7 +359,7 @@ const HomePage = () => {
                         style={{
                           width: "100%",
                           height: "100%",
-                          borderRadius: "16px",
+                          borderRadius: "10px",
                           objectFit: "cover",
                           transition: "opacity 0.3s ease-in-out",
                           opacity: allImagesLoaded ? 1 : 0, // Fade in all images at once

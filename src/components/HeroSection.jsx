@@ -48,7 +48,7 @@ const HeroSection = () => {
             <Skeleton
               variant="rectangular"
               sx={{
-                borderRadius: "16px",
+                borderRadius: "10px",
                 width: { xs: "80%", md: "80%" },
                 background: "#F5F9FC",
                 height: "80%",

@@ -157,7 +157,7 @@ const PromptRankOverviewPage = () => {
       <Navbar />
 
       <Container sx={{ mb: 6, mt: 3 }}>
-        <Stack flexDirection="row">
+        {/* <Stack flexDirection="row">
           <Stack flexGrow={1}>
             <Typography variant="h4" component="h1" mb={3}>
               Inside PromptRank: A Product Breakdown
@@ -174,7 +174,35 @@ const PromptRankOverviewPage = () => {
               View Site
             </Button>
           </Stack>
-        </Stack>
+        </Stack> */}
+        <Grid container mb={3}>
+          <Grid size={{ xs: 12, md: 9 }}>
+            <Typography variant="h4" component="h1">
+              Inside PromptRank: A Product Breakdown
+            </Typography>
+          </Grid>
+          <Grid
+            size={{ xs: 12, md: 3 }}
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "flex-start", md: "flex-end" },
+            }}
+          >
+            <Button
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                mt: { xs: 2, md: 0 },
+              }}
+              variant="contained"
+              component="a"
+              href="https://promptrank.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Site
+            </Button>
+          </Grid>
+        </Grid>
         <Typography variant="h6" mb={1.5}>
           Overview
         </Typography>
@@ -189,68 +217,108 @@ const PromptRankOverviewPage = () => {
 
         {cardButtons.map(
           ({ title, description, route, externalLink, disabled }, index) => (
-            <Grid container key={index}>
-              <Grid size={{ xs: 12 }}>
-                <Card sx={{ p: 5, borderRadius: 4, background: "#222", mb: 1 }}>
-                  <Box sx={{ display: "flex" }}>
-                    <Box sx={{ flex: 1 }}>
-                      <Typography color="white" variant="h6" mb={0.5}>
-                        {title}
-                      </Typography>
-                      <Typography color="white">{description}</Typography>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                      {route && (
-                        <Box sx={{ position: "relative" }}>
-                          <Button
-                            variant="contained"
-                            component={Link}
-                            to={disabled ? undefined : route}
-                            disabled={disabled}
-                            sx={{
-                              "&.Mui-disabled": {
-                                backgroundColor: "#444",
-                                color: "#777",
-                                opacity: 0.7,
-                              },
-                            }}
-                          >
-                            View Details
-                          </Button>
-                          {disabled && (
-                            <Typography
-                              sx={{
-                                position: "absolute",
-                                top: "100%",
-                                left: "50%",
-                                transform: "translateX(-50%)",
-                                fontSize: "12px",
-                                color: "#aaa",
-                                mt: 1,
-                                whiteSpace: "nowrap",
-                              }}
-                            >
-                              Currently Updating
-                            </Typography>
-                          )}
-                        </Box>
-                      )}
-                      {externalLink && (
-                        <Button
-                          variant="contained"
-                          component="a"
-                          href={externalLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Visit {title}
-                        </Button>
-                      )}
-                    </Box>
+            // <Grid container key={index}>
+            //   <Grid size={{ xs: 12 }}>
+            <Card
+              key={index}
+              sx={{ p: 5, borderRadius: 4, background: "#222", mb: 1 }}
+            >
+              <Grid container key={index}>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <Box>
+                    <Typography color="white" variant="h6" mb={0.5}>
+                      {title}
+                    </Typography>
+                    <Typography color="white">{description}</Typography>
                   </Box>
-                </Card>
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: { xs: "flex-start", md: "flex-end" },
+                      mt: { xs: 2, md: 0 },
+                      height: "100%",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      component={Link}
+                      to={disabled ? undefined : route}
+                      disabled={disabled}
+                      sx={{
+                        "&.Mui-disabled": {
+                          backgroundColor: "#444",
+                          color: "#777",
+                          opacity: 0.7,
+                        },
+                        width: { xs: "100%", sm: "auto" },
+                      }}
+                    >
+                      View Details
+                    </Button>
+                  </Box>
+                </Grid>
               </Grid>
-            </Grid>
+
+              {/* <Box sx={{ display: "flex" }}>
+                <Box sx={{ flex: 1 }}>
+                  <Typography color="white" variant="h6" mb={0.5}>
+                    {title}
+                  </Typography>
+                  <Typography color="white">{description}</Typography>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  {route && (
+                    <Box sx={{ position: "relative" }}>
+                      <Button
+                        variant="contained"
+                        component={Link}
+                        to={disabled ? undefined : route}
+                        disabled={disabled}
+                        sx={{
+                          "&.Mui-disabled": {
+                            backgroundColor: "#444",
+                            color: "#777",
+                            opacity: 0.7,
+                          },
+                        }}
+                      >
+                        View Details
+                      </Button>
+                      {disabled && (
+                        <Typography
+                          sx={{
+                            position: "absolute",
+                            top: "100%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            fontSize: "12px",
+                            color: "#aaa",
+                            mt: 1,
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          Currently Updating
+                        </Typography>
+                      )}
+                    </Box>
+                  )}
+                  {externalLink && (
+                    <Button
+                      variant="contained"
+                      component="a"
+                      href={externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit {title}
+                    </Button>
+                  )}
+                </Box>
+              </Box> */}
+            </Card>
           )
         )}
 
