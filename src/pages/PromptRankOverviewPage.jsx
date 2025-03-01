@@ -7,34 +7,48 @@ import {
   Divider,
   Stack,
   Card,
+  useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { Link } from "react-router-dom"; // Import for internal routing
 import Navbar from "../components/Navbar";
+import CodeIcon from "../assets/images/CodeIcon.svg";
+import MapIcon from "../assets/images/MapIcon.svg";
+import WebSiteIcon from "../assets/images/WebSiteIcon.svg";
+import CaseStudyIcon from "../assets/images/CaseStudyIcon.svg";
 
 const PromptRankOverviewPage = () => {
+  const theme = useTheme();
   // Array of card data with route or externalLink options
   const cardButtons = [
     {
+      img: CaseStudyIcon,
+      alt: "Case Study Icon",
       title: "Case Study",
-      route: "/promptrank-case-study", // Internal route
+      route: "/promptrank-casestudy", // Internal route
       description: "UX Research & Insight",
       externalLink: null,
-      disabled: true, // Disabling the case study button
+      // disabled: true, // Disabling the case study button
     },
     {
+      img: MapIcon,
+      alt: "Map Icon",
       title: "Roadmap",
       route: null,
       description: "On-going updates",
       externalLink: "https://trello.com/b/tl1HuWg6/promptrank",
     },
     {
+      img: CodeIcon,
+      alt: "Code Icon",
       title: "Code",
       description: "React and Firebase",
       route: null,
       externalLink: "https://github.com/kevinsmithdesign/PromptRank", // External link
     },
     {
+      img: WebSiteIcon,
+      alt: "Website Icon",
       title: "Site",
       description: "promptrank.io",
       route: null,
@@ -120,6 +134,7 @@ const PromptRankOverviewPage = () => {
           {/* <Typography color="white" fontWeight="bold">
             {card.title}
           </Typography> */}
+
           <Box
             sx={{
               width: "100%",
@@ -206,7 +221,7 @@ const PromptRankOverviewPage = () => {
         <Typography variant="h6" mb={1.5}>
           Overview
         </Typography>
-        <Typography mb={3}>
+        <Typography mb={3} color="#999">
           PromptRank.io is a personal project designed to showcase my full UI/UX
           design and development process—from initial concept to deployment. In
           a competitive job market, I wanted to highlight not just my design
@@ -216,7 +231,10 @@ const PromptRankOverviewPage = () => {
         </Typography>
 
         {cardButtons.map(
-          ({ title, description, route, externalLink, disabled }, index) => (
+          (
+            { title, description, route, externalLink, disabled, img, alt },
+            index
+          ) => (
             // <Grid container key={index}>
             //   <Grid size={{ xs: 12 }}>
             <Card
@@ -225,11 +243,27 @@ const PromptRankOverviewPage = () => {
             >
               <Grid container key={index}>
                 <Grid size={{ xs: 12, md: 6 }}>
-                  <Box>
-                    <Typography color="white" variant="h6" mb={0.5}>
-                      {title}
-                    </Typography>
-                    <Typography color="white">{description}</Typography>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Box
+                      sx={{
+                        width: "48px",
+                        height: "48px",
+                        background: theme.palette.primary.main,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "50%",
+                        marginRight: 2,
+                      }}
+                    >
+                      <img src={img} alt={alt} />
+                    </Box>
+                    <Box>
+                      <Typography color="white" variant="h6" mb={0.5}>
+                        {title}
+                      </Typography>
+                      <Typography color="#999">{description}</Typography>
+                    </Box>
                   </Box>
                 </Grid>
                 <Grid size={{ xs: 12, md: 6 }}>
@@ -242,22 +276,34 @@ const PromptRankOverviewPage = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Button
-                      variant="contained"
-                      component={Link}
-                      to={disabled ? undefined : route}
-                      disabled={disabled}
-                      sx={{
-                        "&.Mui-disabled": {
-                          backgroundColor: "#444",
-                          color: "#777",
-                          opacity: 0.7,
-                        },
-                        width: { xs: "100%", sm: "auto" },
-                      }}
-                    >
-                      View Details
-                    </Button>
+                    {externalLink ? (
+                      <Button
+                        variant="contained"
+                        component="a"
+                        href={externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View {title}
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="contained"
+                        component={Link}
+                        to={disabled ? undefined : route}
+                        disabled={disabled}
+                        sx={{
+                          "&.Mui-disabled": {
+                            backgroundColor: "#444",
+                            color: "#777",
+                            opacity: 0.7,
+                          },
+                          width: { xs: "100%", sm: "auto" },
+                        }}
+                      >
+                        View Case Study
+                      </Button>
+                    )}
                   </Box>
                 </Grid>
               </Grid>

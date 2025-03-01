@@ -119,7 +119,7 @@ function App() {
             element={<KeyedRoute Component={PromptRankOverviewPage} />}
           />
           <Route
-            path="/promptrank-case-study"
+            path="/promptrank-casestudy"
             element={<KeyedRoute Component={PromptRankCaseStudy} />}
           />
           <Route

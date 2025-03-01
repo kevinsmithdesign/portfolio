@@ -7,6 +7,7 @@ import {
   Alert,
   Card,
   Stack,
+  useTheme,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import CaseStudyTitle from "../components/CaseStudyTitle";
@@ -30,6 +31,8 @@ import SiteMap from "../components/SiteMap";
 import Navbar from "../components/Navbar";
 
 export default function PromptRankCaseStudy() {
+  const theme = useTheme();
+
   const caseStudyOverview = [
     {
       title: "Role",
@@ -167,33 +170,58 @@ export default function PromptRankCaseStudy() {
     >
       <Navbar color="white" />
       <Container>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          // pt={6}
-          mb={2}
-          color="#fff"
-          sx={{ paddingTop: 4 }}
-        >
-          An AI-powered Platform Designed to Support Caregivers with Natural,
-          Human-like Conversations in Healthcare.
-        </Typography>
         <Box
           sx={{
-            background: "#222",
-            height: {
-              xs: "auto", // Auto height for extra-small screens and up
-              md: "460px", // Fixed height for medium screens and up (desktop)
-            },
             mb: 2,
-            pt: 2,
-            px: 2,
+            p: 3,
+            border: `1px solid ${theme.palette.primary.main}`,
+            borderRadius: "10px",
+            background: "#1876D233",
+          }}
+        >
+          <Typography color="#fff">
+            This Case Study is actively being updated with new findings and
+            insights.
+          </Typography>
+        </Box>
+
+        {/* <Box
+          sx={{
+            background: "#222",
+            // height: {
+            //   xs: "auto", // Auto height for extra-small screens and up
+            //   md: "460px", // Fixed height for medium screens and up (desktop)
+            // },
+            mb: 2,
+            // pt: 2,
+            // px: 2,
+            p: 4,
             borderRadius: "16px",
             display: "flex",
             // alignItems: "flex-end",
             justifyContent: "center",
           }}
-        ></Box>
+        > */}
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            // pt={6}
+
+            color="#fff"
+          >
+            PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
+          </Typography>
+        </Card>
+        {/* </Box> */}
         <Grid container spacing={2} mb={2}>
           {caseStudyOverview.map(({ title, description, img }) => (
             <Grid size={{ xs: 12, sm: 4, md: 4 }}>
@@ -240,29 +268,29 @@ export default function PromptRankCaseStudy() {
         >
           <CaseStudyTitle
             title="PROBLEM"
-            description="Caregivers Struggle to Find Timely, Supportive Guidance"
+            description="AI Users Struggle to Craft Effective Prompts"
           />
           <Typography mb={3} color="#fff">
-            Caregivers often struggle to access timely, reliable, and tailored
-            support when managing the complex needs of their patients.
-            Communication gaps between caregivers and healthcare professionals
-            can lead to delays in care, misunderstandings, and increased stress.{" "}
+            Users often struggle to generate high-quality prompts that produce
+            relevant, accurate, and insightful AI responses. The lack of clear
+            feedback mechanisms leaves them guessing what works, leading to
+            trial-and-error iterations that waste time and reduce productivity.{" "}
             <br />
-            <br /> Many existing tools are either too clinical, difficult to
-            navigate, or not designed with the caregiver's unique needs in mind,
-            leaving them feeling unsupported in critical moments. This lack of
-            an intuitive, conversational platform makes it harder to address
-            patients concerns efficiently and confidently.
+            <br /> Many existing AI tools provide powerful language models but
+            lack built-in guidance for optimizing prompts. Without a structured
+            way to measure effectiveness, users—ranging from casual
+            experimenters to professionals—face inconsistencies in output
+            quality, making AI interactions unpredictable and inefficient.
           </Typography>
           <Box sx={{ pl: 6 }}>
             <Typography variant="h6" fontWeight="bold" color="#777">
-              “How might we create a platform that empowers caregivers with
-              timely, empathetic guidance tailored to their unique challenges?”
+              “How might we create a system that helps users craft better
+              prompts by evaluating their effectiveness and providing clear,
+              actionable feedback?”
             </Typography>
           </Box>
         </Card>
-        {/* <CaseStudyDivider /> */}
-        <Card
+        {/* <Card
           sx={{
             p: 6,
             background: "#222",
@@ -300,8 +328,7 @@ export default function PromptRankCaseStudy() {
             bulletTwo="Facilitates real-time collaboration by enabling caregivers to share updates with healthcare professionals, keeping all parties informed and aligned."
             img={<CollaborationImg />}
           />
-          {/* <CaseStudyDivider /> */}
-        </Card>
+        </Card> */}
         <Card
           sx={{
             p: 6,
@@ -312,22 +339,23 @@ export default function PromptRankCaseStudy() {
           }}
         >
           <CaseStudyTitle
-            title="RESEARCH"
+            title="DISCOVERY"
             description="Diving Deeper into the Problem"
           />
           <Typography mb={3} color="#fff">
-            Understanding the unique challenges faced by caregivers was crucial
-            to designing an effective solution. Through user interviews,
-            affinity mapping, and competitive analysis, I uncovered key insights
-            that shaped the foundation of Lila, ensuring it meets caregivers’
-            needs for real-time, empathetic, and personalized support.
+            Understanding the challenges users face when crafting effective AI
+            prompts was crucial to designing an impactful solution. By analyzing
+            common frustrations—such as lack of feedback on prompt
+            effectiveness, difficulty comparing AI models, and limited
+            opportunities for collaboration—I identified key opportunities to
+            create a platform that empowers users to rank, refine, and share
+            prompts while fostering a learning-focused community
           </Typography>
-
           <Box
             sx={{
               background: "#333",
               height: "400px",
-              mb: 3,
+
               backgroundImage:
                 "url('https://condens.io/img/blog/interview_analysis/analysis_hero.webp')",
               borderRadius: "16px",
@@ -336,272 +364,102 @@ export default function PromptRankCaseStudy() {
               backgroundRepeat: "no-repeat", // Prevents the image from repeating
             }}
           ></Box>
+        </Card>
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
 
-          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          {/* <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
             User Interviews
-          </Typography>
+          </Typography> */}
+          <CaseStudyTitle
+            title="USER INTERVIEWS"
+            description="Uncovering Needs Through Conversation"
+          />
           <Typography mb={3} color="#fff">
-            To truly understand the challenges caregivers face, I conducted a
-            series of interviews with healthcare professionals and family
-            caregivers, focusing on their experiences with communication tools
-            and pain points in caregiving support. <br />
-            <br /> In addition, I analyzed existing tools in the healthcare and
-            caregiver support space. My goal was to identify gaps where Lila
-            could offer a more intuitive and empathetic approach, addressing the
-            specific needs of caregivers that are often overlooked by current
-            solutions.
+            To truly understand the challenges users face with AI prompting, I
+            conducted interviews with AI enthusiasts, content creators, and
+            professionals who frequently interact with language models. These
+            discussions focused on their struggles with crafting effective
+            prompts, evaluating responses, and navigating different AI tools.{" "}
+            <br />
+            <br /> In addition, I analyzed existing platforms for prompt sharing
+            and AI learning. My goal was to identify gaps where PromptRank could
+            offer a more structured and engaging approach, making prompt
+            optimization more intuitive and collaborative.
           </Typography>
           <Box sx={{ pl: 6, mb: 3 }}>
             <Typography variant="h6" fontWeight="bold" color="#777">
-              “According to recent studies, caregivers feel an increase in
-              stress and burnout when unable to access timely information and
-              support.”
+              “Users often feel frustrated by the trial-and-error nature of
+              prompt crafting, with no clear way to gauge effectiveness or
+              compare results across models.”
             </Typography>
           </Box>
-          <Typography mb={4} color="#fff">
-            This insight validated our approach of creating a conversational
-            platform that’s accessible 24/7, meeting caregivers’ needs in
-            real-time. While many apps provide support during office hours, Lila
-            aims to be a constant companion, ready to assist whenever needed.
+          <Typography color="#fff">
+            This insight validated our approach of creating a gamified,
+            community-driven platform where users can rank, refine, and share
+            prompts, turning AI interaction into a more transparent and
+            rewarding experience.
           </Typography>
-
-          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
-            Affinity Mapping
-          </Typography>
-          <Grid container spacing={2} mb={3}>
-            {affinityMapping.map(({ title, description }) => (
-              <Grid
-                size={{ xs: 12, sm: 4, md: 4 }}
-                key={title}
-                sx={{
-                  display: "flex", // Make the grid items flex containers
-                  flexDirection: "column", // Stack content vertically
-                }}
-              >
-                <Card
-                  sx={{
-                    p: 6,
-                    background: "#333",
-                    color: "#fff",
-                    boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-                    borderRadius: "16px",
-                    flex: 1, // Ensures all cards stretch to the same height
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <Typography fontWeight="bold" mb={1} color="#fff">
-                    {title}
-                  </Typography>
-                  <Typography color="#fff">{description}</Typography>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-          <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
-            Competitive Analysis
-          </Typography>
-          <Typography mb={3} color="#fff">
-            To understand how Lila can best serve caregivers, I conducted a
-            competitive analysis of existing caregiving support platforms. This
-            analysis revealed gaps in the current market, particularly in the
-            areas of real-time assistance, empathy-driven interactions, and
-            personalized guidance. By identifying where competitors fall short,
-            I ensured that Lila would address unmet needs and provide a unique,
-            value-driven experience tailored to caregivers.
-          </Typography>
-
-          {/* Container for Comparison Table */}
-          <Box
-            sx={{
-              width: "100%",
-              overflow: "auto",
-              pb: 2,
-              minHeight: "fit-content",
-              "&::-webkit-scrollbar": {
-                height: "8px",
-              },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: "#f1f1f1",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#888",
-                borderRadius: "4px",
-              },
-            }}
-          >
-            {/* Content wrapper */}
-            <Box
-              sx={{
-                minWidth: "1200px",
-                // Removed maxWidth to prevent cutoff
-              }}
-            >
-              {/* Header Row */}
-              <Box sx={{ display: "flex" }}>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderTopLeftRadius: "16px",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Feature | App Name
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Carley
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    CaringBridge
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Helping Hands
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Honor
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "200px",
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                    borderRight: "1px solid #555",
-                    borderTopRightRadius: "16px",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Lila
-                  </Typography>
-                </Box>
-              </Box>
-
-              {/* Mapped content rows */}
-              {competitiveAnalysis.map(
-                (
-                  { feature, carely, caringBridge, helpingHands, honor, lila },
-                  index
-                ) => (
-                  <Box sx={{ display: "flex" }} key={feature}>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                        borderBottomLeftRadius:
-                          index === competitiveAnalysis.length - 1 ? "16px" : 0,
-                      }}
-                    >
-                      <Typography fontWeight="bold" color="white">
-                        {feature}
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                      }}
-                    >
-                      <Typography>{carely}</Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                      }}
-                    >
-                      <Typography>{caringBridge}</Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                      }}
-                    >
-                      <Typography>{helpingHands}</Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                      }}
-                    >
-                      <Typography>{honor}</Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        width: "200px",
-                        p: 3,
-                        borderBottom: "1px solid #555",
-                        borderLeft: "1px solid #555",
-                        borderRight: "1px solid #555",
-                        borderBottomRightRadius:
-                          index === competitiveAnalysis.length - 1 ? "16px" : 0,
-                      }}
-                    >
-                      <Typography>{lila}</Typography>
-                    </Box>
-                  </Box>
-                )
-              )}
-            </Box>
-          </Box>
         </Card>
+
+        <Box
+          sx={{
+            mb: 2,
+            p: 3,
+            border: `1px solid ${theme.palette.primary.main}`,
+            borderRadius: "10px",
+            background: "#1876D233",
+          }}
+        >
+          <Typography color="#fff">
+            MORE COMING SOON! LAST UPDATED: March 1, 2025
+          </Typography>
+        </Box>
+
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          <CaseStudyTitle
+            title="AFFINITY MAPPING"
+            description="Finding Clarity Through Patterns"
+          />
+          {/* <Typography mb={3} color="#fff">
+            test lorem ipsum dolor hair
+          </Typography> */}
+        </Card>
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          <CaseStudyTitle
+            title="COMPETITIVE ANALYSIS"
+            description="Uncovering Insights to Outperform the Competition"
+          />
+          {/* <Typography mb={3} color="#fff">
+            test lorem ipsum dolor hair
+          </Typography> */}
+        </Card>
+
         <Card
           sx={{
             p: 6,
@@ -617,7 +475,7 @@ export default function PromptRankCaseStudy() {
             title="PERSONAS"
             description="Understanding the People Behind the Need"
           />
-          <CaseStudyPersona
+          {/* <CaseStudyPersona
             name="Linda, 38"
             title="Family Caregiver"
             motivations="To provide the best possible care for her elderly mother while managing her own work and personal life."
@@ -644,9 +502,8 @@ Frustration with existing tools that don’t provide a human-like, empathetic re
 Inconsistent information between caregivers and family members, leading to misunderstandings.
 Lack of real-time assistance tools that support staff while reassuring families."
             img="https://assets.codepen.io/2392702/Group+241290.jpg"
-          />
+          /> */}
         </Card>
-        {/* <CaseStudyDivider /> */}
         <Card
           sx={{
             p: 6,
@@ -659,17 +516,16 @@ Lack of real-time assistance tools that support staff while reassuring families.
         >
           <CaseStudyTitle
             title="USER JOURNEY MAP"
-            description="Understanding the Caregiver Ecosystem
-"
+            description="Understanding the Path to Engagement"
           />
 
           <Typography mb={3} color="#fff">
-            The User Journey Map captures the experiences of different
+            {/* The User Journey Map captures the experiences of different
             caregivers—family members, healthcare professionals, and care
             facility managers—highlighting their challenges and interactions
             with Lila at various stages. This map informed key design decisions
             to ensure Lila meets the unique needs of each user type, providing
-            empathetic, real-time support across their caregiving journeys.
+            empathetic, real-time support across their caregiving journeys. */}{" "}
           </Typography>
           <Box
             sx={{
@@ -699,7 +555,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
               }}
             >
               {/* Header Row */}
-              <Box sx={{ display: "flex" }}>
+              {/* <Box sx={{ display: "flex" }}>
                 <Box
                   sx={{
                     flex: {
@@ -767,10 +623,10 @@ Lack of real-time assistance tools that support staff while reassuring families.
                     Mike (Care Facility Manager)
                   </Typography>
                 </Box>
-              </Box>
+              </Box> */}
 
               {/* Mapped content rows */}
-              {userJourneys.map((journey, index) => (
+              {/* {userJourneys.map((journey, index) => (
                 <Box sx={{ display: "flex" }} key={journey.stage}>
                   <Box
                     sx={{
@@ -832,7 +688,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
                     <Typography color="#fff">{journey.mike}</Typography>
                   </Box>
                 </Box>
-              ))}
+              ))} */}
             </Box>
           </Box>
         </Card>
@@ -849,7 +705,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
         >
           <CaseStudyTitle
             title="INFORMATION ARCHITECTURE"
-            description="Designing a Clear Path to Personalized Care"
+            description="Structuring Content for Clarity & Usability"
           />
           {/* <SiteMap /> */}
         </Card>
@@ -867,7 +723,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
         >
           <CaseStudyTitle
             title="DESIGN"
-            description="Crafting an Intuitive and Empathetic Experience"
+            description="From Concept to Execution"
           />
         </Card>
       </Container>
