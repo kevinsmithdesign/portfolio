@@ -86,8 +86,13 @@ const ResumePage = () => {
   return (
     <Box
       sx={{
-        // minHeight: "100vh",
+        minHeight: "100vh", // This ensures the box takes at least the full viewport height
         backgroundColor: "#f6f6f6",
+        display: "flex",
+        flexDirection: "column",
+        position: "relative", // Add this to help with positioning
+        width: "100%", // Ensure full width
+        paddingBottom: "2rem", // Add some padding at the bottom
       }}
     >
       <Navbar />

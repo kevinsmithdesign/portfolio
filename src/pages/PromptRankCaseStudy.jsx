@@ -29,6 +29,8 @@ import ToolsIcon from "../assets/images/ToolsIcon.svg";
 import CalendarIcon from "../assets/images/CalendarIcon.svg";
 import SiteMap from "../components/SiteMap";
 import Navbar from "../components/Navbar";
+import UserInterviews from "../components/UserInterviews";
+import CompetitiveAnalysisTable from "../components/CompetitiveAnalysis";
 
 export default function PromptRankCaseStudy() {
   const theme = useTheme();
@@ -184,24 +186,6 @@ export default function PromptRankCaseStudy() {
             insights.
           </Typography>
         </Box>
-
-        {/* <Box
-          sx={{
-            background: "#222",
-            // height: {
-            //   xs: "auto", // Auto height for extra-small screens and up
-            //   md: "460px", // Fixed height for medium screens and up (desktop)
-            // },
-            mb: 2,
-            // pt: 2,
-            // px: 2,
-            p: 4,
-            borderRadius: "16px",
-            display: "flex",
-            // alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        > */}
         <Card
           sx={{
             p: 6,
@@ -375,9 +359,6 @@ export default function PromptRankCaseStudy() {
             mb: 2,
           }}
         >
-          {/* <Typography variant="h6" mb={2} fontWeight="bold" color="#fff">
-            User Interviews
-          </Typography> */}
           <CaseStudyTitle
             title="USER INTERVIEWS"
             description="Uncovering Needs Through Conversation"
@@ -409,20 +390,6 @@ export default function PromptRankCaseStudy() {
           </Typography>
         </Card>
 
-        <Box
-          sx={{
-            mb: 2,
-            p: 3,
-            border: `1px solid ${theme.palette.primary.main}`,
-            borderRadius: "10px",
-            background: "#1876D233",
-          }}
-        >
-          <Typography color="#fff">
-            MORE COMING SOON! LAST UPDATED: March 1, 2025
-          </Typography>
-        </Box>
-
         <Card
           sx={{
             p: 6,
@@ -434,13 +401,20 @@ export default function PromptRankCaseStudy() {
           }}
         >
           <CaseStudyTitle
-            title="AFFINITY MAPPING"
-            description="Finding Clarity Through Patterns"
+            title="KEY INSIGHTS"
+            description="Discovering Insights to Shape PromptRank"
           />
-          {/* <Typography mb={3} color="#fff">
-            test lorem ipsum dolor hair
-          </Typography> */}
+          <Typography mb={3} color="#fff">
+            To build a platform that truly meets user needs, I conducted
+            research to uncover how people discover, use, and evaluate AI
+            prompts. Through interviews and data analysis, I identified key
+            challenges, including difficulty in finding high-quality prompts,
+            lack of standardized evaluation, and limited ways to compare outputs
+            across models.
+          </Typography>
+          <UserInterviews />
         </Card>
+
         <Card
           sx={{
             p: 6,
@@ -458,6 +432,8 @@ export default function PromptRankCaseStudy() {
           {/* <Typography mb={3} color="#fff">
             test lorem ipsum dolor hair
           </Typography> */}
+
+          <CompetitiveAnalysisTable />
         </Card>
 
         <Card
@@ -503,6 +479,24 @@ Inconsistent information between caregivers and family members, leading to misun
 Lack of real-time assistance tools that support staff while reassuring families."
             img="https://assets.codepen.io/2392702/Group+241290.jpg"
           /> */}
+        </Card>
+        <Card
+          sx={{
+            p: 6,
+            background: "#222",
+
+            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+            borderRadius: "16px",
+            mb: 2,
+          }}
+        >
+          <CaseStudyTitle
+            title="EMPATHY MAP"
+            description="Mapping Thoughts, Feelings, and Needs"
+          />
+          {/* <Typography mb={3} color="#fff">
+            test lorem ipsum dolor hair
+          </Typography> */}
         </Card>
         <Card
           sx={{
