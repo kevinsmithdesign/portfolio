@@ -160,6 +160,45 @@ export default function PromptRankCaseStudy() {
     },
   ];
 
+  const personas = [
+    {
+      name: "Emily, 25",
+      title: "AI Enthusiast & Content Creator",
+      motivations:
+        "To generate high-quality AI content efficiently and experiment with different AI tools.",
+      painPoints: [
+        "Struggles with trial-and-error when crafting effective prompts.",
+        "Lacks clear feedback on why some prompts work better than others.",
+        "Finds it difficult to compare AI model outputs effectively.",
+      ],
+      img: "https://images.unsplash.com/photo-1598257006408-538c27529235?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "David, 29",
+      title: "Marketing Professional",
+      motivations:
+        "To optimize AI-generated content for marketing campaigns and improve engagement.",
+      painPoints: [
+        "Wastes time refining prompts to get the desired AI-generated copy.",
+        "Lacks a structured way to evaluate and improve prompt effectiveness.",
+        "Struggles to find high-quality, reusable prompts for consistent results.",
+      ],
+      img: "https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?q=80&w=2648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Michael, 36",
+      title: "AI Engineer & Problem Solver",
+      motivations:
+        "To build and refine AI models while optimizing prompts for better performance.",
+      painPoints: [
+        "Lacks efficient ways to test prompts across multiple models.",
+        "Struggles with inconsistent AI outputs, making optimization difficult.",
+        "Needs a structured way to collaborate and compare prompt effectiveness.",
+      ],
+      img: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
+
   return (
     <Box
       sx={{
@@ -456,6 +495,25 @@ export default function PromptRankCaseStudy() {
             title="PERSONAS"
             description="Understanding the People Behind the Need"
           />
+          <Typography mb={3} color="#fff">
+            To design an effective solution, I identified key user groups
+            struggling with AI prompting—each with unique motivations and
+            challenges. From AI enthusiasts seeking efficiency to professionals
+            refining AI-generated content, users face common frustrations:
+            trial-and-error workflows, lack of feedback, and difficulty
+            optimizing prompts.
+          </Typography>
+
+          {personas.map((persona, index) => (
+            <CaseStudyPersona
+              key={index}
+              name={persona.name}
+              title={persona.title}
+              motivations={persona.motivations}
+              painPoints={persona.painPoints.join("\n")}
+              img={persona.img}
+            />
+          ))}
           {/* <CaseStudyPersona
             name="Linda, 38"
             title="Family Caregiver"

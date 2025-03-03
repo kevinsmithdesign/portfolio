@@ -42,7 +42,7 @@ function TabPanel(props) {
       aria-labelledby={`competitor-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ py: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ pt: 3 }}>{children}</Box>}
     </div>
   );
 }
