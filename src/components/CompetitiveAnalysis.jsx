@@ -240,7 +240,7 @@ const CompetitiveAnalysis = () => {
     const takeaways = isDirectCompetitors
       ? [
           {
-            icon: <LooksOneIcon />,
+            // icon: <LooksOneIcon />,
             text: (
               <Typography variant="body2">
                 <strong>PromptRank</strong> offers the most comprehensive
@@ -249,7 +249,7 @@ const CompetitiveAnalysis = () => {
             ),
           },
           {
-            icon: <LooksTwoIcon />,
+            // icon: <LooksTwoIcon />,
             text: (
               <Typography variant="body2">
                 <strong>PromptBase</strong> is the only platform with
@@ -258,7 +258,7 @@ const CompetitiveAnalysis = () => {
             ),
           },
           {
-            icon: <Looks3Icon />,
+            // icon: <Looks3Icon />,
             text: (
               <Typography variant="body2">
                 All direct competitors support <strong>Prompt Sharing</strong>,
@@ -309,19 +309,35 @@ const CompetitiveAnalysis = () => {
           color: "#fff",
         }}
       >
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" mb={2}>
           Key Takeaways
         </Typography>
-        <List>
-          {takeaways.map((takeaway, index) => (
-            <ListItem key={index} disableGutters>
-              <ListItemIcon sx={{ color: "primary.main" }}>
-                {takeaway.icon}
-              </ListItemIcon>
-              <ListItemText primary={takeaway.text} />
-            </ListItem>
-          ))}
-        </List>
+
+        {takeaways.map((takeaway, index) => (
+          <Box sx={{ display: "flex", mb: 1.5, alignItems: "center" }}>
+            <Box>
+              <Box
+                sx={{
+                  width: "24px",
+                  height: "24px",
+                  background: theme.palette.primary.main,
+                  borderRadius: "50%",
+                  mr: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: "bold",
+                  fontSize: "14px",
+                }}
+              >
+                {index + 1}
+              </Box>
+            </Box>
+            <Box>
+              <Typography>{takeaway.text}</Typography>
+            </Box>
+          </Box>
+        ))}
       </Card>
     );
   };
@@ -335,6 +351,15 @@ const CompetitiveAnalysis = () => {
           onChange={handleTabChange}
           indicatorColor="primary"
           textColor="primary"
+          sx={{
+            "& .MuiTab-root": {
+              color: "#999", // Light gray for non-selected tabs
+              "&.Mui-selected": {
+                color: "#fff", // White for selected tab
+                fontWeight: "bold",
+              },
+            },
+          }}
         >
           <Tab label="Direct Competitors" id="tab-0" />
           <Tab label="Indirect Competitors" id="tab-1" />

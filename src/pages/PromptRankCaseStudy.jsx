@@ -429,9 +429,14 @@ export default function PromptRankCaseStudy() {
             title="COMPETITIVE ANALYSIS"
             description="Uncovering Insights to Outperform the Competition"
           />
-          {/* <Typography mb={3} color="#fff">
-            test lorem ipsum dolor hair
-          </Typography> */}
+          <Typography mb={3} color="#fff">
+            I evaluated both direct and indirect competitors to identify feature
+            gaps in prompt optimization. While most platforms offer basic prompt
+            sharing, they lack structured ranking, refinement, and gamification.
+            PromptRank bridges these gaps, providing a comprehensive,
+            user-driven system for ranking, refining, and testing prompts—making
+            it the most feature-complete platform in the space.
+          </Typography>
 
           <CompetitiveAnalysisTable />
         </Card>
