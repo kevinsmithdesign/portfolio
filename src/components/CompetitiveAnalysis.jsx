@@ -354,6 +354,8 @@ const CompetitiveAnalysis = () => {
           sx={{
             "& .MuiTab-root": {
               color: "#999", // Light gray for non-selected tabs
+              padding: "24px 12px",
+
               "&.Mui-selected": {
                 color: "#fff", // White for selected tab
                 fontWeight: "bold",

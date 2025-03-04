@@ -190,7 +190,7 @@ const PromptRankOverviewPage = () => {
             </Button>
           </Stack>
         </Stack> */}
-        <Grid container mb={3}>
+        <Grid container mb={2}>
           <Grid size={{ xs: 12, md: 9 }}>
             <Typography variant="h4" component="h1">
               Inside PromptRank: A Product Breakdown
@@ -218,16 +218,14 @@ const PromptRankOverviewPage = () => {
             </Button>
           </Grid>
         </Grid>
-        <Typography variant="h6" mb={1.5}>
-          Overview
-        </Typography>
+
         <Typography mb={3} color="#999">
           PromptRank.io is a personal project designed to showcase my full UI/UX
           design and development process—from initial concept to deployment. In
           a competitive job market, I wanted to highlight not just my design
           skills but also my ability to architect and build a fully functional
           product. This project demonstrates my expertise in User Experience
-          design, UI development, and modern web technologies.
+          Design, UI Development, and Modern Web Technologies.
         </Typography>
 
         {cardButtons.map(
