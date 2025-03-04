@@ -15,7 +15,7 @@ const personas = [
   {
     name: "Emily (AI Enthusiast & Content Creator)",
     say: [
-      "I want better AI responses, but I don't know how to write the best prompts.",
+      "I want better AI responses, but I don't know how write prompts.",
       "I see people getting amazing AI outputs—how do they do that?",
       "I wish there was a way to compare different prompts and AI models.",
     ],
@@ -100,7 +100,7 @@ const EmpathyMap = () => {
               <Grid item xs={12} sm={6} md={6} key={key}>
                 <Card
                   sx={{
-                    p: 3,
+                    p: 5,
                     border: `1px solid ${theme.palette.primary.main}`,
                     background: "#1876D233",
                     color: "#fff",

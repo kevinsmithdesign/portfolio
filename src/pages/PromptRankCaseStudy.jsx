@@ -560,12 +560,11 @@ Lack of real-time assistance tools that support staff while reassuring families.
           />
 
           <Typography mb={3} color="#fff">
-            I mapped the experiences of three key users—Emily, David, and
-            Michael. Each faced different challenges, from frustrating
-            trial-and-error workflows to the lack of clear feedback on prompt
-            effectiveness. Understanding their thoughts, motivations, and pain
-            points helped shape PromptRank into a more structured and
-            collaborative prompt discovery experience.
+            Building on the personas, I mapped their thoughts, frustrations, and
+            behaviors to uncover deeper insights. From trial-and-error workflows
+            to the lack of clear feedback, these challenges shaped PromptRank
+            into a more structured and collaborative prompt discovery
+            experience.
           </Typography>
           <EmpathyMap />
         </Card>
