@@ -183,10 +183,10 @@ const UserInterviews = () => {
                 </Typography>
                 <Box
                   sx={{
-                    height: 280,
+                    // height: 280,
                     position: "relative",
-                    mt: 1,
-                    mb: 1,
+                    // mt: 1,
+                    // mb: 1,
                   }}
                 >
                   {/* Custom legend with fixed position */}

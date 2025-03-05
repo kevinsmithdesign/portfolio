@@ -32,6 +32,9 @@ import Navbar from "../components/Navbar";
 import UserInterviews from "../components/UserInterviews";
 import CompetitiveAnalysisTable from "../components/CompetitiveAnalysis";
 import EmpathyMap from "../components/EmpathyMap";
+import JourneyMap from "../components/JourneyMap";
+
+import PromptRankBranding from "../assets/images/PromptRankBranding.svg";
 
 export default function PromptRankCaseStudy() {
   const theme = useTheme();
@@ -212,20 +215,6 @@ export default function PromptRankCaseStudy() {
     >
       <Navbar color="white" />
       <Container>
-        <Box
-          sx={{
-            mb: 2,
-            p: 3,
-            border: `1px solid ${theme.palette.primary.main}`,
-            borderRadius: "10px",
-            background: "#1876D233",
-          }}
-        >
-          <Typography color="#fff">
-            This Case Study is actively being updated with new findings and
-            insights.
-          </Typography>
-        </Box>
         <Card
           sx={{
             p: 6,
@@ -235,15 +224,26 @@ export default function PromptRankCaseStudy() {
             mb: 2,
           }}
         >
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            // pt={6}
+          {/* <Box
+            sx={{
+              height: "420px",
+              width: "100%",
+              background: "#333",
+              borderRadius: "12px",
+              mb: 2,
+            }}
 
-            color="#fff"
-          >
+          ></Box> */}
+          <Typography variant="h4" fontWeight="bold" mb={2} color="#fff">
             PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
           </Typography>
+          <Box mb={2}>
+            <img
+              src={PromptRankBranding}
+              style={{ width: "100%", maxWidth: "100%" }}
+              alt="PromptRank Components and Overview image"
+            />
+          </Box>
         </Card>
         {/* </Box> */}
         <Grid container spacing={2} mb={2}>
@@ -591,170 +591,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             to ensure Lila meets the unique needs of each user type, providing
             empathetic, real-time support across their caregiving journeys. */}{" "}
           </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              overflow: "auto",
-              pb: 2,
-              minHeight: "fit-content",
-              "&::-webkit-scrollbar": {
-                height: "8px",
-              },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: "#f1f1f1",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#888",
-                borderRadius: "4px",
-              },
-            }}
-          >
-            {/* Content wrapper - now using width instead of minWidth */}
-            <Box
-              sx={{
-                width: {
-                  xs: "1000px", // Minimum width for mobile scrolling
-                  md: "100%", // Full width on desktop
-                },
-              }}
-            >
-              {/* Header Row */}
-              {/* <Box sx={{ display: "flex" }}>
-                <Box
-                  sx={{
-                    flex: {
-                      xs: "0 0 250px", // Fixed width on mobile
-                      md: 1, // Flex grow on desktop
-                    },
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderTopLeftRadius: "16px",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Stage
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    flex: {
-                      xs: "0 0 250px",
-                      md: 1,
-                    },
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Linda (Family Caregiver)
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    flex: {
-                      xs: "0 0 250px",
-                      md: 1,
-                    },
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    John (Healthcare Professional)
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    flex: {
-                      xs: "0 0 250px",
-                      md: 1,
-                    },
-                    p: 3,
-                    borderTop: "1px solid #555",
-                    borderBottom: "1px solid #555",
-                    borderLeft: "1px solid #555",
-                    borderRight: "1px solid #555",
-                    borderTopRightRadius: "16px",
-                  }}
-                >
-                  <Typography fontWeight="bold" color="#fff">
-                    Mike (Care Facility Manager)
-                  </Typography>
-                </Box>
-              </Box> */}
-
-              {/* Mapped content rows */}
-              {/* {userJourneys.map((journey, index) => (
-                <Box sx={{ display: "flex" }} key={journey.stage}>
-                  <Box
-                    sx={{
-                      flex: {
-                        xs: "0 0 250px",
-                        md: 1,
-                      },
-                      p: 3,
-                      borderBottom: "1px solid #555",
-                      borderLeft: "1px solid #555",
-                      borderBottomLeftRadius:
-                        index === userJourneys.length - 1 ? "16px" : 0,
-                    }}
-                  >
-                    <Typography color="#fff" fontWeight="bold">
-                      {journey.stage}
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      flex: {
-                        xs: "0 0 250px",
-                        md: 1,
-                      },
-                      p: 3,
-                      borderBottom: "1px solid #555",
-                      borderLeft: "1px solid #555",
-                    }}
-                  >
-                    <Typography color="#fff">{journey.linda}</Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      flex: {
-                        xs: "0 0 250px",
-                        md: 1,
-                      },
-                      p: 3,
-                      borderBottom: "1px solid #555",
-                      borderLeft: "1px solid #555",
-                    }}
-                  >
-                    <Typography color="#fff">{journey.john}</Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      flex: {
-                        xs: "0 0 250px",
-                        md: 1,
-                      },
-                      p: 3,
-                      borderBottom: "1px solid #555",
-                      borderLeft: "1px solid #555",
-                      borderRight: "1px solid #555",
-                      borderBottomRightRadius:
-                        index === userJourneys.length - 1 ? "16px" : 0,
-                    }}
-                  >
-                    <Typography color="#fff">{journey.mike}</Typography>
-                  </Box>
-                </Box>
-              ))} */}
-            </Box>
-          </Box>
+          <JourneyMap />
         </Card>
 
         <Card
