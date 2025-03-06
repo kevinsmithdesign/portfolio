@@ -15,7 +15,6 @@ import SolutionLayout from "../components/SolutionLayout";
 import CaseStudyPersona from "../components/CaseStudyPersonas";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
-import LilaAnimationExample from "../components/LilaAnimationExample";
 import PromptViewImg from "../components/PromptViewImg";
 import LilaCaseStudyPreview from "../assets/images/LilaCaseStudyPreview.svg";
 import PersonalizeInteractions from "../components/PersonalizedInteractions";
