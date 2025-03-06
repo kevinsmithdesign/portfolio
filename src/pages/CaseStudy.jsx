@@ -11,7 +11,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import CaseStudyTitle from "../components/CaseStudyTitle";
 import SolutionLayout from "../components/SolutionLayout";
-import CaseStudyDivider from "../components/CaseStudyDivider";
+
 import CaseStudyPersona from "../components/CaseStudyPersonas";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";

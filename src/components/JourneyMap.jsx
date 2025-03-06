@@ -11,7 +11,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-// Updated journey data with more comprehensive information from paste-2.txt
+// Journey data remains the same
 const journeyData = [
   {
     persona: "Emily",
@@ -168,11 +168,17 @@ const JourneyMap = () => {
   const theme = useTheme();
   const [selectedTab, setSelectedTab] = useState(0);
 
+  // Calculate column width based on the number of stages
+  const getColumnWidth = (stagesLength) => {
+    return 10 / stagesLength; // 10 because we're using a 12-column grid with 2 for labels
+  };
+
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <Tabs
         sx={{
           mb: 2,
+          width: "100%",
           "& .MuiTab-root": {
             color: "#999", // Light gray for non-selected tabs
             padding: "24px 12px",
@@ -193,7 +199,7 @@ const JourneyMap = () => {
       {journeyData.map(
         (personaData, index) =>
           selectedTab === index && (
-            <Box key={index} mb={5}>
+            <Box key={index} mb={5} sx={{ width: "100%" }}>
               <Grid container spacing={2} mb={3}>
                 <Grid item xs={12}>
                   <Typography variant="h5" fontWeight="bold" color="white">
@@ -205,7 +211,8 @@ const JourneyMap = () => {
                 </Grid>
               </Grid>
 
-              <Grid container spacing={1} mb={1}>
+              {/* Header Row with Stages */}
+              <Grid container spacing={1} mb={1} sx={{ width: "100%" }}>
                 <Grid item xs={2}>
                   <Paper
                     elevation={2}
@@ -214,6 +221,9 @@ const JourneyMap = () => {
                       color: "white",
                       p: 2,
                       borderRadius: 2,
+                      height: "100%",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
                     <Typography variant="subtitle1" fontWeight="bold">
@@ -224,7 +234,7 @@ const JourneyMap = () => {
                 {personaData.stages.map((stage, idx) => (
                   <Grid
                     item
-                    xs={Math.floor(10 / personaData.stages.length)}
+                    xs={getColumnWidth(personaData.stages.length)}
                     key={idx}
                   >
                     <Paper
@@ -234,6 +244,9 @@ const JourneyMap = () => {
                         color: "white",
                         p: 2,
                         borderRadius: 2,
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
                       <Typography variant="subtitle1" fontWeight="bold">
@@ -243,13 +256,15 @@ const JourneyMap = () => {
                   </Grid>
                 ))}
               </Grid>
+
+              {/* Content Rows */}
               {personaData.rows.map((row, idx) => (
                 <Grid
                   container
                   spacing={1}
                   mb={1}
                   key={idx}
-                  alignItems="stretch"
+                  sx={{ width: "100%" }}
                 >
                   <Grid item xs={2}>
                     <Paper
@@ -259,6 +274,8 @@ const JourneyMap = () => {
                         p: 2,
                         borderRadius: 2,
                         height: "100%",
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
                       <Typography variant="subtitle1" fontWeight="bold">
@@ -269,7 +286,7 @@ const JourneyMap = () => {
                   {row.data.map((item, stageIdx) => (
                     <Grid
                       item
-                      xs={Math.floor(10 / personaData.stages.length)}
+                      xs={getColumnWidth(personaData.stages.length)}
                       key={stageIdx}
                     >
                       <Card
@@ -283,12 +300,14 @@ const JourneyMap = () => {
                           justifyContent:
                             row.name === "Feelings" ? "center" : "flex-start",
                           overflow: "auto",
+                          minHeight: row.name === "Feelings" ? "100px" : "auto",
                         }}
                       >
-                        <CardContent>
+                        <CardContent sx={{ width: "100%" }}>
                           <Typography
                             variant={row.name === "Feelings" ? "h3" : "body2"}
                             align={row.name === "Feelings" ? "center" : "left"}
+                            sx={{ width: "100%" }}
                           >
                             {item}
                           </Typography>
@@ -300,7 +319,15 @@ const JourneyMap = () => {
               ))}
 
               {index === journeyData.length - 1 && (
-                <Box mt={4} p={2} sx={{ bgcolor: "grey.100", borderRadius: 2 }}>
+                <Box
+                  mt={4}
+                  p={2}
+                  sx={{
+                    bgcolor: "grey.100",
+                    borderRadius: 2,
+                    width: "100%",
+                  }}
+                >
                   <Typography variant="h6" gutterBottom>
                     Key Takeaways
                   </Typography>
