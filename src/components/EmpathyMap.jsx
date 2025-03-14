@@ -93,7 +93,7 @@ const EmpathyMap = () => {
 
   const renderPersonaContent = (persona) => {
     return (
-      <Grid container spacing={2} mb={2}>
+      <Grid container spacing={2}>
         {Object.entries(persona).map(
           ([key, values]) =>
             key !== "name" && (

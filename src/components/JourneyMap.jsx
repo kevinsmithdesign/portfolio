@@ -199,7 +199,7 @@ const JourneyMap = () => {
       {journeyData.map(
         (personaData, index) =>
           selectedTab === index && (
-            <Box key={index} mb={5} sx={{ width: "100%" }}>
+            <Box key={index} sx={{ width: "100%" }}>
               <Grid container spacing={2} mb={3}>
                 <Grid item xs={12}>
                   <Typography variant="h5" fontWeight="bold" color="white">

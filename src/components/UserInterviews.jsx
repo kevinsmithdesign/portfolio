@@ -168,8 +168,9 @@ const UserInterviews = () => {
                 flexDirection: "column",
                 overflow: "visible",
                 p: 3,
-                background: "#333",
-                boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+                background: "#111",
+                border: "1px solid #222",
+                boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.005)",
                 borderRadius: "16px",
                 mb: 2,
               }}

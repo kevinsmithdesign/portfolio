@@ -162,8 +162,12 @@ const CompetitiveAnalysis = () => {
               <Card
                 sx={{
                   p: 5,
-                  background: "#333",
-                  boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+                  //   background: "#111",
+                  //   boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+                  //   borderRadius: "16px",
+                  background: "#111",
+                  border: "1px solid #222",
+                  boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.005)",
                   borderRadius: "16px",
                   mb: 2,
                   color: "#fff",
@@ -302,8 +306,10 @@ const CompetitiveAnalysis = () => {
       <Card
         sx={{
           p: 5,
-          background: "#333",
-          boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+
+          background: "#111",
+          border: "1px solid #222",
+          boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.005)",
           borderRadius: "16px",
 
           color: "#fff",

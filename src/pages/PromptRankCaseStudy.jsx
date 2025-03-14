@@ -204,7 +204,7 @@ export default function PromptRankCaseStudy() {
   return (
     <Box
       sx={{
-        background: "#111",
+        background: "#000",
         pb: 4,
         margin: 0,
         minHeight: "100vh",
@@ -216,7 +216,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -235,13 +235,13 @@ export default function PromptRankCaseStudy() {
           <Typography variant="h4" fontWeight="bold" mb={2} color="#fff">
             PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
           </Typography>
-          <Box mb={2}>
+          {/* <Box mb={2}>
             <img
               src={PromptRankBranding}
               style={{ width: "100%", maxWidth: "100%" }}
               alt="PromptRank Components and Overview image"
             />
-          </Box>
+          </Box> */}
         </Card>
         {/* </Box> */}
         <Grid container spacing={2} mb={2}>
@@ -252,7 +252,7 @@ export default function PromptRankCaseStudy() {
                   px: 6,
                   py: 5,
 
-                  background: "#222",
+                  background: "#111",
 
                   boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
                   borderRadius: "16px",
@@ -281,7 +281,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -354,7 +354,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -390,7 +390,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -431,7 +431,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -456,7 +456,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -482,7 +482,7 @@ export default function PromptRankCaseStudy() {
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -545,7 +545,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
         <Card
           sx={{
             p: 6,
-            background: "#222",
+            background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -570,7 +570,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
           <Card
             sx={{
               p: 6,
-              background: "#222",
+              background: "#111",
 
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",

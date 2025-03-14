@@ -163,7 +163,7 @@ const PromptRankOverviewPage = () => {
   return (
     <Box
       sx={{
-        background: "#111",
+        background: "#000",
         height: "100vh",
         color: "#fff",
         overflow: "auto",
@@ -237,7 +237,7 @@ const PromptRankOverviewPage = () => {
             //   <Grid size={{ xs: 12 }}>
             <Card
               key={index}
-              sx={{ p: 5, borderRadius: 4, background: "#222", mb: 1 }}
+              sx={{ p: 5, borderRadius: 4, background: "#111", mb: 1 }}
             >
               <Grid container key={index}>
                 <Grid size={{ xs: 12, md: 6 }}>
