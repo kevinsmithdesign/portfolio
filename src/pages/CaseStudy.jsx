@@ -649,6 +649,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
           />
         </Card>
         {/* <CaseStudyDivider /> */}
+        <Box sx={{ display: { sm: "none" } }}></Box>
         <Card
           sx={{
             p: 6,

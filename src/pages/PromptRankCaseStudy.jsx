@@ -566,65 +566,69 @@ Lack of real-time assistance tools that support staff while reassuring families.
           </Typography>
           <EmpathyMap />
         </Card>
-        <Card
-          sx={{
-            p: 6,
-            background: "#222",
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Card
+            sx={{
+              p: 6,
+              background: "#222",
 
-            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: "16px",
-            mb: 2,
-          }}
-        >
-          <CaseStudyTitle
-            title="USER JOURNEY MAP"
-            description="Understanding the Path to Engagement"
-          />
+              boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+              borderRadius: "16px",
+              mb: 2,
+            }}
+          >
+            <CaseStudyTitle
+              title="USER JOURNEY MAP"
+              description="Understanding the Path to Engagement"
+            />
 
-          <Typography mb={3} color="#fff">
-            {/* The User Journey Map captures the experiences of different
+            <Typography mb={3} color="#fff">
+              {/* The User Journey Map captures the experiences of different
             caregivers—family members, healthcare professionals, and care
             facility managers—highlighting their challenges and interactions
             with Lila at various stages. This map informed key design decisions
             to ensure Lila meets the unique needs of each user type, providing
             empathetic, real-time support across their caregiving journeys. */}{" "}
-          </Typography>
-          <JourneyMap />
-        </Card>
+            </Typography>
 
-        <Card
-          sx={{
-            p: 6,
-            background: "#222",
+            <JourneyMap />
+          </Card>
+        </Box>
+        <Box sx={{ display: "none" }}>
+          <Card
+            sx={{
+              p: 6,
+              background: "#222",
 
-            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: "16px",
-            mb: 2,
-          }}
-        >
-          <CaseStudyTitle
-            title="INFORMATION ARCHITECTURE"
-            description="Structuring Content for Clarity & Usability"
-          />
-          {/* <SiteMap /> */}
-        </Card>
+              boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+              borderRadius: "16px",
+              mb: 2,
+            }}
+          >
+            <CaseStudyTitle
+              title="INFORMATION ARCHITECTURE"
+              description="Structuring Content for Clarity & Usability"
+            />
+            {/* <SiteMap /> */}
+          </Card>
 
-        {/* <CaseStudyDivider /> */}
-        <Card
-          sx={{
-            p: 6,
-            background: "#222",
+          {/* <CaseStudyDivider /> */}
+          <Card
+            sx={{
+              p: 6,
+              background: "#222",
 
-            boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
-            borderRadius: "16px",
-            // mb: 2,
-          }}
-        >
-          <CaseStudyTitle
-            title="DESIGN"
-            description="From Concept to Execution"
-          />
-        </Card>
+              boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
+              borderRadius: "16px",
+              // mb: 2,
+            }}
+          >
+            <CaseStudyTitle
+              title="DESIGN"
+              description="From Concept to Execution"
+            />
+          </Card>
+        </Box>
       </Container>
     </Box>
   );

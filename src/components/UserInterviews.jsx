@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Box, Typography, Card, CardContent } from "@mui/material";
+import Grid from "@mui/material/Grid2";
+
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 import { useTheme } from "@mui/material/styles";
 
@@ -99,10 +101,10 @@ const UserInterviews = () => {
     return (
       <Box
         sx={{
-          position: "absolute",
-          top: "50%",
-          left: 220, // Fixed starting position
-          transform: "translateY(-50%)",
+          //   position: "absolute",
+          //   top: "50%",
+          //   left: 220, // Fixed starting position
+          //   transform: "translateY(-50%)",
           display: "flex",
           flexDirection: "column",
           gap: 1.5,
@@ -158,7 +160,7 @@ const UserInterviews = () => {
     <Box>
       <Grid container spacing={2}>
         {interviewData.map((item, index) => (
-          <Grid item xs={12} md={6} key={index}>
+          <Grid size={{ xs: 12, lg: 6 }} key={index}>
             <Card
               sx={{
                 height: "100%",
@@ -181,60 +183,64 @@ const UserInterviews = () => {
                 >
                   {item.question}
                 </Typography>
-                <Box
+
+                <Grid
+                  container
+                  spacing={4}
                   sx={{
-                    // height: 280,
-                    position: "relative",
-                    // mt: 1,
-                    // mb: 1,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  {/* Custom legend with fixed position */}
-                  {customLegend(`chart-${index}`, item.data)}
-
-                  <PieChart
-                    series={[
-                      {
-                        arcLabel: (item) => `${item.value}%`,
-                        arcLabelMinAngle: 45,
-                        data: item.data.map((entry) => ({
-                          id: entry.id,
-                          value: entry.value,
-                          label: entry.label,
-                          color: entry.color,
-                        })),
-                        innerRadius: 40,
-                        outerRadius: 90,
-                        paddingAngle: 3,
-                        cornerRadius: 4,
-                        startAngle: -90,
-                        endAngle: 270,
-                        cx: 90,
-                        cy: 130,
-                      },
-                    ]}
-                    width={400}
-                    height={260}
-                    // Just completely disable tooltips
-                    tooltip={{ trigger: "none" }}
-                    slotProps={{
-                      legend: {
-                        hidden: true,
-                      },
-                    }}
-                    sx={{
-                      // Target the specific class for arc labels
-                      [`& .${pieArcLabelClasses.root}`]: {
-                        fill: "white",
-                        fontWeight: "bold",
-                      },
-                      // Ensure no stroke on paths
-                      "& path": {
-                        stroke: "none",
-                      },
-                    }}
-                  />
-                </Box>
+                  <Grid size={{ xs: 12, md: 6 }}>
+                    <PieChart
+                      series={[
+                        {
+                          arcLabel: (item) => `${item.value}%`,
+                          //   arcLabelMinAngle: 45,
+                          data: item.data.map((entry) => ({
+                            id: entry.id,
+                            value: entry.value,
+                            label: entry.label,
+                            color: entry.color,
+                          })),
+                          innerRadius: 40,
+                          outerRadius: 90,
+                          paddingAngle: 3,
+                          cornerRadius: 4,
+                          startAngle: -90,
+                          endAngle: 270,
+                          cx: 90,
+                          cy: 130,
+                        },
+                      ]}
+                      //   width={400}
+                      height={260}
+                      // Just completely disable tooltips
+                      tooltip={{ trigger: "none" }}
+                      slotProps={{
+                        legend: {
+                          hidden: true,
+                        },
+                      }}
+                      sx={{
+                        // Target the specific class for arc labels
+                        // [`& .${pieArcLabelClasses.root}`]: {
+                        //   fill: "white",
+                        //   fontWeight: "bold",
+                        // },
+                        // Ensure no stroke on paths
+                        "& path": {
+                          stroke: "none",
+                        },
+                      }}
+                    />
+                  </Grid>
+                  <Grid size={{ xs: 12, md: 6 }}>
+                    {customLegend(`chart-${index}`, item.data)}
+                  </Grid>
+                </Grid>
               </CardContent>
             </Card>
           </Grid>
