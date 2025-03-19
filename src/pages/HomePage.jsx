@@ -211,6 +211,7 @@ import HeroSection from "../components/HeroSection";
 import UICollectionImg from "../assets/images/UICollectionImg.jpg";
 import FrontEndSoftwareImg from "../assets/images/FrontEndSoftwareImg.svg";
 import PromptRank from "../assets/images/PromptRank.svg";
+import DesignSystemImg from "../assets/images/DesignSystemImg.svg";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
@@ -228,18 +229,7 @@ const HomePage = () => {
     //   route: "/casestudy",
     //   img: "https://assets.codepen.io/2392702/Group+241568.svg",
     // },
-    // {
-    //   title: "White Label Design System",
-    //   description:
-    //     "A flexible framework of reusable components and guidelines for building consistent, scalable, and accessible user interfaces, with support for multiple themes.",
-    //   btnText: "View Design System",
-    //   // route: "/designsystem",
-    //   route: "/whitelabel",
-    //   // externalLink: "/whitelabel", // Add this
 
-    //   // externalLink: "https://55c5pt.csb.app/",
-    //   img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29.svg",
-    // },
     {
       title: "Prompt Rank",
       description:
@@ -249,6 +239,19 @@ const HomePage = () => {
       btnText: "Site Overview",
       route: "/promptrank-overview",
       img: PromptRank,
+    },
+    {
+      title: "White Label Design System",
+      description:
+        "A flexible framework of reusable components and guidelines for building consistent, scalable, and accessible user interfaces, with support for multiple themes.",
+      btnText: "View Design System",
+      // route: "/designsystem",
+      // route: "/whitelabel",
+      // externalLink: "/whitelabel", // Add this
+
+      externalLink: "https://whitelabeldesignsystem.netlify.app/",
+      // img: "https://assets.codepen.io/2392702/Desktop+-+114+%281%29.svg",
+      img: DesignSystemImg,
     },
     {
       title: "UI Design Collection",

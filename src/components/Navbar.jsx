@@ -445,7 +445,7 @@ const Navbar = ({ color }) => {
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="h6" fontWeight="bold" color={color}>
+            <Typography variant="h6" fontWeight="600" color={color}>
               Kevin Smith Design
             </Typography>
           </Box>
