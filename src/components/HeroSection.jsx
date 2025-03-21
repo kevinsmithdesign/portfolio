@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Skeleton, Typography, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Skeleton, Typography, Box, Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import HeroImg from "../assets/images/HeroImg.svg";
 
 const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const img = new Image();
@@ -24,13 +26,16 @@ const HeroSection = () => {
     >
       <Grid size={{ sm: 12, md: 5 }}>
         <Box sx={{ mt: { xs: 12, md: 0 } }}>
-          <Typography variant="h2" fontWeight="bold" mb={3}>
+          <Typography variant="h2" fontWeight="bold" mb={3} color="#333">
             Hello, I'm <span style={{ color: "" }}>Kevin Smith</span>
           </Typography>
-          <Typography sx={{ fontSize: "20px", color: "#999" }}>
+          <Typography sx={{ fontSize: "20px", color: "#999" }} mb={4}>
             A UI/UX Designer & Developer with over a decade of experience
             crafting engaging digital experiences and driving business growth.
           </Typography>
+          <Button variant="contained" onClick={() => navigate("/resume")}>
+            View Resume
+          </Button>
         </Box>
       </Grid>
       <Grid size={{ sm: 12, md: 7 }}>

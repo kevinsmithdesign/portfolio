@@ -379,10 +379,15 @@ const HomePage = () => {
                       flexDirection: "column",
                     }}
                   >
-                    <Typography variant="h4" fontWeight="bold" mb={2}>
+                    <Typography
+                      variant="h4"
+                      color="#333"
+                      fontWeight="bold"
+                      mb={2}
+                    >
                       {title}
                     </Typography>
-                    <Typography mb={3} sx={{ fontSize: "18px" }}>
+                    <Typography mb={3} sx={{ fontSize: "18px" }} color="#444">
                       {description}
                     </Typography>
                     <Box>
