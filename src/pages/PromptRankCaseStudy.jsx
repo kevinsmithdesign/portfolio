@@ -212,7 +212,7 @@ export default function PromptRankCaseStudy() {
       }}
     >
       <Navbar color="white" />
-      <Container>
+      <Container sx={{ px: { xs: "32px", md: "32px", lg: "16px" } }}>
         <Card
           sx={{
             p: 6,

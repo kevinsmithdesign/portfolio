@@ -322,27 +322,35 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
-      <Container sx={{ mb: 6 }}>
-        <Box sx={{ mb: 4 }}>
-          <HeroSection />
+      <Navbar color="#333" />
+      <Container
+        sx={{
+          mb: { xs: 12, md: 6 },
+          // background: "red",
+          px: { xs: "32px", md: "32px", lg: "16px" },
+        }}
+      >
+        <Box>
           <Typography
             sx={{
-              fontSize: "64px",
-              lineHeight: "72px",
-              // fontSize: "72px",
-              // lineHeight: "82px",
+              // fontSize: "64px",
+              fontSize: { xs: "32px", md: "48px", lg: "64px" },
+              lineHeight: { xs: "40px", md: "56px", lg: "72px" },
+              // lineHeight: "72px",
               fontWeight: 700,
               color: "#333",
-              mt: 12,
-              mb: 14,
+              // mt: 12,
+              // mt: { xs: 0, md: 6, lg: 12 },
+              my: { xs: 6, md: 8, lg: 12 },
             }}
           >
             <span style={{ color: theme.palette.primary.main }}>
               I'm kevin smith,
             </span>{" "}
-            a designer crafting engaging digital experiences and driving
-            business growth.
+            {/* a designer crafting engaging digital experiences and driving
+            business growth. */}
+            a designer & developer crafting engaging digital experiences and
+            driving business growth.
           </Typography>
         </Box>
         <Grid container spacing={{ xs: 2, md: 8 }}>
@@ -376,7 +384,8 @@ const HomePage = () => {
                             top: 0,
                             left: 0,
                             borderRadius: "10px",
-                            background: "#F5F9FC",
+                            // background: "#F5F9FC",
+                            background: "#eaeaea",
                           }}
                         />
                       )}
