@@ -328,10 +328,10 @@ const HomePage = () => {
           <HeroSection />
           <Typography
             sx={{
-              // fontSize: "64px",
-              // lineHeight: "72px",
-              fontSize: "72px",
-              lineHeight: "82px",
+              fontSize: "64px",
+              lineHeight: "72px",
+              // fontSize: "72px",
+              // lineHeight: "82px",
               fontWeight: 700,
               color: "#333",
               mt: 12,
