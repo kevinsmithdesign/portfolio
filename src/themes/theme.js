@@ -11,7 +11,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto, sans-serif", // Default font family
+    fontFamily: "Inter, sans-serif", // Default font family
     h1: {
       fontSize: "clamp(36px, 5vw, 48px)", // Responsive scaling
       fontWeight: 600, // Semibold

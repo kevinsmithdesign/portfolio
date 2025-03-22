@@ -449,7 +449,7 @@ const Navbar = ({ color }) => {
               <svg
                 // width="16"
                 // height="16"
-                width="36"
+                width="48"
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -477,12 +477,13 @@ const Navbar = ({ color }) => {
                 />
               </svg>
               <Typography
-                fontSize="18px"
+                fontSize="21px"
                 fontWeight="bold"
                 ml={1.5}
                 color="#333"
               >
-                kevinsmith<span style={{ color: "#3B75FE" }}>.design</span>
+                {/* kevinsmith<span style={{ color: "#3B75FE" }}>.design</span> */}
+                KVN
               </Typography>
             </Box>
           </Box>
@@ -495,7 +496,7 @@ const Navbar = ({ color }) => {
               justifyContent: "flex-end",
             }}
           >
-            <HamburgerWithMorph isOpen={isOpen} toggleMenu={toggleMenu} />
+            {/* <HamburgerWithMorph isOpen={isOpen} toggleMenu={toggleMenu} /> */}
           </Box>
         </Container>
       </Box>

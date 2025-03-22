@@ -205,7 +205,14 @@
 // export default HomePage;
 
 import React, { useState, useEffect } from "react";
-import { Button, Container, Typography, Box, Skeleton } from "@mui/material";
+import {
+  Button,
+  Container,
+  Typography,
+  Box,
+  Skeleton,
+  useTheme,
+} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import HeroSection from "../components/HeroSection";
 import UICollectionImg from "../assets/images/UICollectionImg.jpg";
@@ -217,6 +224,7 @@ import Navbar from "../components/Navbar";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [imageLoadStatus, setImageLoadStatus] = useState({});
 
@@ -318,6 +326,24 @@ const HomePage = () => {
       <Container sx={{ mb: 6 }}>
         <Box sx={{ mb: 4 }}>
           <HeroSection />
+          <Typography
+            sx={{
+              // fontSize: "64px",
+              // lineHeight: "72px",
+              fontSize: "72px",
+              lineHeight: "82px",
+              fontWeight: 700,
+              color: "#333",
+              mt: 12,
+              mb: 14,
+            }}
+          >
+            <span style={{ color: theme.palette.primary.main }}>
+              I'm kevin smith,
+            </span>{" "}
+            a designer crafting engaging digital experiences and driving
+            business growth.
+          </Typography>
         </Box>
         <Grid container spacing={{ xs: 2, md: 8 }}>
           {portfolioProjects.map(
