@@ -169,7 +169,9 @@ const PromptRankOverviewPage = () => {
         overflow: "auto",
       }}
     >
-      <Navbar color="#fff" />
+      <Box sx={{ mb: 4 }}>
+        <Navbar color="#fff" />
+      </Box>
 
       <Container
         sx={{ mb: 6, mt: 3, px: { xs: "32px", md: "32px", lg: "16px" } }}
