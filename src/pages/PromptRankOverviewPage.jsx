@@ -245,7 +245,14 @@ const PromptRankOverviewPage = () => {
             >
               <Grid container key={index}>
                 <Grid size={{ xs: 12, md: 6 }}>
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: { xs: "column", sm: "row" },
+                      alignItems: "center",
+                      justifyContent: { xs: "center", sm: "left" },
+                    }}
+                  >
                     <Box
                       sx={{
                         width: "48px",
@@ -255,12 +262,14 @@ const PromptRankOverviewPage = () => {
                         alignItems: "center",
                         justifyContent: "center",
                         borderRadius: "50%",
-                        marginRight: 2,
+                        // marginRight: 2,
+                        marginRight: { xs: 0, sm: 2 },
+                        mb: { xs: 1, sm: 0 },
                       }}
                     >
                       <img src={img} alt={alt} />
                     </Box>
-                    <Box>
+                    <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
                       <Typography color="white" variant="h6" mb={0.5}>
                         {title}
                       </Typography>
@@ -285,6 +294,7 @@ const PromptRankOverviewPage = () => {
                         href={externalLink}
                         target="_blank"
                         rel="noopener noreferrer"
+                        sx={{ width: { xs: "100%", sm: "auto" } }}
                       >
                         View {title}
                       </Button>

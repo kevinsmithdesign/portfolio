@@ -217,7 +217,7 @@ export default function PromptRankCaseStudy() {
       <Container sx={{ px: { xs: "32px", md: "32px", lg: "16px" } }}>
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -251,13 +251,13 @@ export default function PromptRankCaseStudy() {
             <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card
                 sx={{
-                  px: 6,
-                  py: 5,
-
+                  p: { xs: 3, sm: 4, md: 6 },
                   background: "#111",
-
                   boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
                   borderRadius: "16px",
+                  height: "100%", // This ensures all cards have the same height
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
                 <Box sx={{ display: "flex", mb: 1 }}>
@@ -282,7 +282,7 @@ export default function PromptRankCaseStudy() {
         {/* <CaseStudyDivider /> */}
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
@@ -355,7 +355,7 @@ export default function PromptRankCaseStudy() {
         </Card> */}
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
@@ -391,7 +391,7 @@ export default function PromptRankCaseStudy() {
         </Card>
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
@@ -432,9 +432,8 @@ export default function PromptRankCaseStudy() {
 
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
-
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -457,7 +456,7 @@ export default function PromptRankCaseStudy() {
 
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
@@ -483,9 +482,8 @@ export default function PromptRankCaseStudy() {
 
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
-
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -546,9 +544,8 @@ Lack of real-time assistance tools that support staff while reassuring families.
         </Card>
         <Card
           sx={{
-            p: 6,
+            p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
-
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
             mb: 2,
@@ -571,9 +568,8 @@ Lack of real-time assistance tools that support staff while reassuring families.
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
           <Card
             sx={{
-              p: 6,
+              p: { xs: 3, sm: 4, md: 6 },
               background: "#111",
-
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
               mb: 2,
@@ -599,9 +595,8 @@ Lack of real-time assistance tools that support staff while reassuring families.
         <Box sx={{ display: "none" }}>
           <Card
             sx={{
-              p: 6,
+              p: { xs: 3, sm: 4, md: 6 },
               background: "#222",
-
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
               mb: 2,
@@ -617,7 +612,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
           {/* <CaseStudyDivider /> */}
           <Card
             sx={{
-              p: 6,
+              p: { xs: 3, sm: 4, md: 6 },
               background: "#222",
 
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
