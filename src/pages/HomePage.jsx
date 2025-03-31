@@ -350,8 +350,6 @@ const HomePage = () => {
                         sx={{ mb: 2 }}
                         onClick={() => handleButtonClick(route, externalLink)}
                         component={motion.button}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
                       >
                         {btnText}
                       </Button>

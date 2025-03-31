@@ -33,6 +33,7 @@ import EmpathyMap from "../components/EmpathyMap";
 import JourneyMap from "../components/JourneyMap";
 
 import PromptRankBranding from "../assets/images/PromptRankBranding.svg";
+import PromptDetailsPage from "../assets/images/PromptDetailsPage.svg";
 
 export default function PromptRankCaseStudy() {
   const theme = useTheme();
@@ -234,9 +235,17 @@ export default function PromptRankCaseStudy() {
             }}
 
           ></Box> */}
-          <Typography variant="h4" fontWeight="bold" mb={2} color="#fff">
+          <Typography variant="h4" fontWeight="bold" mb={2.5} color="#fff">
             PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
           </Typography>
+          {/* <Box
+            sx={{
+              height: "464px",
+              width: "100%",
+              background: "#333",
+              borderRadius: "12px",
+            }}
+          ></Box> */}
           {/* <Box mb={2}>
             <img
               src={PromptRankBranding}
@@ -592,13 +601,14 @@ Lack of real-time assistance tools that support staff while reassuring families.
             <JourneyMap />
           </Card>
         </Box>
-        <Box sx={{ display: "none" }}>
+        <Box sx={{ display: "" }}>
           <Card
             sx={{
               p: { xs: 3, sm: 4, md: 6 },
               background: "#222",
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
+              display: "none",
               mb: 2,
             }}
           >
@@ -613,10 +623,12 @@ Lack of real-time assistance tools that support staff while reassuring families.
           <Card
             sx={{
               p: { xs: 3, sm: 4, md: 6 },
-              background: "#222",
+
+              background: "#111",
 
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
+              // border: "1px solid #333",
               // mb: 2,
             }}
           >
@@ -624,6 +636,25 @@ Lack of real-time assistance tools that support staff while reassuring families.
               title="DESIGN"
               description="From Concept to Execution"
             />
+            <Typography mb={3} color="#fff">
+              With user insights and clear opportunities defined, I translated
+              strategy into interface—building a cohesive design system,
+              establishing visual hierarchy, and refining each interaction to
+              support usability, clarity, and engagement.
+            </Typography>
+
+            <Grid container>
+              <Grid size={{ md: 12 }}>
+                <img
+                  src={PromptDetailsPage}
+                  style={{
+                    width: "100%",
+                    borderRadius: "12px",
+                    border: "1px solid #222",
+                  }}
+                />
+              </Grid>
+            </Grid>
           </Card>
         </Box>
       </Container>
