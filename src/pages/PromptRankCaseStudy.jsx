@@ -215,14 +215,15 @@ export default function PromptRankCaseStudy() {
       <Box sx={{ mb: 4 }}>
         <Navbar color="white" />
       </Box>
-      <Container sx={{ px: { xs: "32px", md: "32px", lg: "16px" } }}>
+      <Container sx={{ px: { xs: "16px", md: "32px", lg: "16px" } }}>
         <Card
           sx={{
             p: { xs: 3, sm: 4, md: 6 },
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            // mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           {/* <Box
@@ -235,7 +236,7 @@ export default function PromptRankCaseStudy() {
             }}
 
           ></Box> */}
-          <Typography variant="h4" fontWeight="bold" mb={2.5} color="#fff">
+          <Typography variant="h4" fontWeight="bold" mb={2} color="#fff">
             PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
           </Typography>
           {/* <Box
@@ -255,7 +256,7 @@ export default function PromptRankCaseStudy() {
           </Box> */}
         </Card>
         {/* </Box> */}
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={{ xs: 1, md: 2 }} mb={{ xs: 1, md: 2 }}>
           {caseStudyOverview.map(({ title, description, img }) => (
             <Grid size={{ xs: 12, sm: 4, md: 4 }}>
               <Card
@@ -296,7 +297,7 @@ export default function PromptRankCaseStudy() {
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -368,7 +369,7 @@ export default function PromptRankCaseStudy() {
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -405,7 +406,7 @@ export default function PromptRankCaseStudy() {
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -445,7 +446,7 @@ export default function PromptRankCaseStudy() {
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -470,7 +471,7 @@ export default function PromptRankCaseStudy() {
 
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -495,7 +496,7 @@ export default function PromptRankCaseStudy() {
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           {/* <CaseStudyDivider /> */}
@@ -557,7 +558,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
             background: "#111",
             boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
             borderRadius: "16px",
-            mb: 2,
+            mb: { xs: 1, md: 2 },
           }}
         >
           <CaseStudyTitle
@@ -609,7 +610,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
               display: "none",
-              mb: 2,
+              mb: { xs: 1, md: 2 },
             }}
           >
             <CaseStudyTitle
@@ -629,7 +630,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
               boxShadow: "24px 24px 64px rgba(36, 107, 253, 0.01)",
               borderRadius: "16px",
               // border: "1px solid #333",
-              // mb: 2,
+              // mb: { xs: 1, md: 2 },
             }}
           >
             <CaseStudyTitle
