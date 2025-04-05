@@ -133,7 +133,7 @@ const HomePage = () => {
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: "10px",
-                      backgroundColor: "#f8f8f8",
+                      backgroundColor: "#fff",
                       minHeight: "400px",
                     }}
                   >
