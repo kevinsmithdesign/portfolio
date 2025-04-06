@@ -134,7 +134,7 @@ const HomePage = () => {
                       justifyContent: "center",
                       borderRadius: "10px",
                       backgroundColor: "#fff",
-                      minHeight: "400px",
+                      minHeight: "100%",
                     }}
                   >
                     <img
