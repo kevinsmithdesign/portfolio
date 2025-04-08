@@ -194,9 +194,9 @@ const PromptRankOverviewPage = () => {
             </Button>
           </Stack>
         </Stack> */}
-        <Grid container mb={2}>
+        <Grid container mb={4}>
           <Grid size={{ xs: 12, md: 9 }}>
-            <Typography variant="h4" component="h1">
+            <Typography variant="h3" component="h1">
               Inside PromptRank: A Product Breakdown
             </Typography>
           </Grid>

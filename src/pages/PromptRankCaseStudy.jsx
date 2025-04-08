@@ -236,7 +236,7 @@ export default function PromptRankCaseStudy() {
             }}
 
           ></Box> */}
-          <Typography variant="h4" fontWeight="bold" mb={2} color="#fff">
+          <Typography variant="h4" fontWeight="bold" color="#fff">
             PromptRank: The Ultimate Hub for AI Prompt Optimization & Discovery
           </Typography>
           {/* <Box
@@ -388,10 +388,10 @@ export default function PromptRankCaseStudy() {
           <Box
             sx={{
               background: "#333",
-              height: "400px",
+              height: "450px",
 
               backgroundImage:
-                "url('https://condens.io/img/blog/interview_analysis/analysis_hero.webp')",
+                "url('https://cdn.mos.cms.futurecdn.net/SxU3uZ9hfxbVwcUFtEn2H3-1200-80.png.webp')",
               borderRadius: "16px",
               backgroundSize: "cover", // Ensures the image covers the entire container
               backgroundPosition: "center", // Centers the image
@@ -633,7 +633,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
               // mb: { xs: 1, md: 2 },
             }}
           >
-            <CaseStudyTitle
+            {/* <CaseStudyTitle
               title="DESIGN"
               description="From Concept to Execution"
             />
@@ -642,9 +642,33 @@ Lack of real-time assistance tools that support staff while reassuring families.
               strategy into interface—building a cohesive design system,
               establishing visual hierarchy, and refining each interaction to
               support usability, clarity, and engagement.
-            </Typography>
+            </Typography> */}
 
-            <Grid container>
+            <CaseStudyTitle
+              title="PROTOTYPE"
+              description="Testing, Learning, and Evolving"
+            />
+            <Typography mb={3} color="#fff">
+              I built the prototype as a functional foundation for ongoing
+              iteration—shaped by direct user feedback and real-world testing.
+              It allowed me to continuously refine interactions, adjust flows,
+              and make improvements as the product evolved.
+            </Typography>
+            <Button
+              sx={{
+                width: { xs: "100%", sm: "auto" },
+                mt: { xs: 2, md: 0 },
+              }}
+              variant="contained"
+              component="a"
+              href="https://promptrank.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Site
+            </Button>
+
+            {/* <Grid container>
               <Grid size={{ md: 12 }}>
                 <img
                   src={PromptDetailsPage}
@@ -655,7 +679,7 @@ Lack of real-time assistance tools that support staff while reassuring families.
                   }}
                 />
               </Grid>
-            </Grid>
+            </Grid> */}
           </Card>
         </Box>
       </Container>
