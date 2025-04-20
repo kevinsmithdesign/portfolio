@@ -19,7 +19,7 @@ import Navbar from "../components/Navbar";
 const HomePage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const [imageOpacity, setImageOpacity] = useState({});
+  const [imagesLoaded, setImagesLoaded] = useState({});
 
   const portfolioProjects = [
     {
@@ -56,24 +56,34 @@ const HomePage = () => {
     },
   ];
 
-  // Preload all images immediately
+  // Initialize the loading state for all images
   useEffect(() => {
-    // Initialize all images with 0 opacity
-    const initialOpacity = {};
+    // Set all images as loading initially
+    const initialLoadState = {};
     portfolioProjects.forEach((_, index) => {
-      initialOpacity[index] = 0;
+      initialLoadState[index] = false;
     });
-    setImageOpacity(initialOpacity);
+    setImagesLoaded(initialLoadState);
 
     // Preload images
     portfolioProjects.forEach(({ img }, index) => {
       const image = new Image();
       image.src = img;
       image.onload = () => {
-        // Fade in each image as it loads
-        setImageOpacity((prev) => ({
+        // Mark image as loaded when it completes loading
+        setImagesLoaded((prev) => ({
           ...prev,
-          [index]: 1,
+          [index]: true,
+        }));
+      };
+
+      // Handle image load errors
+      image.onerror = () => {
+        console.error(`Failed to load image: ${img}`);
+        // Still mark as "loaded" to remove skeleton
+        setImagesLoaded((prev) => ({
+          ...prev,
+          [index]: true,
         }));
       };
     });
@@ -133,10 +143,28 @@ const HomePage = () => {
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: "10px",
-                      backgroundColor: "#fff",
-                      minHeight: "100%",
+                      backgroundColor: imagesLoaded[index]
+                        ? "transparent"
+                        : "#f5f5f5",
+                      minHeight: "300px", // Set minimum height for skeleton
                     }}
                   >
+                    {!imagesLoaded[index] ? (
+                      <Skeleton
+                        variant="rectangular"
+                        width="100%"
+                        height="100%"
+                        animation="wave"
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          borderRadius: "10px",
+                        }}
+                      />
+                    ) : null}
                     <img
                       src={img}
                       alt={title}
@@ -145,11 +173,8 @@ const HomePage = () => {
                         height: "100%",
                         borderRadius: "10px",
                         objectFit: "cover",
-                        transition: "opacity 1.2s ease-in-out",
-                        opacity:
-                          imageOpacity[index] !== undefined
-                            ? imageOpacity[index]
-                            : 0,
+                        transition: "opacity 0.8s ease-in-out",
+                        opacity: imagesLoaded[index] ? 1 : 0,
                       }}
                     />
                   </Box>
