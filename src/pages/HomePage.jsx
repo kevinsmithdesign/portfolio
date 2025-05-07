@@ -226,17 +226,18 @@ const HomePage = () => {
       <Box
         sx={{
           background: "#fafafa",
-          minHeight: "100vh",
+          // minHeight: "100vh",
+          minHeight: { xs: "60vh", md: "100vh" },
           display: "flex",
           alignItems: "center",
         }}
       >
         <Container>
-          <Box sx={{ mb: "100px" }}>
+          <Box sx={{ mb: "q00px" }}>
             <Typography
               sx={{
-                fontSize: { xs: "32px", md: "48px", lg: "88px" },
-                lineHeight: { xs: "40px", md: "56px", lg: "94px" },
+                fontSize: { xs: "30px", sm: "64px", md: "72px", lg: "88px" },
+                lineHeight: { xs: "40px", sm: "72px", md: "80px", lg: "94px" },
                 fontWeight: 700,
                 color: "#010410",
                 mb: 3,
@@ -251,7 +252,12 @@ const HomePage = () => {
 
             <Typography
               variant="h4"
-              sx={{ color: "#777", lineHeight: "", fontWeight: 500 }}
+              sx={{
+                color: "#777",
+                lineHeight: "",
+                fontWeight: 500,
+                fontSize: { xs: "18px", sm: "24px", md: "32px", lg: "32px" },
+              }}
               mb={6}
             >
               Designing engaging digital experiences and driving business growth
@@ -287,7 +293,7 @@ const HomePage = () => {
         }}
       >
         <Container>
-          <Stack mb={4} sx={{ textAlign: "center" }}>
+          <Stack mb={4} mt={{ xs: 8, md: 0 }} sx={{ textAlign: "center" }}>
             <Typography variant="h1" mb={1} sx={{ color: "#010410" }}>
               Explore my Expertise
             </Typography>
@@ -300,7 +306,7 @@ const HomePage = () => {
             </Typography>
           </Stack>
 
-          <Grid container spacing={1}>
+          <Grid container spacing={1} mb={{ xs: 8, md: 0 }}>
             {myExpertise.map(({ icon, title, description }) => (
               <Grid size={{ xs: 12, md: 6, lg: 4 }}>
                 <Card
@@ -352,7 +358,7 @@ const HomePage = () => {
         }}
       >
         <Container>
-          <Stack sx={{ textAlign: "center", mb: 4 }}>
+          <Stack mt={{ xs: 8, md: 0 }} sx={{ textAlign: "center", mb: 4 }}>
             <Typography variant="h1" sx={{ color: "#010410" }}>
               My Process
             </Typography>
@@ -364,7 +370,7 @@ const HomePage = () => {
             </Typography>
           </Stack>
 
-          <Grid container spacing={1}>
+          <Grid container spacing={1} mb={{ xs: 8, md: 0 }}>
             {myProcess.map(({ number, title, description }) => (
               <Grid size={{ xs: 12, md: 4 }}>
                 <Card
