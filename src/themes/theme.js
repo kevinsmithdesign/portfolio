@@ -11,7 +11,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Inter, sans-serif", // Default font family
+    // fontFamily: "Inter, sans-serif", // Default font family
+    fontFamily: "Neue Haas Grotesk Display Pro",
     h1: {
       fontSize: "clamp(36px, 5vw, 48px)", // Responsive scaling
       fontWeight: 600, // Semibold
@@ -74,8 +75,9 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: "8px", // Rounded corners for buttons
-          padding: "8px 16px", // Default padding
+          padding: "12px 24px", // Default padding
           fontSize: "1rem", // Default font size
+          fontWeight: 600,
           boxShadow: "none",
           "&:hover": {
             boxShadow: "none",
@@ -84,7 +86,7 @@ const theme = createTheme({
         containedPrimary: {
           backgroundColor: "#3B75FE",
           color: "#fff",
-          fontWeight: 600,
+
           "&:hover": {
             backgroundColor: darken("#3B75FE", 0.1), // Darkens by 10%
           },
