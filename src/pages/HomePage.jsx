@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Button,
   Container,
@@ -30,6 +30,26 @@ const HomePage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const [imagesLoaded, setImagesLoaded] = useState({});
+
+  // Create refs for sections
+  const recentWorkRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Function to scroll to Recent Work section
+  const scrollToRecentWork = () => {
+    recentWorkRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  // Function to scroll to Contact section
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   const myExpertise = [
     {
@@ -242,12 +262,14 @@ const HomePage = () => {
               <Button
                 variant="contained"
                 sx={{ p: "18px 32px", borderRadius: "10px" }}
+                onClick={scrollToRecentWork}
               >
                 View my Work
               </Button>
               <Button
                 variant="outlined"
                 sx={{ p: "18px 32px", borderRadius: "10px" }}
+                onClick={scrollToContact}
               >
                 Get in Touch
               </Button>
@@ -280,10 +302,10 @@ const HomePage = () => {
 
           <Grid container spacing={1}>
             {myExpertise.map(({ icon, title, description }) => (
-              <Grid size={{ xs: 12, md: 6, md: 4 }}>
+              <Grid size={{ xs: 12, md: 6, lg: 4 }}>
                 <Card
                   sx={{
-                    p: 4,
+                    p: 5,
                     boxShadow: "none",
                     borderRadius: "16px",
                     background: "#fafafa",
@@ -298,7 +320,7 @@ const HomePage = () => {
                       height: "48px",
                       borderRadius: "50%",
                       background: theme.palette.primary.main,
-                      mb: 2,
+                      mb: 3,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -314,9 +336,7 @@ const HomePage = () => {
                   >
                     {title}
                   </Typography>
-                  <Typography variant="body2" color="#777">
-                    {description}
-                  </Typography>
+                  <Typography variant="body2">{description}</Typography>
                 </Card>
               </Grid>
             ))}
@@ -349,7 +369,7 @@ const HomePage = () => {
               <Grid size={{ xs: 12, md: 4 }}>
                 <Card
                   sx={{
-                    p: 4,
+                    p: 5,
                     boxShadow: "none",
                     borderRadius: "16px",
                     background: "",
@@ -383,7 +403,15 @@ const HomePage = () => {
         </Container>
       </Box>
 
-      <Box sx={{ background: "", mb: 18 }}>
+      {/* Add the ref to the Recent Work section */}
+      <Box
+        ref={recentWorkRef}
+        sx={{
+          background: "",
+          mb: 18,
+          scrollMarginTop: "80px", // Add some margin to account for any fixed headers
+        }}
+      >
         <Container>
           <Stack my={8} sx={{ textAlign: "center" }}>
             <Typography variant="h1" xs={{ color: "#010410" }}>
@@ -393,7 +421,8 @@ const HomePage = () => {
               variant="body1"
               sx={{ fontSize: "18px", fontWeight: 500, color: "#777" }}
             >
-              Lorem ispum dolor hair you know some longer text
+              Innovative digital solutions that blend design excellence with
+              development expertise.
             </Typography>
           </Stack>
 
@@ -486,15 +515,125 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Box>
-      <footer>
-        <Box sx={{ background: "#010410" }}>
-          <Container sx={{ py: 10 }}>
-            <Typography color="white" fontWeight="bold">
-              Connect
+      <Box
+        ref={contactRef}
+        sx={{
+          background: "#010410",
+          scrollMarginTop: "80px",
+        }}
+      >
+        <Container sx={{ py: 10 }}>
+          <Typography variant="h1" color="white" fontWeight={600} mb={4}>
+            Get in Touch
+          </Typography>
+
+          <Grid container spacing={4}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="h6" color="white" mb={1}>
+                Let's work together
+              </Typography>
+              <Typography color="white" opacity={0.7} mb={4}>
+                I'm always open to discussing new projects, creative ideas, or{" "}
+                <br />
+                opportunities to be part of your vision or team.
+              </Typography>
+
+              <Stack>
+                <Typography fontWeight={600} color="white">
+                  Email
+                </Typography>
+
+                <Typography color="white">info@kevinsmithdesign.com</Typography>
+              </Stack>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 6 }}>
+              {/* <Box
+                component="form"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 3,
+                }}
+              >
+                <Box>
+                  <Typography color="white" mb={1}>
+                    Name
+                  </Typography>
+                  <input
+                    style={{
+                      width: "100%",
+                      padding: "12px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      borderRadius: "8px",
+                      color: "white",
+                    }}
+                    placeholder="Your name"
+                  />
+                </Box>
+
+                <Box>
+                  <Typography color="white" mb={1}>
+                    Email
+                  </Typography>
+                  <input
+                    style={{
+                      width: "100%",
+                      padding: "12px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      borderRadius: "8px",
+                      color: "white",
+                    }}
+                    placeholder="Your email"
+                  />
+                </Box>
+
+                <Box>
+                  <Typography color="white" mb={1}>
+                    Message
+                  </Typography>
+                  <textarea
+                    style={{
+                      width: "100%",
+                      padding: "12px",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      borderRadius: "8px",
+                      color: "white",
+                      minHeight: "120px",
+                      fontFamily: "inherit",
+                    }}
+                    placeholder="What can I help you with?"
+                  />
+                </Box>
+
+                <Button
+                  variant="contained"
+                  sx={{
+                    alignSelf: "flex-start",
+                    p: "12px 24px",
+                    borderRadius: "8px",
+                    mt: 2,
+                  }}
+                >
+                  Send Message
+                </Button>
+              </Box> */}
+            </Grid>
+          </Grid>
+
+          <Box
+            sx={{ mt: 8, pt: 4, borderTop: "1px solid rgba(255,255,255,0.1)" }}
+          >
+            <Typography color="white" opacity={0.6} textAlign="">
+              © {new Date().getFullYear()} Kevin Smith Design. All rights
+              reserved.
             </Typography>
-          </Container>
-        </Box>
-      </footer>
+          </Box>
+        </Container>
+      </Box>
     </>
   );
 };

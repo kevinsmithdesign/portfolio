@@ -32,7 +32,7 @@ const Navbar = ({ color }) => {
           </Box>
         </Box>
         <Box sx={{ flexGrow: 1, position: "relative" }}>
-          <HamburgerMenu />
+          {/* <HamburgerMenu /> */}
         </Box>
         <Box></Box>
       </Container>
