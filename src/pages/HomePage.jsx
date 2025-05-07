@@ -233,7 +233,7 @@ const HomePage = () => {
         }}
       >
         <Container>
-          <Box sx={{ mb: "q00px" }}>
+          <Box sx={{ mb: "100px" }}>
             <Typography
               sx={{
                 fontSize: { xs: "30px", sm: "64px", md: "72px", lg: "88px" },
