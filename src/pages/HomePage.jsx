@@ -26,6 +26,8 @@ import PartyIcon from "../icons/PartyIcon";
 import GitIcon from "../icons/GitIcon";
 import LightningIcon from "../icons/LightningIcon";
 
+import AnimatedBtn from "../components/AnimatedBtn";
+
 const HomePage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
@@ -284,7 +286,8 @@ const HomePage = () => {
             </Typography>
 
             <Stack flexDirection="row" gap={2}>
-              <Button
+              <AnimatedBtn text="View my Work" onClick={scrollToRecentWork} />
+              {/* <Button
                 variant="contained"
                 sx={{ p: "18px 32px", borderRadius: "10px" }}
                 onClick={scrollToRecentWork}
@@ -297,7 +300,7 @@ const HomePage = () => {
                 onClick={scrollToContact}
               >
                 Get in Touch
-              </Button>
+              </Button> */}
             </Stack>
           </Box>
         </Container>
