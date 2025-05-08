@@ -164,6 +164,25 @@ const HomePage = () => {
     },
   ];
 
+  const websiteStats = [
+    {
+      statNum: "10+",
+      experienceTitle: "Years of Experience",
+      description: "Combining Design Expertise and Development Skill.",
+    },
+    {
+      statNum: "8+",
+      experienceTitle: "Products Launched",
+      description:
+        "From Initial Minimum Viable Products to Fully-Scaled Production Platforms.",
+    },
+    {
+      statNum: "4+",
+      experienceTitle: "Design Systems Built",
+      description: "With Tokens, Guidelines, and Code Integration.",
+    },
+  ];
+
   // Initialize the loading state for all images
   useEffect(() => {
     // Set all images as loading initially
@@ -233,11 +252,11 @@ const HomePage = () => {
         }}
       >
         <Container>
-          <Box sx={{ mb: "100px" }}>
+          <Box sx={{ mb: "60px" }}>
             <Typography
               sx={{
-                fontSize: { xs: "30px", sm: "64px", md: "72px", lg: "88px" },
-                lineHeight: { xs: "40px", sm: "72px", md: "80px", lg: "94px" },
+                fontSize: { xs: "30px", sm: "64px", md: "72px", lg: "96px" },
+                lineHeight: { xs: "40px", sm: "72px", md: "80px", lg: "102px" },
                 fontWeight: 700,
                 color: "#010410",
                 mb: 3,
@@ -349,6 +368,88 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Box>
+
+      <Box
+        sx={{
+          background: "",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Container sx={{ mb: "60px" }}>
+          {/* Testing idea */}
+
+          <Grid
+            container
+            spacing={10}
+            mb={{ xs: 8, md: 1, display: "flex", alignItems: "center" }}
+          >
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Stack>
+                {/* <Typography variant="h1" sx={{ fontSize: "64px" }}>
+                  Experiences with Passion, Precision, and Purpose.
+                </Typography> */}
+
+                <Typography variant="h1" sx={{ fontSize: "64px" }}>
+                  Discover, Design, Develop, Deploy.
+                </Typography>
+              </Stack>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Card
+                sx={{
+                  px: 5,
+                  py: 6,
+                  boxShadow: "none",
+                  borderRadius: "16px",
+                  background: "#fafafa",
+                }}
+              >
+                <Typography mt={1} variant="h6" mb={4} fontWeight={500}>
+                  Transforming ideas into impactful solutions: leveraging
+                  strategic design thinking and technical expertise to create
+                  intuitive digital experiences that drive engagement and
+                  deliver measurable results.
+                </Typography>
+
+                <Button variant="contained" onClick={scrollToContact}>
+                  Let's Talk
+                </Button>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <Grid container spacing={1} mb={{ xs: 8, md: 0 }}>
+            {websiteStats.map(({ statNum, experienceTitle, description }) => (
+              <Grid size={{ xs: 12, md: 4 }}>
+                <Card
+                  sx={{
+                    p: 5,
+                    boxShadow: "none",
+                    borderRadius: "16px",
+                    background: "#fafafa",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                  }}
+                >
+                  <Typography variant="h1" sx={{ fontSize: "96px" }}>
+                    {statNum}
+                  </Typography>
+                  <Typography variant="h4" mb={1}>
+                    {experienceTitle}
+                  </Typography>
+                  <Typography>{description}</Typography>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+
+          {/* Testing idea ends */}
+        </Container>
+      </Box>
+
       <Box
         sx={{
           background: "#fafafa",

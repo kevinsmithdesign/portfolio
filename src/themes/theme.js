@@ -45,12 +45,12 @@ const theme = createTheme({
     },
     body1: {
       fontSize: "16px",
-      fontWeight: 400, // Regular weight for body text
+      fontWeight: 500, // Regular weight for body text
       lineHeight: "1.5", // Comfortable spacing
     },
     body2: {
       fontSize: "14px",
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: "1.5",
     },
     body3: {
