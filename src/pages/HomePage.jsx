@@ -416,9 +416,11 @@ const HomePage = () => {
                   deliver measurable results.
                 </Typography>
 
-                <Button variant="contained" onClick={scrollToContact}>
+                {/* <Button variant="contained" onClick={scrollToContact}>
                   Let's Talk
-                </Button>
+                </Button> */}
+
+                <AnimatedBtn text="Let's Talk" onClick={scrollToContact} />
               </Card>
             </Grid>
           </Grid>
@@ -610,13 +612,18 @@ const HomePage = () => {
                       {description}
                     </Typography>
                     <Box>
-                      <Button
+                      {/* <Button
                         variant="contained"
                         sx={{ mb: 2 }}
                         onClick={() => handleButtonClick(route, externalLink)}
                       >
                         {btnText}
-                      </Button>
+                      </Button> */}
+
+                      <AnimatedBtn
+                        text={btnText}
+                        onClick={() => handleButtonClick(route, externalLink)}
+                      />
                     </Box>
                   </Grid>
                 </React.Fragment>

@@ -1,126 +1,3 @@
-// import React, { useCallback } from "react";
-// import { Typography, Box } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-// import { motion } from "framer-motion";
-// import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-// const ButtonWrapper = styled(motion.button)(({ theme }) => ({
-//   position: "relative",
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "flex-start",
-//   padding: "0px 28px 0px 6px",
-//   borderRadius: "999px",
-//   border: "none",
-//   // backgroundColor: "#ddd",
-//   background: "#eee",
-//   overflow: "hidden",
-//   cursor: "pointer",
-//   outline: "none",
-//   height: "60px",
-// }));
-
-// const Fill = styled(motion.div)(({ theme }) => ({
-//   position: "absolute",
-//   top: "50%",
-//   left: 8,
-//   height: 40,
-//   width: 40,
-//   transform: "translateY(-50%)",
-//   borderRadius: "999px",
-//   backgroundColor: theme.palette.primary.main,
-//   zIndex: 0,
-// }));
-
-// const IconWrapper = styled(Box)(() => ({
-//   width: 40,
-//   height: 40,
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   position: "relative",
-//   zIndex: 1,
-// }));
-
-// const Text = styled(motion.span)(() => ({
-//   marginLeft: 12,
-//   fontWeight: 600,
-//   fontSize: "1rem",
-//   zIndex: 1,
-// }));
-
-// const AnimatedButton = ({ text, onClick }) => {
-//   // Use useCallback to ensure consistent function reference
-//   const handleClick = useCallback(
-//     (e) => {
-//       // Prevent default browser behavior
-//       e.preventDefault();
-
-//       // Add a small timeout to ensure the event fires after animations
-//       setTimeout(() => {
-//         if (onClick && typeof onClick === "function") {
-//           onClick(e);
-//         }
-//       }, 10);
-//     },
-//     [onClick]
-//   );
-
-//   return (
-//     <ButtonWrapper
-//       initial="rest"
-//       whileHover="hover"
-//       animate="rest"
-//       onClick={handleClick}
-//       // Add these props to ensure proper event handling
-//       role="button"
-//       tabIndex={0}
-//     >
-//       {/* Expanding fill starts behind icon */}
-//       <Fill
-//         variants={{
-//           rest: { width: 40 },
-//           hover: {
-//             width: "calc(100% - 16px)",
-//             transition: { duration: 0.4, ease: "easeInOut" },
-//           },
-//         }}
-//       />
-
-//       <IconWrapper>
-//         <motion.div
-//           variants={{
-//             rest: { color: "#fff" },
-//             hover: { color: "#fff" },
-//           }}
-//           style={{
-//             display: "flex",
-//             alignItems: "center",
-//             justifyContent: "center",
-//             width: "100%",
-//             height: "100%",
-//           }}
-//         >
-//           <ArrowForwardIcon
-//             sx={{ fontSize: 20, position: "relative", left: "3px" }}
-//           />
-//         </motion.div>
-//       </IconWrapper>
-
-//       <Text
-//         variants={{
-//           rest: { color: "#000" },
-//           hover: { color: "#fff" },
-//         }}
-//       >
-//         {text}
-//       </Text>
-//     </ButtonWrapper>
-//   );
-// };
-
-// export default AnimatedButton;
-
 import React, { useCallback, memo } from "react";
 import { Box, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
@@ -144,6 +21,14 @@ const ButtonWrapper = styled(motion.button)(({ theme }) => ({
   // Add hardware acceleration
   transform: "translateZ(0)",
   willChange: "transform",
+  boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+  transition: "box-shadow 0.3s ease",
+  "&:hover": {
+    boxShadow: "0px 4px 12px rgba(59, 117, 254, 0.25)",
+  },
+  "&:active": {
+    transform: "translateZ(0) scale(0.98)",
+  },
 }));
 
 const IconWrapper = styled(Box)(() => ({
@@ -160,6 +45,7 @@ const IconWrapper = styled(Box)(() => ({
 // Memoize the component to prevent unnecessary re-renders
 const AnimatedButton = memo(({ text, onClick }) => {
   const theme = useTheme();
+
   // Use useCallback to ensure consistent function reference
   const handleClick = useCallback(
     (e) => {
@@ -184,33 +70,52 @@ const AnimatedButton = memo(({ text, onClick }) => {
       tabIndex={0}
       variants={{
         rest: {},
-        hover: {},
+        hover: {
+          background: "#3B75FE",
+          transition: { duration: 0.3, ease: "easeInOut" },
+        },
       }}
     >
       <motion.div
         variants={{
-          rest: { width: 40 },
+          rest: { width: 40, x: 0 },
           hover: {
             width: "calc(100% - 16px)",
-            transition: { duration: 0.4, ease: "easeInOut" },
+            transition: {
+              width: { duration: 0.4, ease: "easeInOut" },
+            },
           },
         }}
         style={{
           position: "absolute",
-          top: "50%",
+          // top: "50%",
           left: 8,
           height: 40,
           transform: "translateY(-50%)",
           borderRadius: "999px",
-          backgroundColor: theme.palette.primary.main, // Use a direct color value
+          backgroundColor: theme.palette.primary.main,
           zIndex: 0,
         }}
       />
 
       <IconWrapper>
-        <ArrowForwardIcon
-          sx={{ fontSize: 20, position: "relative", left: "3px" }}
-        />
+        <motion.div
+          variants={{
+            rest: { x: 0 },
+            hover: {
+              x: 3,
+              transition: {
+                duration: 0.2,
+                ease: "easeOut",
+                delay: 0.1,
+              },
+            },
+          }}
+        >
+          <ArrowForwardIcon
+            sx={{ fontSize: 20, position: "relative", left: 2 }}
+          />
+        </motion.div>
       </IconWrapper>
 
       <motion.span
